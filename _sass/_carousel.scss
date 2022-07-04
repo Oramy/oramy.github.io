@@ -94,3 +94,24 @@ body {
     margin-top: 7rem;
   }
 }
+
+.paral {
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+}
+
+.paralsec {
+background: 
+linear-gradient(
+  lighten($primary, 30%), 
+  lighten($primary, 35%)
+);
+}
+
+.inline-image
+{
+    filter: invert(35%);
+    height: 1em;
+    vertical-align: -.125em;
+}
