@@ -1,6 +1,8 @@
 var headersToAnimate = ["who knows how to code.",
                         "with graphic design skills.",
+                        "who creates clear and concise documents.",
                         "who is good at math.",
+                        "who is able to do fast prototyping.",
                         "and engineer."];
 var startReversAnimationAfter = 1500; //ms
 var letterSpeed = 70;

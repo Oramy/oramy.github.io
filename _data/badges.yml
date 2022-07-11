@@ -1,0 +1,39 @@
+2weeks:
+  title: 2 weeks
+  style: badge-info
+3months:
+  title: 3 months
+  style: badge-info
+6months:
+  title: 6 months
+  style: badge-info
+2years:
+  title: 2 years
+  style: badge-info
+
+1developer:
+  title: Solo dev
+  style: badge-info
+6developers:
+  title: 6 developers
+  style: badge-info
+9developers:
+  title: 9 developers
+  style: badge-info
+Internship:
+  title: Internship
+  style: badge-info
+
+GD:
+  title: Game Designer
+  style: badge-primary
+LD:
+  title: Level Designer
+  style: badge-secondary
+GPP:
+  title: Gameplay Programmer
+  style: badge-secondary
+
+GameJam:
+  title: Game Jam
+  style: badge-info

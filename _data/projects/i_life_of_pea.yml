@@ -1,0 +1,14 @@
+title: Life of Pea
+description: Little party game where you race to the top of a giant bean plant.
+short-description: Little party game where you race to the top of a giant bean plant.
+sd-no-sound-video:
+thumbnail: "/assets/images/life-of-pea/life-of-pea-screen-2.png"
+featured: false
+hidden: false
+year: 2014
+badges:
+  -
+    - GameJam
+  -
+    - GD
+    - GPP

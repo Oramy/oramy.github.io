@@ -1,0 +1,16 @@
+title: Fired Up!
+description: A <b>4 player co-op couch game</b> where you use whatever you find in the house to save it from the flames.</p>
+short-description: <b>4 player co-op couch game</b> about trainee firefighting animals.</p>
+sd-no-sound-video: "/assets/images/fired_up/Fired_Up_Trailer-SD_NoSound.mp4"
+thumbnail: "/assets/images/fired_up/fired_up_screen_2.png"
+structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.png"
+year: 2022
+featured: true
+hidden: false
+badges:
+  -
+    - 3months
+    - 6developers
+  -
+    - GD
+    - LD
