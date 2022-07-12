@@ -1,7 +1,8 @@
-title: Technical experiments 
+title: Choreographies 
 description: Two spaceships on the run! <b>You can only take 45° turns</b>, scrolling at lightspeed in the winding corridors of a gigantic spaceship. 
              Will you take the risk of going faster, or will you let your opponent outrun you?
 short-description: Frantic 2-player race in space with 45° turns only.
+very-short-description: Two choreographies made for students
 sd-no-sound-video: "/assets/images/45_degrees/45_degrees_trailer.mp4"
 thumbnail: "/assets/images/45_degrees/45_degrees_screen_1.png"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.png"
@@ -11,6 +12,6 @@ hidden: false
 badges:
   -
     - 2weeks
-    - 9developers
+    - 6developers
   -
-    - Engineer
+    - GD

@@ -1,0 +1,45 @@
+<div class="fat-container px-4">
+  <h1 class="display-1 mb-4 text-center">Projects library</h1>
+  <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false"><h2>All</h2></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="games-tab" data-toggle="tab" href="#games" role="tab" aria-controls="games" aria-selected="false"><h2>Games</h2></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="creative-tab" data-toggle="tab" href="#creative" role="tab" aria-controls="creative" aria-selected="true"><h2>Creative</h2></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="engineering-tab" data-toggle="tab" href="#engineering" role="tab" aria-controls="engineering" aria-selected="false"><h2>Engineering</h2></a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+      {% assign all-projects = '' | split: '' %}
+      {% for project_hash in site.data.projects %}
+        {% assign all-projects = all-projects | push: project_hash %}
+      {% endfor %}
+      {% for project_hash in site.data.creative-projects %}
+        {% assign all-projects = all-projects | push: project_hash %}
+      {% endfor %}
+      {% for project_hash in site.data.engineering-projects %}
+        {% assign all-projects = all-projects | push: project_hash %}
+      {% endfor %}
+      {% assign sorted_projects = all-projects | sort %}
+      {% include project_list_compact.html projects=sorted_projects %}
+    </div>
+    <div class="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
+      {% assign sorted_projects = site.data.projects | sort %}
+      {% include project_list_compact.html projects=sorted_projects %}
+    </div>
+    <div class="tab-pane fade" id="creative" role="tabpanel" aria-labelledby="creative-tab">
+      {% assign sorted_projects = site.data.creative-projects | sort %}
+      {% include project_list_compact.html projects=sorted_projects %}
+    </div>
+    <div class="tab-pane fade" id="engineering" role="tabpanel" aria-labelledby="engineering-tab">
+      {% assign sorted_projects = site.data.engineering-projects | sort %}
+      {% include project_list_compact.html projects=sorted_projects %}
+    </div>
+  </div>
+</div>

@@ -14,6 +14,9 @@
 1developer:
   title: Solo dev
   style: badge-info
+2developers:
+  title: 2 developers
+  style: badge-info
 6developers:
   title: 6 developers
   style: badge-info
@@ -32,6 +35,9 @@ LD:
   style: badge-secondary
 GPP:
   title: Gameplay Programmer
+  style: badge-secondary
+Engineer:
+  title: Engineer
   style: badge-secondary
 
 GameJam:

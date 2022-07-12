@@ -2,40 +2,7 @@
 layout: default
 title: Home
 ---
-<div class="px-3 pt-5 my-0 pb-0 text-left">
-
-  <div class="col-md-8 col-lg-6 mx-auto">
-    <div class="row">
-      <img class="rounded-circle col-md-4 col-6" src="{{ "/assets/images/photo_linkedin.jpg" | relative_url }}" />
-      <div class="col-md-8 col-6 d-flex">
-        <ul class="list-unstyled align-self-end flex-column col-12 row">
-          <div class="col-12"><a class="badge badge-light" href="https://linkedin.com/in/amaury-butaux"><li class="bi bi-linkedin"><span class="nav-other-websites-desc"> LinkedIn</span></li></a></div>
-          <div class="col-12"><a class="badge badge-light" href="https://oramy.itch.io"><li><img src="{{"/assets/images/itchio-textless-black.svg" | relative_url }}" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></li></a></div>
-          <div class="col-12"><a class="badge badge-light" href="https://oramy.github.io/resume.pdf"><li class="bi bi-file-person"><span class="nav-other-websites-desc"> Resume</span></li></a></div>
-        </ul>
-      </div> 
-    </div>
-  </div>
-  <h1 class="col-md-8 col-lg-6 display-2 fw-bold mx-auto">Amaury Butaux</h1>
-  <div class="col-md-8 col-lg-6 mx-auto">
-      <h2 class="ml-3 mt-4">
-      Junior Game Designer <!--<small class="text-primary" id="Subtitles"></small>-->
-      </h2>
-  </div>
-</div>
-<div class="px-3 my-0 pb-0 text-left bg-light">
-  <div class="mb-0 bg-light pt-3 pb-3">
-    <div class="col-md-8 col-lg-6 mx-auto d-flex">
-      <h6 class="ml-3 px-0 align-self-middle align-middle">Looking for a <b>6 months game design internship</b>
-        beginning in <b>February 2023.</b></h6>
-    </div>
-  </div>
-  <!--<div class="col-md-8 col-lg-6 mx-auto">
-    <div class="d-grid d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 gap-3 mx-1">Game Designer</button>
-      <button type="button" class="btn btn-outline-secondary btn-lg px-4 mx-1">Gameplay Programmer</button>
-    </div>-->
-</div>
+{% include nav.html %}
 <div class="jumbotron-fluid mx-0 px-0 paralsec paral">
   <div class="px-3 pt-5 my-0 pb-0 text-left">
     <div class="py-4"></div>
@@ -152,27 +119,7 @@ title: Home
   {% assign sorted_projects = site.data.projects | sort %}
   {% include project_list.html projects=sorted_projects %}
 </div>
-<div class="fat-container px-4">
-  <h1 class="display-3 mb-4 text-center">Other projects</h1>
-  <ul class="nav nav-fill nav-pills" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="creative-tab" data-toggle="tab" href="#creative" role="tab" aria-controls="creative" aria-selected="true">Creative</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="engineering-tab" data-toggle="tab" href="#engineering" role="tab" aria-controls="engineering" aria-selected="false">Engineering</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="creative" role="tabpanel" aria-labelledby="creative-tab">
-      {% assign sorted_projects = site.data.creative-projects | sort %}
-      {% include project_list.html projects=sorted_projects %}
-    </div>
-    <div class="tab-pane fade" id="engineering" role="tabpanel" aria-labelledby="engineering-tab">
-      {% assign sorted_projects = site.data.engineering-projects | sort %}
-      {% include project_list.html projects=sorted_projects %}
-    </div>
-  </div>
-</div>
+<hr class="my-5">
 <div class="container">
 <h1>About me</h1>
 </div>
