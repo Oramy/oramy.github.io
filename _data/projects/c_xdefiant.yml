@@ -7,6 +7,7 @@ very-short-description: Free-to-play fast-paced arena shooter made by Ubisoft.
 sd-no-sound-video: "/assets/images/xdefiant/xdefiant_gameplay.mp4"
 thumbnail: "/assets/images/xdefiant/xdefiant_thumbnail.jpg"
 structure-logo: "/assets/images/logos/Ubisoft-logo.svg"
+dedicated-page: "/projects/xdefiant"
 year: 2021
 featured: true
 hidden: false

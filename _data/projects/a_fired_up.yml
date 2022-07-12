@@ -5,6 +5,7 @@ very-short-description: <b>4 player co-op couch game</b>
 sd-no-sound-video: "/assets/images/fired_up/Fired_Up_Trailer-SD_NoSound.mp4"
 thumbnail: "/assets/images/fired_up/fired_up_screen_2.png"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.png"
+dedicated-page: "/projects/fired-up"
 year: 2022
 featured: true
 hidden: false
