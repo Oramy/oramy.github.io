@@ -1,0 +1,150 @@
+.link-unstyled {
+  &,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus,
+  &:active:hover {
+    font-style: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: inherit;
+    text-decoration: none !important;
+    font-variant: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    border-radius: inherit;
+    border: inherit;
+    outline: inherit;
+    box-shadow: inherit;
+    padding: inherit;
+    vertical-align: inherit;
+  }
+}
+
+.clickable-card {
+  perspective: 1000px;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  animation-fill-mode: backwards;
+}
+
+.card-mouse-anim {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform-style: preserve-3d;
+  transition: transform 0.1s;
+}
+
+.clickable-card:hover .card-content{
+  transform: rotateY(180deg);
+  transition: 1s;
+  /*animation-duration: .7s;
+  animation-fill-mode: backwards;
+  animation-name: card-flip;*/
+}
+
+@keyframes card-flip-forward {
+  from {
+    transform: translateZ(0px);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: translateX(-30%) translateZ(100px) rotateY(90deg);
+    animation-timing-function: ease-out;
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes card-flip-forward {
+  from {
+    transform: translateZ(0px);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: translateX(-30%) translateZ(100px) rotateY(90deg);
+    animation-timing-function: ease-out;
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
+}
+
+.face-front, .face-back {
+  background-color: #fff;
+}
+.face-front {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.face-back {
+  transform: translateZ(-1px) rotateY(180deg);
+}
+
+.face-back, .clickable-card, .card-content {
+  min-height: 100%;
+}
+
+.card-thumbnail {
+  width: 100%;
+  height: 0;
+  padding-top: 50%;
+  overflow: hidden;
+}
+
+.card-back {
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.card-img-back {
+  position:relative;
+  width:auto;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  overflow: hidden;
+  filter: grayscale(20%) blur(1px);
+}
+
+.card-back-text {
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0px;
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(20px);
+}
+
+.translateZ-5 {
+  transform-style: preserve-3d;
+  transform: translateZ(5px);
+}
+
+.translateZ-10 {
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+}
+
+.preserve-3D {
+  transform-style: preserve-3d;
+}

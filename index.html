@@ -50,7 +50,7 @@ title: Home
     {% else %}
     <div class="carousel-item">
     {% endif %}
-      <video title="{{ project.title }}" preload="auto" autoplay loop class="first-slide carousel-item-background">
+      <video title="{{ project.title }}" preload="auto" autoplay loop muted class="first-slide carousel-item-background">
         <source src="{{ project.sd-no-sound-video | relative_url }}" type="video/mp4">
         <p>{{ project.title }}</p>
      </video>

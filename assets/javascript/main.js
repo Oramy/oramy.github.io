@@ -1,4 +1,4 @@
-var headersToAnimate = ["who knows how to code.",
+/*var headersToAnimate = ["who knows how to code.",
                         "with graphic design skills.",
                         "who creates clear and concise documents.",
                         "who is good at math.",
@@ -28,4 +28,32 @@ function animateHeaders(headerIndex){
  setTimeout(function(){ reverseAnimation(headerIndex)}, letterSpeed * i + startReversAnimationAfter);
 }
 
-animateHeaders(0)
+animateHeaders(0)*/
+
+$(document).ready(function(){
+   var currentMousePos = { x: -1, y: -1 };
+    $(document).on("mousemove", function(event) {
+        currentMousePos.x = event.clientX;
+        currentMousePos.y = event.clientY;
+    });
+$(".clickable-card").on('mouseenter', function() {
+  var el = this;
+  function anim() {
+      var dx = currentMousePos.x;
+      dx = dx - el.getBoundingClientRect().x - el.getBoundingClientRect().width / 2;
+      var dy = currentMousePos.y - el.getBoundingClientRect().y - el.getBoundingClientRect().height / 2;
+      dx = dx / el.getBoundingClientRect().width;
+      dy = dy / el.getBoundingClientRect().height;
+      $(el).children(".card-content").children(".card-mouse-anim").css("transform", "rotateX("+dy*50+"deg) rotateY("+dx*50+"deg)");
+ 
+      if(dx < -.5 || dx > .5 || dy > .5 || dy < -.5) {
+         $(el).off("mousemove");
+         $(el).children(".card-content").children(".card-mouse-anim").css("transform", "rotateX(0deg) rotateY(0deg)");
+      }
+      else {
+        requestAnimationFrame(anim);
+      }
+  }
+  var requestID = requestAnimationFrame(anim);
+})
+});

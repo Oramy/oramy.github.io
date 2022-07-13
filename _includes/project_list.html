@@ -5,24 +5,42 @@
 {% unless project.hidden %}
 {% assign index = index | plus: 1 %}
 <div class="card p-0 text-left">
-    <div class="card-img-top card-thumbnail">
-    <img class="card-img-top fill-image" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
-    </div>
-    <div class="card-body d-flex flex-column">
-    <h4 class="card-title text-dark">{{ project.title }}</h4>
-    <p class="card-text text-dark">{{ project.short-description }}</p>
-        <div class="p-0 mt-auto" >
-        {% for line in project.badges %}
-        {% for badge in line %}
-        {% assign badge_data = site.data.badges[badge] %}
-        <span class="badge {{ badge_data.style }}">{{ badge_data.title }}</span>
-        {% endfor %}
-        {% unless forloop.last %}
-        <br />
-        {% endunless %}
-        {% endfor %}
+    <a class="clickable-card link-unstyled bg-light" href="{{project.dedicated-page}}">
+        <div class="card-content">
+            <div class="card-mouse-anim">
+            <div class="face-back bg-light preserve-3D">
+                <div class="card-img-top card-thumbnail">
+                    <img class="card-img-top fill-image" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+                </div>
+                <div class="card-body preserve-3D">
+                <h4 class="card-title text-dark translateZ-10">{{ project.title }}</h4>
+                <p class="card-text text-dark translateZ-5">{{ project.short-description }}</p>
+                    <div class="p-0 mt-auto" >
+                    {% for line in project.badges %}
+                    {% for badge in line %}
+                    {% assign badge_data = site.data.badges[badge] %}
+                    <span class="badge {{ badge_data.style }}">{{ badge_data.title }}</span>
+                    {% endfor %}
+                    {% unless forloop.last %}
+                    <br />
+                    {% endunless %}
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="face-front bg-light">
+                <div class="card-img card-back">
+                    <div class="position-absolute rounded overflow-hidden w-100 h-100">
+                        <img class="card-img card-img-back" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}" />
+                    </div>
+                    <div class="card-back-text d-flex">
+                        <h3 class="card-title text-dark display-5 text-center bg-light py-3 w-100 my-auto">{{ project.title }}</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
+    </a>
 </div>
 {% assign remainder2 = index | modulo: 2 %}
 {% assign remainder3 = index | modulo: 3 %}
