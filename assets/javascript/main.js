@@ -31,6 +31,8 @@ function animateHeaders(headerIndex){
 animateHeaders(0)*/
 
 $(document).ready(function(){
+  if (window.matchMedia("(min-width: 576px)").matches) {
+ 
    var currentMousePos = { x: -1, y: -1 };
     $(document).on("mousemove", function(event) {
         currentMousePos.x = event.clientX;
@@ -39,6 +41,7 @@ $(document).ready(function(){
 $(".clickable-card").on('mouseenter', function() {
   var el = this;
   function anim() {
+      if (window.matchMedia("(min-width: 576px)").matches) {
       var dx = currentMousePos.x;
       dx = dx - el.getBoundingClientRect().x - el.getBoundingClientRect().width / 2;
       var dy = currentMousePos.y - el.getBoundingClientRect().y - el.getBoundingClientRect().height / 2;
@@ -53,7 +56,9 @@ $(".clickable-card").on('mouseenter', function() {
       else {
         requestAnimationFrame(anim);
       }
+    }
   }
   var requestID = requestAnimationFrame(anim);
 })
+  }
 });

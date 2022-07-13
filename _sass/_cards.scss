@@ -32,7 +32,6 @@
   width: 100%;
   height: 100%;
   transition: transform 0.8s;
-  transform-style: preserve-3d;
   animation-fill-mode: backwards;
 }
 
@@ -44,6 +43,23 @@
   transition: transform 0.1s;
 }
 
+@include media-breakpoint-up(sm) {
+
+.card-content {
+  transform-style: preserve-3d;
+}
+.card-mouse-anim {
+  transform-style: preserve-3d;
+}
+}
+.card-content {
+  transform: rotateY(180deg);
+}
+
+@include media-breakpoint-up(sm) {
+  .card-content {
+    transform: rotateY(0deg);
+  }
 .clickable-card:hover .card-content{
   transform: rotateY(180deg);
   transition: 1s;
@@ -52,36 +68,19 @@
   animation-name: card-flip;*/
 }
 
-@keyframes card-flip-forward {
-  from {
-    transform: translateZ(0px);
-    animation-timing-function: ease-in;
-  }
-
-  50% {
-    transform: translateX(-30%) translateZ(100px) rotateY(90deg);
-    animation-timing-function: ease-out;
-  }
-
-  to {
-    transform: rotateY(180deg);
-  }
+.translateZ-5 {
+  transform-style: preserve-3d;
+  transform: translateZ(5px);
 }
 
-@keyframes card-flip-forward {
-  from {
-    transform: translateZ(0px);
-    animation-timing-function: ease-in;
-  }
+.translateZ-10 {
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+}
 
-  50% {
-    transform: translateX(-30%) translateZ(100px) rotateY(90deg);
-    animation-timing-function: ease-out;
-  }
-
-  to {
-    transform: rotateY(180deg);
-  }
+.preserve-3D {
+  transform-style: preserve-3d;
+}
 }
 
 .face-front, .face-back {
@@ -133,18 +132,4 @@
   overflow-x: hidden;
   transform-style: preserve-3d;
   transform: translateZ(20px);
-}
-
-.translateZ-5 {
-  transform-style: preserve-3d;
-  transform: translateZ(5px);
-}
-
-.translateZ-10 {
-  transform-style: preserve-3d;
-  transform: translateZ(10px);
-}
-
-.preserve-3D {
-  transform-style: preserve-3d;
 }
