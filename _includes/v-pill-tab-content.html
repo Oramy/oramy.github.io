@@ -1,0 +1,9 @@
+{% assign downcased = include.name | downcase | replace: " ", "-" %}
+
+{% if include.active %}
+<div class="tab-pane fade show active" id="v-pills-{{downcased}}"
+role="tabpanel" aria-labelledby="v-pills-{{downcased}}-tab">
+{% else %}
+<div class="tab-pane fade" id="v-pills-{{downcased}}"
+role="tabpanel" aria-labelledby="v-pills-{{downcased}}-tab">
+{% endif %}

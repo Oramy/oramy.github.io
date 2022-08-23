@@ -14,17 +14,9 @@
             {% assign badges-size = project.badges | size %}
             {% unless badges-size == 0 %}
             <div class="p-0 m-0 mt-auto" >
-            {% for line in project.badges %}
-            {% for badge in line %}
-            {% assign badge_data = site.data.badges[badge] %}
-            <span class="badge {{ badge_data.style }}">{{ badge_data.title }}</span>
-            {% endfor %}
-            {% unless forloop.last %}
-            <br />
-            {% endunless %}
-            {% endfor %}
-            {% endunless %}
+                {% include badges.html badges=project.badges %}
             </div>
+            {% endunless %}
         </div>
     </div>
     {% assign remainder3 = index | modulo: 3 %}

@@ -1,5 +1,372 @@
 ---
 layout: project
-title: Fired Up !
+title: Fired Up!
 ---
-Fired Up!
+{% assign project = site.data.projects.a_fired_up %}
+<div class="container">
+</div>
+<div class="container-fluid">
+    <div class="row align-items-start">
+        <div class="offset-lg-3 col-lg-6">
+            <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
+            <p class="lead">{{ project.description }}</p>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item w-100" src="https://player.vimeo.com/video/726483205?h=8fdfd4bfee" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-lg-3 my-2">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 shadow d-none d-lg-block p-3">
+                    <h2>Infos</h2>
+                    <hr>
+                    <p></p>
+                    <ul>
+                        <li><b>Genre:</b> Couch Co-op</li>
+                        <li><b>Year:</b> 2022</li>
+                        <li><b>Tools:</b> Unity, Probuilder, Progrid</li>
+                    </ul>
+                    {% include badges.html badges=project.badges %}
+                    <hr>
+                    <h6>Why is this project important?</h6>
+                </div>
+                <div class="col-12 d-lg-none p-3">
+                    <h2>Infos</h2>
+                    <hr>
+                    <p></p>
+                    <ul>
+                        <li><b>Genre:</b> Couch Co-op</li>
+                        <li><b>Year:</b> 2022</li>
+                        <li><b>Tools:</b> Unity, Probuilder, Progrid</li>
+                    </ul>
+                    {% include badges.html badges=project.badges %}
+                    <hr>
+                    <h6>Why is this project important?</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron mt-2">
+  <div class="container-fluid">
+    <div class="row justify-content-md-center align-items-start">
+      <div class="col-lg-4">
+        {% assign image_list = "/assets/images/fired_up/fired_up_screen_1.png,
+        /assets/images/fired_up/fired_up_screen_2.png,
+        /assets/images/fired_up/fired_up_screen_3.png" | split: "," %}
+        {% assign caption_list = "First image,
+        Second image,
+        Third Image" | split: "," %}
+        {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_1" %}
+      </div>
+      <div class="col-lg-2 shadow p-3">
+        <h2>Summary</h2>
+        <hr>
+        <p>We were two game designers on this project, so we had to split
+            tasks and to organize ourselves to be more efficient.
+        <!--Fired Up! is a <b>4-player couch co-op game</b> in which you play as cute little animals which are trainee firefighters. You have to save several little houses with your friends.
+        For this game, we wanted our players to have fun together discovering the many ways there are to put down the fire in a chaotic mood.
+        Players can use anything they like to extinguish the fire: real tools like an extinguisher, but also ordinary objects found in the house. From an aquarium to a cardboard filled in the pool.
+        -->
+        </p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <div class="sticky-top pt-3">
+          <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            {% include v-pill-tab.html name="Communication" active="true" %}
+            {% include v-pill-tab.html name="Writing Specifications" %}
+            {% include v-pill-tab.html name="Research" %}
+            {% include v-pill-tab.html name="3Cs" %}
+            {% include v-pill-tab.html name="Metrics" %}
+            {% include v-pill-tab.html name="Features" %}
+            {% include v-pill-tab.html name="Balancing" %}
+            {% include v-pill-tab.html name="Level Design" %}
+          </div>
+        </div>
+      </div>
+      <hr class="d-md-none d-block w-100">
+      <div class="col-md-6 mt-3">
+        <div class="tab-content" id="v-pills-tabContent">
+          {% include v-pill-tab-content.html name="Communication" active="true" %}
+            <h2>Communication</h2>
+            <hr>
+            <div class="row">
+              <div class="col-lg-6">
+                  {% assign image_list = "
+                  /assets/images/fired_up/design_documents/miro-brainstorming-zoomed-in.png,
+                  /assets/images/fired_up/design_documents/GD_presentation.png
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  Brainstorming organized on Miro,
+                  Synthetic presentations to share the latest key decisions to the team.
+                  " | split: "," %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_communication" %}
+              </div>
+              <div class="col-lg-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+              </div>
+            </div>
+          {% include div-end.html %}
+          
+          {% include v-pill-tab-content.html name="Writing Specifications" content="w" %}
+            <h2 class="button">Writing Specifications</h2>
+            <hr>
+            <div class="row">
+              <div class="col-lg-12">
+                  {% assign image_list = "
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(1).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(2).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(3).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(4).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(5).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(6).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(7).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(8).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(9).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(10).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(11).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(12).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(13).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(14).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(15).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(16).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(17).png,
+                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(18).png
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  Writing synthetic and comprehensive specs with clear schemes,
+                  Using Google Slides allows for easier teamwork,
+                  The whole document is made with one software to foster fast iterations,
+                  Coherent symbols in every schemes make for a more readable document
+                  " | split: "," %}
+                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
+              </div>
+              <div class="col-lg-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Research" %}
+            <h2 class="button">Research</h2>
+            <hr>
+            <div class="row">
+              <div class="col-lg-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+              </div>
+              <div class="col-lg-4">
+                  {% assign image_list = "
+                  /assets/images/fired_up/design_documents/systemic_gd_research_overview_square.png,
+                  /assets/images/fired_up/design_documents/verticality_research_overview.png,
+                  /assets/images/fired_up/design_documents/exploration_ld_lvl3_square.gif
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  Research on systemic game design,
+                  Exploring the relevance of verticality for our levels,
+                  Iterations and exploration for the game last level
+                  " | split: "," %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_research" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="3Cs" %}
+            <h2 class="button">3Cs</h2>
+            <hr>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Metrics" %}
+            <h2 class="button">Metrics</h2>
+            <hr>
+            <div class="row">
+              <div class="col-lg-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+              </div>
+              <div class="col-lg-4">
+                  {% assign image_list = "
+                  /assets/images/fired_up/design_documents/camera_metrics_square.png,
+                  /assets/images/fired_up/design_documents/camera_ground_square.png,
+                  /assets/images/fired_up/design_documents/metrics_square.png
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  Camera minimal zoom to ensure objects that are big enough on screen;
+                  Camera projection on ground to build well sized levels;
+                  Objects size (non-interactable in blue, interactable in yellow)
+                  " | split: ";" %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_metrics" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Features" %}
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Balancing" %}
+            <h2 class="button">Balancing</h2>
+            <hr>
+            <div class="row">
+              <div class="col-lg-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+              </div>
+              <div class="col-lg-6">
+                  {% assign image_list = "
+                  /assets/images/fired_up/design_documents/DDA.png,
+                  /assets/images/fired_up/design_documents/balancing-unity-layout.png
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  Dynamic difficulty adjustment scheme;
+                  Custom unity layout to have all interesting values to balance during balancing playtests
+                  " | split: ";" %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_balancing" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Level Design" %}
+            <h2 class="button">Level Design</h2>
+            <hr>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          {% include div-end.html %}
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-light p-2 row justify-content-md-center">
+      <div class= "col-lg-8">
+      <h2>My work</h2>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Communication</summary>
+        <hr>
+        <div class="row">
+          <div class="col-lg-6">
+              {% assign image_list = "
+              /assets/images/fired_up/design_documents/miro-brainstorming-zoomed-in.png,
+              /assets/images/fired_up/design_documents/GD_presentation.png
+              " | split: "," %}
+              {% assign caption_list = "
+              Brainstorming organized on Miro,
+              Synthetic presentations to share the latest key decisions to the team.
+              " | split: "," %}
+              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_communication" %}
+          </div>
+          <div class="col-lg-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          </div>
+        </div>
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Writing Specifications</summary>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12">
+              {% assign image_list = "
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(1).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(2).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(3).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(4).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(5).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(6).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(7).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(8).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(9).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(10).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(11).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(12).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(13).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(14).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(15).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(16).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(17).png,
+              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(18).png
+              " | split: "," %}
+              {% assign caption_list = "
+              Writing synthetic and comprehensive specs with clear schemes,
+              Using Google Slides allows for easier teamwork,
+              The whole document is made with one software to foster fast iterations,
+              Coherent symbols in every schemes make for a more readable document
+              " | split: "," %}
+              {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
+          </div>
+          <div class="col-lg-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          </div>
+        </div>
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Research</summary>
+        <hr>
+        <div class="row">
+          <div class="col-lg-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          </div>
+          <div class="col-lg-4">
+              {% assign image_list = "
+              /assets/images/fired_up/design_documents/systemic_gd_research_overview_square.png,
+              /assets/images/fired_up/design_documents/verticality_research_overview.png,
+              /assets/images/fired_up/design_documents/exploration_ld_lvl3_square.gif
+              " | split: "," %}
+              {% assign caption_list = "
+              Research on systemic game design,
+              Exploring the relevance of verticality for our levels,
+              Iterations and exploration for the game last level
+              " | split: "," %}
+              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_research" %}
+          </div>
+        </div>
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">3Cs</summary>
+        <hr>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Metrics</summary>
+        <hr>
+        <div class="row">
+          <div class="col-lg-8">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          </div>
+          <div class="col-lg-4">
+              {% assign image_list = "
+              /assets/images/fired_up/design_documents/camera_metrics_square.png,
+              /assets/images/fired_up/design_documents/camera_ground_square.png,
+              /assets/images/fired_up/design_documents/metrics_square.png
+              " | split: "," %}
+              {% assign caption_list = "
+              Camera minimal zoom to ensure objects that are big enough on screen;
+              Camera projection on ground to build well sized levels;
+              Objects size (non-interactable in blue, interactable in yellow)
+              " | split: ";" %}
+              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_metrics" %}
+          </div>
+        </div>
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Features</summary>
+        <hr>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Balancing</summary>
+        <hr>
+        <div class="row">
+          <div class="col-lg-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          </div>
+          <div class="col-lg-6">
+              {% assign image_list = "
+              /assets/images/fired_up/design_documents/DDA.png,
+              /assets/images/fired_up/design_documents/balancing-unity-layout.png
+              " | split: "," %}
+              {% assign caption_list = "
+              Dynamic difficulty adjustment scheme;
+              Custom unity layout to have all interesting values to balance during balancing playtests
+              " | split: ";" %}
+              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_balancing" %}
+          </div>
+        </div>
+      </details>
+      <details class="border border-primary m-2 p-2">
+        <summary class="button">Level Design</summary>
+        <hr>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+      </details>
+    </div>
+      </div>
+  </div>
+</div>
