@@ -5,7 +5,7 @@ title: Fired Up!
 {% assign project = site.data.projects.a_fired_up %}
 <div class="container">
 </div>
-<div class="container-fluid">
+<div class="container-fluid mb-1">
     <div class="row align-items-start">
         <div class="offset-lg-3 col-lg-6">
             <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
@@ -14,7 +14,7 @@ title: Fired Up!
                 <iframe class="embed-responsive-item w-100" src="https://player.vimeo.com/video/726483205?h=8fdfd4bfee" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="col-lg-3 my-2">
+        <div class="col-lg-3 my-2 sticky-top py-2">
             <div class="row justify-content-center">
                 <div class="col-lg-9 shadow d-none d-lg-block p-3">
                     <h2>Infos</h2>
@@ -27,7 +27,7 @@ title: Fired Up!
                     </ul>
                     {% include badges.html badges=project.badges %}
                     <hr>
-                    <h6>Why is this project important?</h6>
+                    <a class="btn btn-primary btn-sm" href="#" role="button">Download on itch.io</a>
                 </div>
                 <div class="col-12 d-lg-none p-3">
                     <h2>Infos</h2>
@@ -40,16 +40,33 @@ title: Fired Up!
                     </ul>
                     {% include badges.html badges=project.badges %}
                     <hr>
-                    <h6>Why is this project important?</h6>
+                    <a class="btn btn-primary btn-sm btn-block" href="#" role="button">Download on itch.io</a>
                 </div>
             </div>
         </div>
     </div>
+    <div class="offset-md-3 col-md-6 mt-5 p-3">
+        <h1>Game Overview</h1>
+        <hr>
+        <p>
+        Fired Up! is a <b>4-player couch co-op game</b> in which you play as
+        cute little animals which are trainee firefighters. You have to save
+        several little houses with your friends.
+        </p>
+        <h6>Our core intentions</h6>
+        <ul>
+          <li>Couch co-op game</li>
+          <li>Chaos</li>
+          <li>High level of interaction : using everything in the house</li>
+          <li>Multiple small levels</li>
+        </ul>
+    </div>
 </div>
-<div class="jumbotron mt-2">
+<div class="jumbotron mt-1 pt-1">
   <div class="container-fluid">
+    
     <div class="row justify-content-md-center align-items-start">
-      <div class="col-lg-4">
+      <!-- <div class="col-lg-4">
         {% assign image_list = "/assets/images/fired_up/fired_up_screen_1.png,
         /assets/images/fired_up/fired_up_screen_2.png,
         /assets/images/fired_up/fired_up_screen_3.png" | split: "," %}
@@ -57,31 +74,68 @@ title: Fired Up!
         Second image,
         Third Image" | split: "," %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_1" %}
-      </div>
-      <div class="col-lg-2 shadow p-3">
-        <h2>Summary</h2>
-        <hr>
+      </div> -->
+      <div class="col-md-6 p-3">
+        <div class="row my-2 p-2">
+          <h1 class="col-12">My missions</h1>
+          <hr class="col-12">
+          <div>
+            <h6>Game Design</h6>
+            <ul>
+              <li>Designing <b>Core Mechanics</b></li>
+              <li>Designing <b>3Cs</b></li>
+              <li><b>Balancing</b></li>
+              <li>Designing <b>Signs & Feedbacks</b> (and implementing some)</li>
+              <li>Integrating <b>assets</b></li>
+            </ul>
+          </div>
+          <div>
+            <h6>Level Design</h6>
+            <ul>
+              <li><b>Design and Blockouts</b></li>
+              <li>Designing <b>onboarding</b> levels</li>
+              <li>Iterating on levels</li>
+            </ul>
+          </div>
+          <div>
+            <h6>UX</h6>
+            <ul>
+              <li>Designing & Implementing <b>Onboarding</b></li>
+              <li>Screen Mockups</li>
+
+            </ul>
+          </div>
+        </div>
+        <!-- For this game, we wanted our players to have fun together discovering the many ways there are to put down the fire in a chaotic mood.
+        Players can use anything they like to extinguish the fire: real tools like an extinguisher, but also ordinary objects found in the house. From an aquarium to a cardboard filled in the pool.
+
         <p>We were two game designers on this project, so we had to split
             tasks and to organize ourselves to be more efficient.
-        <!--Fired Up! is a <b>4-player couch co-op game</b> in which you play as cute little animals which are trainee firefighters. You have to save several little houses with your friends.
-        For this game, we wanted our players to have fun together discovering the many ways there are to put down the fire in a chaotic mood.
-        Players can use anything they like to extinguish the fire: real tools like an extinguisher, but also ordinary objects found in the house. From an aquarium to a cardboard filled in the pool.
-        -->
-        </p>
+            </p> -->
+        <!--<div class="alert alert-primary alert-dismissible fade show" role="alert">
+
+           <i class="bi bi-info-circle-fill"></i> 
+           We were two game designers on this project. Go checkout the work of <b>Keltoum</b>!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+        </div>-->
       </div>
     </div>
-    <div class="row mt-2">
+    <div class="row mt-4">
+      <h1 class="col-12 col-md-9 offset-md-3">Detailed Work</h1>
       <div class="col-md-3">
         <div class="sticky-top pt-3">
           <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             {% include v-pill-tab.html name="Working with the team" active="true" %}
-            {% include v-pill-tab.html name="Writing Specifications" %}
+            {% include v-pill-tab.html name="Writing Documents" %}
             {% include v-pill-tab.html name="Research" %}
             {% include v-pill-tab.html name="3Cs" %}
             {% include v-pill-tab.html name="Metrics" %}
             {% include v-pill-tab.html name="Features" %}
             {% include v-pill-tab.html name="Balancing" %}
             {% include v-pill-tab.html name="Level Design" %}
+            {% include v-pill-tab.html name="One Page" %}
           </div>
         </div>
       </div>
@@ -124,7 +178,7 @@ title: Fired Up!
             </div>
           {% include div-end.html %}
           
-          {% include v-pill-tab-content.html name="Writing Specifications" content="w" %}
+          {% include v-pill-tab-content.html name="Writing Documents" content="w" %}
             <h2>Writing Documents</h2>
             <hr>
             <div class="row justify-content-lg-center">
@@ -209,13 +263,13 @@ title: Fired Up!
             <div class="row">
               <div class="col-lg-6">
                   {% assign image_list = "
-                  /assets/images/fired_up/design_documents/camera_metrics_square.png,
                   /assets/images/fired_up/design_documents/camera_ground_square.png,
+                  /assets/images/fired_up/design_documents/camera_metrics_square.png,
                   /assets/images/fired_up/design_documents/metrics_square.png
                   " | split: "," %}
                   {% assign caption_list = "
-                  Camera minimal zoom to ensure objects that are big enough on screen;
                   Camera projection on ground to build well sized levels;
+                  Camera minimal zoom to ensure objects that are big enough on screen;
                   Objects size (non-interactable in blue, interactable in yellow)
                   " | split: ";" %}
                   {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_metrics" %}
@@ -246,16 +300,27 @@ title: Fired Up!
             <hr>
             <div class="row">
               <div class="col-lg-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+              <h6>Using external playtests</h6>
+              <p>
+              Balancing Fired Up! was a hard task for our small team.
+              Our UX/UR designer made several playtests to gather feedbacks,
+              but we had not enough iterations to balance the game with only these playtests.
+              </p>
+              <h6>Balancing a game in a small amount of time</h6>
+              <p>
+              We dedicated team playtests to balancing, in which I would balance the game on the fly,
+              taking into account our dev team's skills, which allowed an overall balanced experienced
+              despite our small time resources.
+              </p>
               </div>
               <div class="col-lg-6">
                   {% assign image_list = "
-                  /assets/images/fired_up/design_documents/DDA.png,
-                  /assets/images/fired_up/design_documents/balancing-unity-layout.png
+                  /assets/images/fired_up/design_documents/balancing-unity-layout.png,
+                  /assets/images/fired_up/design_documents/DDA.png
                   " | split: "," %}
                   {% assign caption_list = "
-                  Dynamic difficulty adjustment scheme;
-                  Custom unity layout to have all interesting values to balance during balancing playtests
+                  Custom unity layout to have all interesting values to balance during balancing playtests;
+                  Dynamic difficulty adjustment scheme
                   " | split: ";" %}
                   {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_balancing" %}
               </div>
@@ -263,6 +328,11 @@ title: Fired Up!
           {% include div-end.html %}
           {% include v-pill-tab-content.html name="Level Design" %}
             <h2>Level Design</h2>
+            <hr>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="One Page" %}
+            <h2>One Page</h2>
             <hr>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
           {% include div-end.html %}

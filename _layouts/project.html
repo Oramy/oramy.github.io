@@ -1,5 +1,12 @@
----
-layout: default
----
-{% include nav_compact.html %}
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body class="pb-0 pt-0">
+    {% include nav_compact.html %}
+    {{ content }}
+    {%- include footer.html -%}
+  </body>
+
+</html>
