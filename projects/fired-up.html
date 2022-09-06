@@ -46,14 +46,7 @@ title: Fired Up!
         </div>
     </div>
     <div class="offset-md-3 col-md-6 mt-5 p-3">
-        <h1>Game Overview</h1>
-        <hr>
-        <p>
-        Fired Up! is a <b>4-player couch co-op game</b> in which you play as
-        cute little animals which are trainee firefighters. You have to save
-        several little houses with your friends.
-        </p>
-        <h6>Our core intentions</h6>
+        <h5>Our core intentions</h5>
         <ul>
           <li>Couch co-op game</li>
           <li>Chaos</li>
@@ -79,30 +72,28 @@ title: Fired Up!
         <div class="row my-2 p-2">
           <h1 class="col-12">My missions</h1>
           <hr class="col-12">
-          <div>
+          <div class="col-12 col-lg-6">
             <h6>Game Design</h6>
             <ul>
-              <li>Designing <b>Core Mechanics</b></li>
+              <li>Designing <b>core mechanics</b></li>
               <li>Designing <b>3Cs</b></li>
               <li><b>Balancing</b></li>
-              <li>Designing <b>Signs & Feedbacks</b> (and implementing some)</li>
+              <li>Designing <b>signs & feedbacks</b></li>
               <li>Integrating <b>assets</b></li>
             </ul>
           </div>
-          <div>
-            <h6>Level Design</h6>
+          <div class="col-12 col-lg-6">
+            <h6>Level design</h6>
             <ul>
-              <li><b>Design and Blockouts</b></li>
-              <li>Designing <b>onboarding</b> levels</li>
+              <li><b>Design and blockouts</b></li>
               <li>Iterating on levels</li>
             </ul>
           </div>
-          <div>
+          <div class="col-12">
             <h6>UX</h6>
             <ul>
-              <li>Designing & Implementing <b>Onboarding</b></li>
-              <li>Screen Mockups</li>
-
+              <li>Designing & implementing <b>onboarding</b></li>
+              <li>Screen mockups</li>
             </ul>
           </div>
         </div>
@@ -124,27 +115,29 @@ title: Fired Up!
     </div>
     <div class="row mt-4">
       <h1 class="col-12 col-md-9 offset-md-3">Detailed Work</h1>
+      <hr class="col-12 col-md-6 offset-md-3">
       <div class="col-md-3">
         <div class="sticky-top pt-3">
           <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            {% include v-pill-tab.html name="Working with the team" active="true" %}
-            {% include v-pill-tab.html name="Writing Documents" %}
+            {% include v-pill-tab.html name="One Page" active="true" %}
+            {% include v-pill-tab.html name="Writing documents" %}
             {% include v-pill-tab.html name="Research" %}
-            {% include v-pill-tab.html name="3Cs" %}
+            <hr class="my-1 w-100">
             {% include v-pill-tab.html name="Metrics" %}
-            {% include v-pill-tab.html name="Features" %}
             {% include v-pill-tab.html name="Balancing" %}
-            {% include v-pill-tab.html name="Level Design" %}
-            {% include v-pill-tab.html name="One Page" %}
+            <hr class="my-1 w-100">
+            {% include v-pill-tab.html name="Team work" %}
+            <!--{% include v-pill-tab.html name="3Cs" %}
+            {% include v-pill-tab.html name="Features" %}
+            {% include v-pill-tab.html name="Level Design" %}-->
           </div>
         </div>
       </div>
       <hr class="d-md-none d-block w-100">
       <div class="col-md-6 mt-3">
         <div class="tab-content" id="v-pills-tabContent">
-          {% include v-pill-tab-content.html name="Working with the team" active="true" %}
-            <h2>Working with the team</h2>
-            <hr>
+          {% include v-pill-tab-content.html name="Team work" %}
+            <h2 class="mb-4">Team work</h2>
             <div class="row">
               <div class="col-lg-6">
                   {% assign image_list = "
@@ -158,51 +151,42 @@ title: Fired Up!
                   {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_communication" %}
               </div>
               <div class="col-lg-6">
-                <h6>Including the team</h6>
+                <h5>Including the team</h5>
                 <p>
-                  We organized brainstormings to gather ideas from the team that we
-                  would then filter and synthetize to get to mechanics matching our intentions and scope.
+                  We <b>gathered ideas</b> during <b>brainstorming</b> sessions
+                  that we would then <b>filter and refine</b> to get to
+                  mechanics matching our intentions and scope.
                 </p>
-                <h6>Keeping the team informed</h6>
+                <h5>Keeping the team informed</h5>
                 <p>
-                  We also held small and short meetings to keep the team updated with
-                  key decisions in the beginning of the project.
+                  We also held small and short meetings to <b>keep the team updated</b> with
+                  <b>key decisions</b> in the beginning of the project.
                 </p>
-                <h6>Working with programmers</h6>
+                <h5>Working with programmers</h5>
                 <p>
-                  My engineering skills allowed me to easily understand what the
-                  programming challenges were and to design features with the right
-                  level of detail.
+                  My <b>engineering skills</b> allowed me to easily <b>understand
+                    programming challenges</b> and to design features with the <b>right
+                  level of detail</b>.
                 </p>
               </div>
             </div>
           {% include div-end.html %}
           
-          {% include v-pill-tab-content.html name="Writing Documents" content="w" %}
-            <h2>Writing Documents</h2>
-            <hr>
+          {% include v-pill-tab-content.html name="Writing Documents" %}
+            <h2 class="mb-4">Writing Documents</h2>
             <div class="row justify-content-lg-center">
-              <div class="col-lg-10">
+              <p class="col-12">
+                <b>Writing synthetic and comprehensive documents</b> which can be modified
+                and shared easily is decisive. Here is an excerpt from a document
+                I have made for this project.
+              </p>
+              <div class="col-12">
                   {% assign image_list = "
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(1).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(2).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(3).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(4).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(5).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(6).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(7).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(8).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(9).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(10).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(11).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(12).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(13).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(14).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(15).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(16).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(17).png,
-                  /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(18).png
-                  " | split: "," %}
+                  /assets/images/fired_up/design_documents/example_document_1.png,
+                  /assets/images/fired_up/design_documents/example_document_2.png,
+                  /assets/images/fired_up/design_documents/example_document_3.png,
+                  /assets/images/fired_up/design_documents/example_document_4.png
+                                    " | split: "," %}
                   {% assign caption_list = "
                   Writing synthetic and comprehensive specs with clear schemes,
                   Using Google Slides allows for easier teamwork,
@@ -211,19 +195,13 @@ title: Fired Up!
                   " | split: "," %}
                   {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
               </div>
-              <div class="col-12">
-                Writing synthetic and comprehensive documents which can be modified easily
-                to share with the team is decisive. Here is an example document I have made
-                for this project.
-              </div>
             </div>
           {% include div-end.html %}
           {% include v-pill-tab-content.html name="Research" %}
-            <h2>Research</h2>
-            <hr>
+            <h2 class="mb-4">Research</h2>
             <div class="row">
               <div class="col-lg-6">
-                <h6>Making well informed decisions.</h6>
+                <h5>Making well informed decisions.</h5>
                 <p>
                 I investigated several subjects during this project to be able
                 to make well informed decisions. To be more efficient, we split
@@ -231,7 +209,7 @@ title: Fired Up!
                 of the project.
                 </p>
 
-                <h6>Research in Level Design</h6>
+                <h5>Research in Level Design</h5>
                 <p>
                 Iterating over level design and testing out ideas was also part of
                 my work in this project.
@@ -253,13 +231,11 @@ title: Fired Up!
             </div>
           {% include div-end.html %}
           {% include v-pill-tab-content.html name="3Cs" %}
-            <h2>3Cs</h2>
-            <hr>
+            <h2 class="mb-4">3Cs</h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
           {% include div-end.html %}
           {% include v-pill-tab-content.html name="Metrics" %}
-            <h2>Metrics</h2>
-            <hr>
+            <h2 class="mb-4">Metrics</h2>
             <div class="row">
               <div class="col-lg-6">
                   {% assign image_list = "
@@ -275,17 +251,17 @@ title: Fired Up!
                   {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_metrics" %}
               </div>
               <div class="col-lg-6">
-                <h6>Camera</h6>
+                <h5>Camera</h5>
                 <p>
                 We defined camera's maximum range, object and character sizes to ensure game readability.
                 This led to our level size as we wanted one-screen levels.
                 </p>
-                <h6>Level Metrics</h6>
+                <h5>Level Metrics</h5>
                 Walls' height and thickness were then defined on the camera view to minimize
                 blind spots while still ensuring circulation was clear. 
                 <br>We used a base unit (1m) to build our levels.
                 </p>
-                <h6>Helpers</h6>
+                <h5>Helpers</h5>
                 <p>
                 I made helpers to ensure those metrics were respected when we integrated content
                 and designed levels.
@@ -296,17 +272,16 @@ title: Fired Up!
           {% include v-pill-tab-content.html name="Features" %}
           {% include div-end.html %}
           {% include v-pill-tab-content.html name="Balancing" %}
-            <h2>Balancing</h2>
-            <hr>
+            <h2 class="mb-4">Balancing</h2>
             <div class="row">
               <div class="col-lg-6">
-              <h6>Using external playtests</h6>
+              <h5>Using external playtests</h5>
               <p>
               Balancing Fired Up! was a hard task for our small team.
               Our UX/UR designer made several playtests to gather feedbacks,
               but we had not enough iterations to balance the game with only these playtests.
               </p>
-              <h6>Balancing a game in a small amount of time</h6>
+              <h5>Balancing a game in a small amount of time</h5>
               <p>
               We dedicated team playtests to balancing, in which I would balance the game on the fly,
               taking into account our dev team's skills, which allowed an overall balanced experienced
@@ -327,161 +302,36 @@ title: Fired Up!
             </div>
           {% include div-end.html %}
           {% include v-pill-tab-content.html name="Level Design" %}
-            <h2>Level Design</h2>
-            <hr>
+            <h2 class="mb-4">Level Design</h2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
           {% include div-end.html %}
-          {% include v-pill-tab-content.html name="One Page" %}
-            <h2>One Page</h2>
-            <hr>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
+          {% include v-pill-tab-content.html name="One Page" active="true" %}
+            <h2 class="mb-4">One Page</h2>
+            <div class="row">
+              <div class="col-12 col-md-6">
+              <a href="/assets/images/fired_up/design_documents/One_Page_Burnout.png" id="pop">
+                  <img class="img-thumbnail img-fluid" id="imageresource" src="/assets/images/fired_up/design_documents/One_Page_Burnout.png">
+              </a>
+              <a class="badge badge-primary" href="/assets/images/fired_up/design_documents/One_Page_Burnout.png" id="pop">
+                  Click to enlarge
+              </a>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5>A reminder</h5>
+                <p>
+                  The role of this one page is to have all <b>core mechanics</b> of the game
+                  <b>synthetized in one poster</b> which is always <b>visible by the team</b>.
+                </p>
+                <h5>Feature Cuts</h5>
+                <p>
+                  Some of the presented features were cut. We kept mechanics
+                  that were the <b>most important</b> in building our goal experience.
+                </p>
+              </div>
+            </div>
           {% include div-end.html %}
         </div>
       </div>
     </div>
-    <!--
-    <div class="container-fluid bg-light p-2 row justify-content-md-center">
-      <div class= "col-lg-8">
-      <h2>My work</h2>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Communication</summary>
-        <hr>
-        <div class="row">
-          <div class="col-lg-6">
-              {% assign image_list = "
-              /assets/images/fired_up/design_documents/miro-brainstorming-zoomed-in.png,
-              /assets/images/fired_up/design_documents/GD_presentation.png
-              " | split: "," %}
-              {% assign caption_list = "
-              Brainstorming organized on Miro,
-              Synthetic presentations to share the latest key decisions to the team.
-              " | split: "," %}
-              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_communication" %}
-          </div>
-          <div class="col-lg-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-          </div>
-        </div>
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Writing Specifications</summary>
-        <hr>
-        <div class="row">
-          <div class="col-lg-12">
-              {% assign image_list = "
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(1).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(2).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(3).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(4).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(5).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(6).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(7).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(8).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(9).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(10).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(11).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(12).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(13).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(14).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(15).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(16).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(17).png,
-              /assets/images/fired_up/design_documents/Containers/Contenants comportement remplissage(18).png
-              " | split: "," %}
-              {% assign caption_list = "
-              Writing synthetic and comprehensive specs with clear schemes,
-              Using Google Slides allows for easier teamwork,
-              The whole document is made with one software to foster fast iterations,
-              Coherent symbols in every schemes make for a more readable document
-              " | split: "," %}
-              {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
-          </div>
-          <div class="col-lg-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-          </div>
-        </div>
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Research</summary>
-        <hr>
-        <div class="row">
-          <div class="col-lg-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-          </div>
-          <div class="col-lg-4">
-              {% assign image_list = "
-              /assets/images/fired_up/design_documents/systemic_gd_research_overview_square.png,
-              /assets/images/fired_up/design_documents/verticality_research_overview.png,
-              /assets/images/fired_up/design_documents/exploration_ld_lvl3_square.gif
-              " | split: "," %}
-              {% assign caption_list = "
-              Research on systemic game design,
-              Exploring the relevance of verticality for our levels,
-              Iterations and exploration for the game last level
-              " | split: "," %}
-              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_research" %}
-          </div>
-        </div>
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">3Cs</summary>
-        <hr>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Metrics</summary>
-        <hr>
-        <div class="row">
-          <div class="col-lg-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-          </div>
-          <div class="col-lg-4">
-              {% assign image_list = "
-              /assets/images/fired_up/design_documents/camera_metrics_square.png,
-              /assets/images/fired_up/design_documents/camera_ground_square.png,
-              /assets/images/fired_up/design_documents/metrics_square.png
-              " | split: "," %}
-              {% assign caption_list = "
-              Camera minimal zoom to ensure objects that are big enough on screen;
-              Camera projection on ground to build well sized levels;
-              Objects size (non-interactable in blue, interactable in yellow)
-              " | split: ";" %}
-              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_metrics" %}
-          </div>
-        </div>
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Features</summary>
-        <hr>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Balancing</summary>
-        <hr>
-        <div class="row">
-          <div class="col-lg-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-          </div>
-          <div class="col-lg-6">
-              {% assign image_list = "
-              /assets/images/fired_up/design_documents/DDA.png,
-              /assets/images/fired_up/design_documents/balancing-unity-layout.png
-              " | split: "," %}
-              {% assign caption_list = "
-              Dynamic difficulty adjustment scheme;
-              Custom unity layout to have all interesting values to balance during balancing playtests
-              " | split: ";" %}
-              {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_balancing" %}
-          </div>
-        </div>
-      </details>
-      <details class="border border-primary m-2 p-2">
-        <summary class="button">Level Design</summary>
-        <hr>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus mauris nec ex dictum gravida. Etiam a diam in felis cursus dapibus eu ut leo. Ut in dictum dui. Cras enim justo, finibus eget ultricies et, blandit id lorem. Donec consectetur magna eget eros bibendum vestibulum. Nulla egestas sollicitudin felis ac accumsan. Maecenas sed quam blandit, ultrices nibh quis, varius lectus. Morbi tincidunt justo facilisis quam accumsan gravida bibendum eu ante.
-      </details>
-    </div>
-      </div>
-    -->
   </div>
 </div>
