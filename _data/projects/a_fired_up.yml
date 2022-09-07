@@ -9,10 +9,14 @@ dedicated-page: "/projects/fired-up"
 year: 2022
 featured: true
 hidden: false
+genre: Couch-Co-op
+tools: Unity, Probuilder, Progrid, Notion, Google Slides
+download-page: https://spaceconcombre.itch.io/firedup
+download-button: Download on itch.io
 badges:
   -
     - 3months
-    - 6developers
+    - 7developers
   -
     - GD
     - LD

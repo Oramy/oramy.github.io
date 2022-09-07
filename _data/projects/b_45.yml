@@ -10,6 +10,10 @@ dedicated-page: "/projects/45-degrees"
 year: 2021
 featured: true
 hidden: false
+genre: Racing game
+tools: Unity, Probuilder
+download-page: https://spaceconcombre.itch.io/45
+download-button: Download on itch.io
 badges:
   -
     - 2weeks

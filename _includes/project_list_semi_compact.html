@@ -1,0 +1,40 @@
+<div class="card-deck justify-content-center">
+    {% assign index = 0 %}
+    {% for project_hash in include.projects %}
+    {% assign project = project_hash[1] %}
+    {% unless project.hidden %}
+    {% if project.featured %}
+    {% assign index = index | plus: 1 %}
+    <div class="card col-lg-3 col-md-4 col-sm-6 p-0 text-left d-flex flex-column">
+        <div class="card-img-top card-thumbnail">
+        <img class="card-img-top fill-image" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+        </div>
+        <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-dark">{{ project.title }}</h5>
+        <p class="card-text text-dark">{{ project.very-short-description }}</p>
+            {% assign badges-size = project.badges | size %}
+            {% unless badges-size == 0 %}
+            <div class="p-0 m-0 mt-auto" >
+                {% include badges.html badges=project.badges %}
+            </div>
+            {% endunless %}
+        </div>
+    </div>
+    {% assign remainder3 = index | modulo: 3 %}
+    {% assign remainder4 = index | modulo: 4 %}
+    {% assign remainder2 = index | modulo: 2 %}
+
+    {% if remainder4 == 0 %}
+    <div class="w-100 my-2 d-none d-lg-block"></div>
+    {% endif %}
+    {% if remainder3 == 0 %}
+    <div class="w-100 my-2 d-none d-md-block d-lg-none"></div>
+    {% endif %}
+    {% if remainder2 == 0 %}
+    <div class="w-100 my-2 d-none d-sm-block d-md-none"></div>
+    {% endif %}
+    <div class="w-100 my-2 d-block d-sm-none"></div>
+    {% endif %}
+    {% endunless %}
+    {% endfor %}
+</div>

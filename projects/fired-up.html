@@ -3,8 +3,6 @@ layout: project
 title: Fired Up!
 ---
 {% assign project = site.data.projects.a_fired_up %}
-<div class="container">
-</div>
 <div class="container-fluid mb-1">
       <div class="row">
         <div class="offset-lg-3 col-lg-6">
@@ -27,34 +25,7 @@ title: Fired Up!
           carousel-id="fired-up-thumbnail-carousel" %}
         </div>
         <div class="col-lg-3 my-2 sticky-lg-top py-2">
-            <div class="row justify-content-center">
-                <div class="col-lg-9 shadow d-none d-lg-block p-3">
-                    <h2>Infos</h2>
-                    <hr>
-                    <p></p>
-                    <ul>
-                        <li><b>Genre:</b> Couch Co-op</li>
-                        <li><b>Year:</b> 2022</li>
-                        <li><b>Tools:</b> Unity, Probuilder, Progrid</li>
-                    </ul>
-                    {% include badges.html badges=project.badges %}
-                    <hr>
-                    <a class="btn btn-primary btn-sm" href="#" role="button">Download on itch.io</a>
-                </div>
-                <div class="col-12 d-lg-none p-3">
-                    <h2>Infos</h2>
-                    <hr>
-                    <p></p>
-                    <ul>
-                        <li><b>Genre:</b> Couch Co-op</li>
-                        <li><b>Year:</b> 2022</li>
-                        <li><b>Tools:</b> Unity, Probuilder, Progrid</li>
-                    </ul>
-                    {% include badges.html badges=project.badges %}
-                    <hr>
-                    <a class="btn btn-primary btn-sm btn-block" href="#" role="button">Download on itch.io</a>
-                </div>
-            </div>
+          {% include project-info.html project=project%}
         </div>
         <div class="offset-lg-3 col-lg-6">
           <div class="mt-3 p-3">
@@ -71,17 +42,7 @@ title: Fired Up!
 </div>
 <div class="jumbotron mt-1 pt-1">
   <div class="container-fluid">
-    
     <div class="row justify-content-md-center align-items-start">
-      <!-- <div class="col-lg-4">
-        {% assign image_list = "/assets/images/fired_up/fired_up_screen_1.png,
-        /assets/images/fired_up/fired_up_screen_2.png,
-        /assets/images/fired_up/fired_up_screen_3.png" | split: "," %}
-        {% assign caption_list = "First image,
-        Second image,
-        Third Image" | split: "," %}
-        {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_1" %}
-      </div> -->
       <div class="col-md-6 p-3">
         <div class="row my-2 p-2">
           <h1 class="col-12">My missions</h1>
@@ -347,4 +308,16 @@ title: Fired Up!
       </div>
     </div>
   </div>
+</div>
+<div class="container my-3 py-3">
+  {% assign credits-content = "
+  Amaury Butaux : Game/Level Designer,
+  Ethan Fillette : Music Composer & Sound Integrator,
+  Liam Hô : Producer,
+  Théophile Lauseig : Game Artist,
+  Keltoum Marsli : Game/Level Designer & Sound Designer,
+  Maxime Maurin : Programmer,
+  Christopher Norton : UR/UX Designer"
+  %}
+  {% include credits.html content=credits-content %}
 </div>

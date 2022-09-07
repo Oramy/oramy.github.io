@@ -2,8 +2,8 @@
     <div class="container-fat px-4">
         <h1 class="display-3 mb-5 text-center text-light">Featured projects</h1>
         <div class="px-4 mb-3">
-            {% assign sorted_projects = site.data.projects | sort %}
-            {% include project_list.html projects=sorted_projects %}
+            {% assign sorted_projects = site.data.projects | sort  %}
+            {% include project_list_semi_compact.html projects=sorted_projects %}
         </div>
     </div>
 </div>

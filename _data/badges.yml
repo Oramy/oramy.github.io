@@ -20,12 +20,15 @@
 6developers:
   title: 6 developers
   style: badge-info
+7developers:
+  title: 7 developers
+  style: badge-info
 9developers:
   title: 9 developers
   style: badge-info
 Internship:
   title: Internship
-  style: badge-info
+  style: badge-danger
 
 GD:
   title: Game Designer
