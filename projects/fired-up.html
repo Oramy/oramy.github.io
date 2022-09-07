@@ -6,13 +6,32 @@ title: Fired Up!
 <div class="container">
 </div>
 <div class="container-fluid mb-1">
-    <div class="row align-items-start">
+      <div class="row">
         <div class="offset-lg-3 col-lg-6">
-            <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
-            <p class="lead">{{ project.description }}</p>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item w-100" src="https://player.vimeo.com/video/726483205?h=8fdfd4bfee" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        {% assign slide-content-list = "
+        video;https://player.vimeo.com/video/726483205?h=8fdfd4bfee,
+        image;/assets/images/fired_up/fired_up_screen_1.png,
+        image;/assets/images/fired_up/fired_up_screen_2.png,
+        image;/assets/images/fired_up/fired_up_screen_3.png,
+        image;/assets/images/fired_up/fired_up_screen_4.png" | split: "," %}
+        {% assign thumbnails = "
+        /assets/images/fired_up/thumbnail_video.png,
+        /assets/images/fired_up/fired_up_screen_1.png,
+        /assets/images/fired_up/fired_up_screen_2.png,
+        /assets/images/fired_up/fired_up_screen_3.png,
+        /assets/images/fired_up/fired_up_screen_4.png" | split: "," %}
+        {% include thumbnail-carousel.html slide-content=slide-content-list
+          thumbnail-images=thumbnails
+          carousel-id="fired-up-thumbnail-carousel" %}
+        <div class="mt-3 p-3">
+            <h5>Our core intentions</h5>
+            <ul>
+              <li>Couch co-op game</li>
+              <li>Chaos</li>
+              <li>High level of interaction : using everything in the house</li>
+              <li>Multiple small levels</li>
+            </ul>
+        </div>
         </div>
         <div class="col-lg-3 my-2 sticky-top py-2">
             <div class="row justify-content-center">
@@ -44,15 +63,6 @@ title: Fired Up!
                 </div>
             </div>
         </div>
-    </div>
-    <div class="offset-md-3 col-md-6 mt-5 p-3">
-        <h5>Our core intentions</h5>
-        <ul>
-          <li>Couch co-op game</li>
-          <li>Chaos</li>
-          <li>High level of interaction : using everything in the house</li>
-          <li>Multiple small levels</li>
-        </ul>
     </div>
 </div>
 <div class="jumbotron mt-1 pt-1">
@@ -203,8 +213,8 @@ title: Fired Up!
               <div class="col-lg-6">
                 <h5>Making well informed decisions.</h5>
                 <p>
-                I investigated several subjects during this project to be able
-                to make well informed decisions. To be more efficient, we split
+                I investigated <b>several subjects</b> during this project to be able
+                to make <b>well informed decisions</b>. To be more efficient, we split
                 the workload to research key design fields during the beginning
                 of the project.
                 </p>
@@ -253,17 +263,17 @@ title: Fired Up!
               <div class="col-lg-6">
                 <h5>Camera</h5>
                 <p>
-                We defined camera's maximum range, object and character sizes to ensure game readability.
-                This led to our level size as we wanted one-screen levels.
+                We defined camera's maximum range, object and character sizes to <b>ensure game readability</b>.
+                This led to our level size as we wanted <b>one-screen levels</b>.
                 </p>
                 <h5>Level Metrics</h5>
-                Walls' height and thickness were then defined on the camera view to minimize
-                blind spots while still ensuring circulation was clear. 
+                Walls' height and thickness were then defined on the camera view to <b>minimize
+                blind spots</b> while still <b>ensuring circulation clarity</b>. 
                 <br>We used a base unit (1m) to build our levels.
                 </p>
                 <h5>Helpers</h5>
                 <p>
-                I made helpers to ensure those metrics were respected when we integrated content
+                I made helpers to <b>ensure metrics were respected</b> when we integrated content
                 and designed levels.
                 </p>
               </div>
@@ -277,13 +287,12 @@ title: Fired Up!
               <div class="col-lg-6">
               <h5>Using external playtests</h5>
               <p>
-              Balancing Fired Up! was a hard task for our small team.
               Our UX/UR designer made several playtests to gather feedbacks,
               but we had not enough iterations to balance the game with only these playtests.
               </p>
               <h5>Balancing a game in a small amount of time</h5>
               <p>
-              We dedicated team playtests to balancing, in which I would balance the game on the fly,
+              We dedicated team playtests to balancing. During these sessions I balanced the game on the fly,
               taking into account our dev team's skills, which allowed an overall balanced experienced
               despite our small time resources.
               </p>

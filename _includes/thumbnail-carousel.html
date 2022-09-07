@@ -1,0 +1,52 @@
+{% assign indicators-id = include.carousel-id | append: "-indicators" %}
+<div id="{{include.carousel-id}}" class="carousel slide mb-3" align="center">
+    <!-- slides -->
+    <div class="carousel-inner">
+    {% assign index = 0 %}
+    {% for slide in include.slide-content %}
+        {% assign splits = slide | split: ";" %}
+        {% if forloop.first %}
+            <div class="carousel-item h-100 active">
+        {% else %}
+            <div class="carousel-item h-100">
+        {% endif %}
+
+        {% if splits.first contains "image" %}
+            <img class="d-block w-100" src="{{splits.last}}" alt="Hills">
+        {% endif %}
+        {% if splits.first contains "video" %}
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item w-100" src="{{splits.last}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        {% endif %}
+        </div>
+
+    {% assign index = index | plus: 1 %}
+    {% endfor %}
+    </div>
+</div>
+<!-- Thumbnails -->
+<ol class="d-flex flex-row w-100 list-unstyled" id="{{indicators-id}}">
+    {% assign index = 0 %}
+    {% for image in include.thumbnail-images %}
+    <li class="list-item active px-2">
+        <button class="thumbnail-carousel-btn btn btn-default p-0" data-slide-to="{{index}}" data-target="#{{include.carousel-id}}">
+            <img src="{{image}}" class="img-fluid rounded">
+        </button>
+    </li>
+    {% assign index = index | plus: 1 %}
+    {% endfor %}
+</ol>
+<script>
+    var id = $('#{{include.carousel-id}} .carousel-inner').find('.active').index();
+    $('#{{indicators-id}}').children().removeClass("active");
+    $('#{{indicators-id}}').children().eq(id).addClass("active");
+
+    $('#{{indicators-id}}').find("button").on("click", function() {
+
+        var id = $(this).parent("li").index();
+        $('#{{indicators-id}}').children().removeClass("active");
+        $('#{{indicators-id}}').children().eq(id).addClass("active");
+
+    });
+</script>

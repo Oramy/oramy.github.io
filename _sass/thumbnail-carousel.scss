@@ -1,0 +1,15 @@
+.thumbnail-carousel-btn img {
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.thumbnail-carousel-btn img:hover,
+.active .thumbnail-carousel-btn img,
+.thumbnail-carousel-btn:focus img {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.active .thumbnail-carousel-btn {
+    box-shadow: 0 0 0 0.2rem $primary;
+}
