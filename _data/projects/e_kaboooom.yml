@@ -5,7 +5,7 @@ very-short-description: An open world action game, where the player takes contro
 sd-no-sound-video:
 thumbnail: "/assets/images/kaboooom/kaboooom_screen_2.png"
 featured: false
-hidden: false
+hidden: true
 year: 2022
 badges:
   -

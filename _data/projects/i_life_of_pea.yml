@@ -5,7 +5,7 @@ very-short-description: Little party game where you race to the top of a giant b
 sd-no-sound-video:
 thumbnail: "/assets/images/life-of-pea/life-of-pea-screen-2.png"
 featured: false
-hidden: false
+hidden: true
 year: 2014
 badges:
   -

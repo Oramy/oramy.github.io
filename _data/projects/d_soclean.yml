@@ -5,7 +5,7 @@ very-short-description: 4-players coop game.
 sd-no-sound-video: "/assets/images/xdefiant/xdefiant_gameplay.mp4"
 thumbnail: "/assets/images/so_clean/so_clean_screen_3.png"
 featured: false
-hidden: false
+hidden: true
 year: 2020
 badges:
   -

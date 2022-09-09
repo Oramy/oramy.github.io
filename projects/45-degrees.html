@@ -12,12 +12,14 @@ title: 45°
         video;https://www.youtube.com/embed/tQiUdatfsO0,
         image;/assets/images/45_degrees/45_degrees_screen_1.png,
         image;/assets/images/45_degrees/45_degrees_screen_2.png,
-        image;/assets/images/45_degrees/45_degrees_screen_3.png" | split: "," %}
+        image;/assets/images/45_degrees/45_degrees_screen_3.png,
+        image;/assets/images/45_degrees/45_degrees_screen_5.png" | split: "," %}
         {% assign thumbnails = "
         /assets/images/45_degrees/thumbnail_video.png,
         /assets/images/45_degrees/45_degrees_screen_1.png,
         /assets/images/45_degrees/45_degrees_screen_2.png,
-        /assets/images/45_degrees/45_degrees_screen_3.png" | split: "," %}
+        /assets/images/45_degrees/45_degrees_screen_3.png,
+        /assets/images/45_degrees/45_degrees_screen_5.png" | split: "," %}
         {% include thumbnail-carousel.html slide-content=slide-content-list
           thumbnail-images=thumbnails
           carousel-id="fired-up-thumbnail-carousel" %}

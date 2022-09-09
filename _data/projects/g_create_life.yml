@@ -5,7 +5,7 @@ very-short-description: Puzzle game in which you must create life ecosystems.
 sd-no-sound-video:
 thumbnail: "/assets/images/create_life/create_life_logo_long.jpg"
 featured: false
-hidden: false
+hidden: true
 year: 2016
 badges:
   -
