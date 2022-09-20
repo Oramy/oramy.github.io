@@ -6,11 +6,15 @@ short-description: Free-to-play fast-paced arena shooter made by Ubisoft.
 very-short-description: Free-to-play fast-paced arena shooter made by Ubisoft. 
 sd-no-sound-video: "/assets/images/xdefiant/xdefiant_gameplay.mp4"
 thumbnail: "/assets/images/xdefiant/xdefiant_thumbnail.jpg"
-structure-logo: "/assets/images/logos/Ubisoft-logo.svg"
+structure-logo: "/assets/images/logos/ubisoft-horizontal-logo-black.png"
 dedicated-page: "/projects/xdefiant"
 year: 2021
 featured: true
 hidden: false
+genre: Free-to-play arena FPS
+tools: Snowdrop, C++, Perforce, Visual Scripting
+download-page: https://www.ubisoft.com/fr-fr/game/xdefiant
+download-button: Website
 badges:
   -
     - 6months

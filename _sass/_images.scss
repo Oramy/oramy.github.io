@@ -8,8 +8,9 @@
 
 
 .structure-logo {
-  height: 60px;
-  width: auto;
+  max-height: 100%;
+  width: 100px;
+  max-width: 15vw;
 }
 
 .panel-heading .accordion-toggle:after {

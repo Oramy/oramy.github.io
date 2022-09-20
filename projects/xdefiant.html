@@ -2,4 +2,71 @@
 layout: project
 title: XDefiant
 ---
-XDefiant
+{% assign project = site.data.projects.c_xdefiant %}
+<div class="container-fluid mb-1">
+      <div class="row">
+        <div class="offset-lg-3 col-lg-6">
+            <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
+            <p class="lead">{{ project.description }}</p>
+        {% assign slide-content-list = "
+        video;https://www.youtube.com/embed/nmlhRFabV6w,
+        image;/assets/images/xdefiant/xdefiant_screen_1.webp,
+        image;/assets/images/xdefiant/xdefiant_screen_2.webp,
+        image;/assets/images/xdefiant/xdefiant_screen_3.png,
+        image;/assets/images/xdefiant/xdefiant_screen_4.png" | split: "," %}
+        {% assign thumbnails = "
+        /assets/images/xdefiant/thumbnail_video.png,
+        /assets/images/xdefiant/xdefiant_screen_1.webp,
+        /assets/images/xdefiant/xdefiant_screen_2.webp,
+        /assets/images/xdefiant/xdefiant_screen_3.png,
+        /assets/images/xdefiant/xdefiant_screen_4.png" | split: "," %}
+        {% include thumbnail-carousel.html slide-content=slide-content-list
+          thumbnail-images=thumbnails
+          carousel-id="fired-up-thumbnail-carousel" %}
+        </div>
+        <div class="col-lg-3 my-2 sticky-lg-top py-2">
+          {% include project-info.html project=project%}
+        </div>
+        <div class="offset-lg-3 col-lg-6">
+          <div class="mt-3 p-3">
+          </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron mt-1 pt-1">
+  <div class="container-fluid">
+    <div class="row justify-content-md-center align-items-start">
+      <div class="col-md-6 p-3">
+        <div class="row my-2 p-2">
+          <h1 class="col-12">My missions</h1>
+          <hr class="col-12">
+          <div class="col-12">
+            <h6>Gameplay Programming</h6>
+            <ul>
+              <li>Implementing <b>sticky gadgets</b> behavior</li>
+              <li>Implementing <b>visual scripting nodes</b> for Tech Game Designers</li>
+              <li><b>Fixing bugs</b> on the existing codebase: <b>AI behavior trees, score system,
+                damage system, game modes, gadgets, ultimates</b>.
+              </li>
+              <li><b>Code reviews</b></li>
+            </ul>
+          </div>
+        </div>
+        <!-- For this game, we wanted our players to have fun together discovering the many ways there are to put down the fire in a chaotic mood.
+        Players can use anything they like to extinguish the fire: real tools like an extinguisher, but also ordinary objects found in the house. From an aquarium to a cardboard filled in the pool.
+
+        <p>We were two game designers on this project, so we had to split
+            tasks and to organize ourselves to be more efficient.
+            </p> -->
+        <!--<div class="alert alert-primary alert-dismissible fade show" role="alert">
+
+           <i class="bi bi-info-circle-fill"></i> 
+           We were two game designers on this project. Go checkout the work of <b>Keltoum</b>!
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

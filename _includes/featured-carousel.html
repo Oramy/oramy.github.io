@@ -39,12 +39,12 @@
           </div>
         </div>
         <div class="row d-flex px-2">
-          <p class="text-dark col-12 col-md-8 col-lg-8">{{ project.description }}</p>
+          <p class="text-dark col-12 col-md-10 col-lg-8">{{ project.description }}</p>
         </div>
         <div class="d-flex px-2">
-          <p><a class="btn btn-lg btn-primary" href="{{ project.dedicated-page | default: "#" }}" role="button">Learn more</a></p>
-          <div class="ml-auto">
-            <img class="structure-logo" src="{{ project.structure-logo | relative_url }}" />
+          <a class="btn btn-lg btn-primary" href="{{ project.dedicated-page | default: "#" }}" role="button">Learn more</a>
+          <div class="ml-auto d-flex flex-column justify-content-center">
+            <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" />
           </div>
         </div>
       </div>

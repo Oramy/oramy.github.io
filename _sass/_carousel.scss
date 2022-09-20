@@ -23,8 +23,10 @@ body {
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  bottom: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
+  bottom: auto;
 }
 
 /* Declare heights because of positioning of img element */
@@ -41,6 +43,21 @@ body {
   filter: blur(5px);
 }
 
+.carousel-control-prev-icon,
+    .carousel-control-next-icon{
+        outline: $black;
+        border-radius: 50%;
+        background-size: 60%;
+        background-color: $black;
+        background-position: center;
+        opacity: 100%;
+    }
+.carousel-control-prev-icon {
+    background-position: calc(50% - 3px);
+}
+.carousel-control-next-icon {
+    background-position: calc(50% + 3px);
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -118,8 +135,8 @@ linear-gradient(
 }
 
 .carousel-control-big-icon {
-  width: 50px;
-  height: 50px;
+  width: 57px;
+  height: 57px;
 }
 
 .carousel-alt-caption {
