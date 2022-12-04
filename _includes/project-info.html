@@ -12,6 +12,13 @@
             </ul>
             {% include badges.html badges=project.badges %}
             <hr>
+          <div class="d-flex flex-column justify-content-center">
+            <img class="structure-logo align-self-center mx-3" src="{{ project.structure-logo | relative_url }}" />
+            {% if project.title == "Fired Up!" %}
+            <img class="structure-logo align-self-center mx-3" src="{{ project.award-logo | relative_url }}" />
+            {% endif %}
+          </div>
+            <hr>
             <a class="btn btn-primary btn-sm" href="{{project.download-page}}" role="button">{{project.download-button}}</a>
         </div>
         <div class="col-12 d-lg-none p-3">
@@ -24,6 +31,15 @@
                 <li><b>Tools:</b> {{project.tools}}</li>
             </ul>
             {% include badges.html badges=project.badges %}
+            <hr>
+          <div class="d-flex flex-row justify-content-center">
+             <div>
+               <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" />
+               {% if project.title == "Fired Up!" %}
+               <img class="structure-logo mx-3" src="{{ project.award-logo | relative_url }}" />
+               {% endif %}
+             </div>
+          </div>
             <hr>
             <a class="btn btn-primary btn-sm btn-block" href="{{project.download-page}}" role="button">{{project.download-button}}</a>
         </div>
