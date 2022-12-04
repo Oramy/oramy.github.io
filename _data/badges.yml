@@ -44,7 +44,7 @@ LD:
   style: badge-secondary
 GPP:
   title: Gameplay Programmer
-  style: badge-secondary
+  style: badge-success
 Engineer:
   title: Engineer
   style: badge-secondary
