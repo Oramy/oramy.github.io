@@ -21,3 +21,141 @@ title: Spike - Work in progress
         </div>
     </div>
 </div>
+<div class="jumbotron mt-1 pt-1">
+  <div class="container-fluid">
+    <div class="row justify-content-md-center align-items-start">
+      <div class="col-md-6 p-3">
+        <div class="row my-2 p-2">
+          <h1 class="col-12">My missions</h1>
+          <hr class="col-12">
+          <div class="col-12 col-lg-6">
+            <h6>Game Design</h6>
+            <ul>
+              <li>Designing <b>core mechanics</b></li>
+              <li>Designing <b>3Cs</b></li>
+              <li>Enemy & Combat Design</li>
+              <li>Fast Prototyping</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6">
+            <h6>Level design</h6>
+            <ul>
+              <li><b>Creating playgrounds</b></li>
+              <li>Macro level design</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6">
+            <h6>Narrative design</h6>
+            <ul>
+              <li><b>Worldbuilding</b></li>
+              <li>Narrative <b>structure</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <h1 class="col-12 col-md-9 offset-md-3">Detailed Work</h1>
+      <hr class="col-12 col-md-6 offset-md-3">
+      <div class="col-md-3">
+        <div class="sticky-top pt-3">
+          <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            {% include v-pill-tab.html name="Technical documents" active="true" %}
+            {% include v-pill-tab.html name="Design Presentations" %}
+            <hr class="my-1 w-100 d-none d-md-block">
+          </div>
+        </div>
+      </div>
+      <hr class="d-md-none d-block w-100">
+      <div class="col-md-6 mt-3">
+        <div class="tab-content" id="v-pills-tabContent">
+          {% include v-pill-tab-content.html name="Technical Documents" active="true" %}
+            <h2 class="mb-4">Technical Documents</h2>
+            <div class="row justify-content-lg-center">
+              <p class="col-12">
+                <b>Writing synthetic and comprehensive technical documents</b> to ensure
+                the team uses the same vocabulary and has a document to refer to.
+                Here is the technical document we wrote on the <b>throw & aim mechanic</b>.
+              </p>
+              <div class="col-12">
+                  {% assign image_list = "
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim1.png,
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim2.png,
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim3.png,
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim4.png,
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim5.png,
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim6.png,
+                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim7.png
+                                    " | split: "," %}
+                  {% assign caption_list = "
+                  Using Google Slides allows for easier teamwork,
+                  Overview of the feature before going in-depth into details,
+                  Illustrating clearly each situation with a diagram creates documents that are easier to read,
+                  Coherent symbols in every diagram make for a more readable document,
+                  I am able to design mathematical models that are adapted to our intentions,
+                  Detailing meaningful tweakable parameters to facilitate work with programmers,
+                  Detailing our design intentions ensure each member can take the right decisions
+                  " | split: "," %}
+                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Design Presentations" %}
+            <h2 class="mb-4">Design Presentations</h2>
+            <div class="row justify-content-lg-center">
+              <p class="col-12">
+                To ensure everyone is up to date with the latest design decisions, we arrange presentations
+                that <b>explain design intentions</b>, <b>why solutions were accepted or rejected</b> and
+                what we decided.
+              </p>
+              <div class="col-12">
+                  {% assign image_list = "
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation1.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation2.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation6.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation7.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation8.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation9.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation10.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation11.png,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation12.png
+                                    " | split: "," %}
+                  {% assign caption_list = "
+                  Presenting mechanics to the team,
+                  Reference technical documentation to explain how it works and give it more exposure,
+                  Seeing the system through the user eyes to highlight what's important,
+                  Explaining what are the standard solutions for this problem,
+                  Explaining design intentions to give an idea of why solutions were rejected/accepted,
+                  Giving an overview of the inner workings of the system,
+                  A link to technical documentation is available in every slide,
+                  Giving intentions also help User Researchers to know what to test,
+                  Reusing the same diagrams as in technical documentation to foster readability
+                  " | split: "," %}
+                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike_carousel_design_presentation_specifications" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container my-3 py-3">
+  {% assign credits-content = "
+  Amaury Butaux : Game/Level Designer,
+  Charlotte Stern : Game/Level Designer,
+  Benoît Marsili : UX/UR Designer,
+  Tristan Réamot : AI Programmer,
+  Ilan Ouamrouche : Gameplay Programmer,
+  Ludovic Aubertin : Tools Programmer,
+  Martin Rault : Character Artist,
+  Astrid Merit : Environment Artist,
+  Liam Hô : Producer,
+   : ,
+  Hélène Malherbe : Extern Animator,
+  Raphaël Bourgueil : Extern VFX Artist,
+  Blanche Périssère : Extern Rig Artist,
+  Solenn Ripoteau : Extern Environment Artist
+  "
+  %}
+  {% include credits.html content=credits-content %}
+</div>
