@@ -2,15 +2,29 @@
 layout: project
 title: Spike - Work in progress
 ---
-{% assign project = site.data.projects.j_spike %}
+{% assign project = site.data.projects.a_a_spike %}
 <div class="container-fluid mb-1">
       <div class="row">
         <div class="offset-lg-3 col-lg-6">
             <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
             <p class="lead">{{ project.description }}</p>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item w-100" src="https://www.youtube.com/embed/kB9QPJhgBQw?start=3746" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        {% assign slide-content-list = "
+        video;https://www.youtube.com/embed/NL-Y3g5IYMw,
+        video;https://www.youtube.com/embed/G0qrZeRaLwk?start=4630,
+        image;/assets/images/spike/spike_screen_01.png,
+        image;/assets/images/spike/spike_screen_02.png,
+        image;/assets/images/spike/spike_screen_05.png,
+        image;/assets/images/spike/spike_screen_09.png" | split: "," %}
+        {% assign thumbnails = "
+        /assets/images/spike/spike_gameplay.png,
+        /assets/images/spike/spike_jury_presentation.png,
+        /assets/images/spike/spike_screen_01.png,
+        /assets/images/spike/spike_screen_02.png,
+        /assets/images/spike/spike_screen_05.png,
+        /assets/images/spike/spike_screen_09.png" | split: "," %}
+        {% include thumbnail-carousel.html slide-content=slide-content-list
+          thumbnail-images=thumbnails
+          carousel-id="spike-thumbnail-carousel" %}
         </div>
         <div class="col-lg-3 my-2 sticky-lg-top py-2">
           {% include project-info.html project=project%}
@@ -135,26 +149,30 @@ title: Spike - Work in progress
               </div>
             </div>
           {% include div-end.html %}
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="container my-3 py-3">
   {% assign credits-content = "
-  Amaury Butaux : Game/Level Designer,
-  Charlotte Stern : Game/Level Designer,
+  Amaury Butaux : Game Designer,
+  Charlotte Stern : Game Designer,
   Benoît Marsili : UX/UR Designer,
   Tristan Réamot : AI Programmer,
   Ilan Ouamrouche : Gameplay Programmer,
   Ludovic Aubertin : Tools Programmer,
   Martin Rault : Character Artist,
   Astrid Merit : Environment Artist,
+  Gabriel Sauvage : Sound & Music Designer,
   Liam Hô : Producer,
    : ,
   Hélène Malherbe : Extern Animator,
   Raphaël Bourgueil : Extern VFX Artist,
   Blanche Périssère : Extern Rig Artist,
-  Solenn Ripoteau : Extern Environment Artist
+  Solenn Ripoteau : Extern Environment Artist,
+  Slimane Kouidri : Musician,
+  Médéricq Debacq : Musician
   "
   %}
   {% include credits.html content=credits-content %}
