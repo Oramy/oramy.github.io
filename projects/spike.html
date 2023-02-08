@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Spike - Work in progress
+title: Spike
 ---
 {% assign project = site.data.projects.a_a_spike %}
 <div class="container-fluid mb-1">
@@ -29,9 +29,32 @@ title: Spike - Work in progress
         <div class="col-lg-3 my-2 sticky-lg-top py-2">
           {% include project-info.html project=project%}
         </div>
-        <div class="offset-lg-3 col-lg-6">
+        <div class="offset-lg-3 col-lg-3">
           <div class="mt-3 p-3">
+              <h5>Key Selling Points</h5>
+              <ul>
+                <li>Use your own <b>spikes</b> as a <b>weapon</b></li>
+                <li><b>Hardcore</b> experience, <b>cute</b> visuals</li>
+                <li><b>Stop motion</b> inspired animations</li>
+              </ul>
           </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="mt-3 p-3">
+              <h5>Combat Design Intentions</h5>
+              <ul>
+                <li>Fights should <b>feel fair</b></li>
+                <li><b>Challenge on fast decision making</b> rather than precision and reaction</li>
+                <li><b>You are fragile</b>: each enemy is a serious threat.</li>
+              </ul>
+          </div>
+        </div>
+        <div class="alert alert-primary alert-dismissible fade show offset-lg-3 col-lg-6" role="alert">
+          <strong>Please note</strong> this project is a <b>vertical slice</b>
+          of the 4th zone of the full game.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
     </div>
 </div>
@@ -77,6 +100,11 @@ title: Spike - Work in progress
             {% include v-pill-tab.html name="Technical documents" active="true" %}
             {% include v-pill-tab.html name="Design Presentations" %}
             <hr class="my-1 w-100 d-none d-md-block">
+            {% include v-pill-tab.html name="Enemy Design" %}
+            {% include v-pill-tab.html name="Enemy implementation and balancing" %}
+            <hr class="my-1 w-100 d-none d-md-block">
+            {% include v-pill-tab.html name="Fast prototyping" %}
+            {% include v-pill-tab.html name="Feature and asset lists" %}
           </div>
         </div>
       </div>
@@ -110,7 +138,7 @@ title: Spike - Work in progress
                   Detailing meaningful tweakable parameters to facilitate work with programmers,
                   Detailing our design intentions ensure each member can take the right decisions
                   " | split: "," %}
-                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
+                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike-technical-documents-carousel" %}
               </div>
             </div>
           {% include div-end.html %}
@@ -145,7 +173,118 @@ title: Spike - Work in progress
                   Giving intentions also help User Researchers to know what to test,
                   Reusing the same diagrams as in technical documentation to foster readability
                   " | split: "," %}
-                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike_carousel_design_presentation_specifications" %}
+                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike-carousel-design-presentation-specifications" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Enemy Design" %}
+            <h2 class="mb-4">Designing Enemies</h2>
+            <div class="row">
+              <div class="col-lg-6">
+              <h5>From the 3Cs to Enemies</h5>
+              <p>
+              We built our enemies <b>in regards to the character's moveset we made.</b>
+              Each enemy challenges specific skills and all skills are
+              covered by our enemy set.
+              </p>
+              <h5>Designing with production constraints</h5>
+              <p>
+              <b>We suggested simple & functional character designs</b> to the art team
+              as a basis to iterate upon and to be able to meet deadlines.
+              <b>For example</b>, the spike catcher design matches its behaviour
+              without the need to add hard-to-animate hands.
+              </p>
+              </div>
+              <div class="col-lg-6">
+                  {% assign image_list = "
+                  /assets/images/spike/mob-gifs/termite-idle-gif.gif,
+                  /assets/images/spike/mob-gifs/spike-catcher-idle-gif.gif,
+                  /assets/images/spike/mob-gifs/mosquitoe-idle-gif.gif,
+                  /assets/images/spike/mob-gifs/firefly-idle-gif.gif
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  <b>Termite</b>: a basic monster challenging dodging and throwing spikes;
+                  <b>Spike Catcher</b>: A monster with a counter attack that forces to move;
+                  <b>Mosquitoe</b>: Explosive kamikaze mob to keep you on your toes;
+                  <b>Firefly</b> An explosive firefly to add variations and danger to combat situations
+                  " | split: ";" %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-mob-design-carousel" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Enemy implementation and balancing" %}
+            <h2 class="mb-4">Implementing & Balancing enemies</h2>
+            <div class="row">
+              <div class="col-lg-6">
+              <h5>Implementing enemies</h5>
+              <p>
+                I worked inside the engine using <b>Unity's animator</b> and <b>used a custom finite state machine tool</b>
+                to implement enemies into the game.
+                <br />I worked hand-in-hand with the AI programmer to be able to do faster
+                refinements on the enemies.
+              </p>
+              </div>
+              <div class="col-lg-6">
+              <h5>Balancing enemies</h5>
+              <p>
+                To balance the game, I used <b>internal feedback</b> from the team combined with <b>mathematical balancing</b>
+                based on the target player behaviours we wanted to have.
+              </p>
+              </div>
+              <div class="col-lg-12">
+                  {% assign image_list = "
+                    /assets/images/spike/design-documents/ai-design/ai-animator-spike-catcher.png,
+                    /assets/images/spike/design-documents/ai-design/ai-fsm-spike-catcher.png,
+                    /assets/images/spike/design-documents/ai-balancing.png
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  All animations phases have easy to tweak timings.;
+                  A finite state machine (FSM) I made to implement the spike catcher's behavior;
+                  Upstream balancing of monsters by using mathematical tests
+                  " | split: ";" %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-carousel-implementing-enemies" %}
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Fast prototyping" %}
+            <h2 class="mb-4">Fast prototyping</h2>
+            <div class="row">
+              <div class="col-lg-6">
+                  <img class="d-block w-100 mb-5" src="/assets/images/spike/fast-prototyping/fast-prototyping-breakable.gif">
+              </div>
+              <div class="col-lg-6">
+                <h5>Prototyping 3Cs</h5>
+                <p>To be able to get a better grasp on our 3Cs as soon as possible,
+                  <b>I prototyped some parts of our character controller and added gamefeel elements</b> such as animations.
+                </p>
+                <h5>Toys</h5>
+                <p>
+                  To <b>test our 3Cs and gamefeel early on</b>, we prototyped toys such as breakable objects that are shown in the adjacent gif. 
+                </p>
+              </div>
+            </div>
+          {% include div-end.html %}
+          {% include v-pill-tab-content.html name="Feature and asset lists" %}
+            <h2 class="mb-4">Feature & asset lists</h2>
+            <div class="row">
+              <div class="col-lg-12">
+                  Throughout the project, we built several asset and feature lists as <b>a way to facilitate
+                  the work with others</b>. Building asset lists with other team members allows
+                  everyone to be on the same basis and designers to give them information about what is
+                  the most important for the game.
+              </div>
+              <div class="col-lg-12">
+                  {% assign image_list = "
+                  /assets/images/spike/design-documents/asset-lists/asset-list-actions-and-decisions.png,
+                  /assets/images/spike/design-documents/asset-lists/asset-list-signs-and-feedback.png,
+                  /assets/images/spike/design-documents/asset-lists/asset-list-animations-excerpt.png
+                  " | split: "," %}
+                  {% assign caption_list = "
+                  AI Action and Decision Asset List to work with the AI programmer.;
+                  Listing and designing Signs & feedback with our UX designer.;
+                  Animation asset list as a work document used with our external animator.
+                  " | split: ";" %}
+                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-carousel-feature-asset-lists" %}
               </div>
             </div>
           {% include div-end.html %}

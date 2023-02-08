@@ -42,6 +42,9 @@ GD:
 LD:
   title: Level Designer
   style: badge-secondary
+CD:
+  title: Combat Designer
+  style: badge-secondary
 GPP:
   title: Gameplay Programmer
   style: badge-success
