@@ -18,7 +18,12 @@
         {% else %}
         <div class="carousel-item h-100">
         {% endif %}
-                <img class="d-block w-100 mb-5" src="{{image}}">
+        {% assign imageFile= image | split: "."%}
+                <picture class="d-block w-100 mb-5">
+                    <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+                    <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
+                    <img src="{{image}}">
+                </picture>
             <div class="carousel-alt-caption bg-dark" style="--bs-bg-opacity: .5;">
                 <p>{{include.captions[index]}}</p>
             </div>
