@@ -20,7 +20,9 @@
         {% endif %}
         {% assign imageFile= image | split: "."%}
                 <picture class="d-block w-100 mb-5">
+                    {% unless image contains "gif" %}
                     <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+                    {% endunless %}
                     <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
                     <img src="{{image}}">
                 </picture>

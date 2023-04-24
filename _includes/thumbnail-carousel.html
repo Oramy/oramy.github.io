@@ -14,7 +14,9 @@
         {% if splits.first contains "image" %}
             {% assign imageFile=splits[1] | split: "."%}
             <picture>
-                <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+                {% unless image contains "gif" %}
+                    <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+                {% endunless %}
                 <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
                 <img class="d-block w-100" src="{{splits[1]}}" alt="{{splits[2]}}">
             </picture>
