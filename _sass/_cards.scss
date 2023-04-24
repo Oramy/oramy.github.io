@@ -59,7 +59,8 @@
   .card-content {
     transform: rotateY(0deg);
   }
-.clickable-card:hover .card-content{
+.clickable-card:hover .card-content,
+.clickable-card:focus .card-content{
   transform: rotateY(180deg);
   transition: 1s;
   /*animation-duration: .7s;
