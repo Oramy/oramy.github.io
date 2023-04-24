@@ -11,17 +11,17 @@ title: Spike
         {% assign slide-content-list = "
         video;https://www.youtube.com/embed/NL-Y3g5IYMw,
         video;https://www.youtube.com/embed/G0qrZeRaLwk?start=4630,
-        image;/assets/images/spike/spike_screen_01.png,
-        image;/assets/images/spike/spike_screen_02.png,
-        image;/assets/images/spike/spike_screen_05.png,
-        image;/assets/images/spike/spike_screen_09.png" | split: "," %}
+        image;/assets/images/spike/spike_screen_01.png;Fighting screenshot,
+        image;/assets/images/spike/spike_screen_02.png;Shop screenshot,
+        image;/assets/images/spike/spike_screen_05.png;Life pool screenshot,
+        image;/assets/images/spike/spike_screen_09.png;Death screenshot" | split: "," %}
         {% assign thumbnails = "
-        /assets/images/spike/spike_gameplay.png,
-        /assets/images/spike/spike_jury_presentation.png,
-        /assets/images/spike/spike_screen_01.png,
-        /assets/images/spike/spike_screen_02.png,
-        /assets/images/spike/spike_screen_05.png,
-        /assets/images/spike/spike_screen_09.png" | split: "," %}
+        /assets/images/spike/spike_gameplay.png;Spike Gameplay,
+        /assets/images/spike/spike_jury_presentation.png;Spike Jury Presentation,
+        /assets/images/spike/spike_screen_01.png;Screenshot 1,
+        /assets/images/spike/spike_screen_02.png;Screenshot 2,
+        /assets/images/spike/spike_screen_05.png;Screenshot 3,
+        /assets/images/spike/spike_screen_09.png;Screenshot 4" | split: "," %}
         {% include thumbnail-carousel.html slide-content=slide-content-list
           thumbnail-images=thumbnails
           carousel-id="spike-thumbnail-carousel" %}
