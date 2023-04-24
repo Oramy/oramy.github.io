@@ -46,9 +46,9 @@
             <a class="btn btn-lg btn-primary" href="{{ project.dedicated-page | default: "#" }}" role="button">Learn more</a>
           </div>
           <div class="ml-auto d-flex flex-column flex-md-row align-items-end">
-            <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" />
+            <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" alt="{{project.structure-logo-alt}}" />
             {% if project.title == "Fired Up!" %}
-            <img class="structure-logo mx-3" src="{{ project.award-logo | relative_url }}" />
+            <img class="structure-logo mx-3" src="{{ project.award-logo | relative_url }}" alt="{{project.award-logo-alt}}" />
             {% endif %}
           </div>
         </div>
