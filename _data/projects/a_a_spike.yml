@@ -5,6 +5,7 @@ very-short-description: An action/adventure game about <b>a hedgehog using their
 sd-no-sound-video: "/assets/images/spike/spike-gameplay-footage-sd-sound.mp4"
 thumbnail: "/assets/images/spike/spike_screen_04.png"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.png"
+structure-logo-alt: Cnam-Enjmin
 dedicated-page: "/projects/spike"
 year: 2022
 featured: true

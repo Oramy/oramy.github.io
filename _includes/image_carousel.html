@@ -18,13 +18,14 @@
         {% else %}
         <div class="carousel-item h-100">
         {% endif %}
-        {% assign imageFile= image | split: "."%}
-                <picture class="d-block w-100 mb-5">
+        {% assign splits= image | split: ";"%}
+        {% assign imageFile= splits[0] | split: "."%}
+                <picture>
                     {% unless image contains "gif" %}
-                    <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+                        <source type="image/webp" srcset="{{imageFile[0]}}.webp">
                     {% endunless %}
                     <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
-                    <img src="{{image}}">
+                    <img src="{{image}}" alt="{{splits[1]}}" class="d-block w-100 mb-5">
                 </picture>
             <div class="carousel-alt-caption bg-dark" style="--bs-bg-opacity: .5;">
                 <p>{{include.captions[index]}}</p>
