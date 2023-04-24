@@ -318,3 +318,10 @@ legend {
     color: inherit;
   }
 }
+
+a.badge-light:hover {
+  background-color: $gray-700;
+}
+a.badge-light:hover .inline-image {
+  filter: invert(100%);
+}
