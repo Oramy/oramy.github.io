@@ -319,9 +319,17 @@ legend {
   }
 }
 
-a.badge-light:hover {
+a.badge-light:hover, a.badge-light:focus {
+  color: white;
+  background-color: $gray-700;
+}
+a:hover .badge-light, a:focus .badge-light {
+  color: white;
   background-color: $gray-700;
 }
 a.badge-light:hover .inline-image {
+  filter: invert(100%);
+}
+a:hover badge-light .inline-image {
   filter: invert(100%);
 }
