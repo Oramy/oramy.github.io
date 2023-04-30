@@ -319,17 +319,57 @@ legend {
   }
 }
 
-a.badge-light:hover, a.badge-light:focus {
-  color: white;
-  background-color: $gray-700;
+a.badge.bg-light:hover, a.badge.bg-light:focus {
+  color: white !important;
+  background-color: $gray-700 !important;
 }
-a:hover .badge-light, a:focus .badge-light {
-  color: white;
-  background-color: $gray-700;
+a:hover .badge.bg-light, a:focus .badge.bg-light {
+  color: white !important;
+  background-color: $gray-700 !important;
 }
-a.badge-light:hover .inline-image {
+a.badge.bg-light:hover .inline-image {
   filter: invert(100%);
 }
-a:hover badge-light .inline-image {
+a:hover .badge.bg-light .inline-image {
   filter: invert(100%);
+}
+a.badge{
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+
+.inline-image
+{
+    filter: invert(35%);
+    height: 1em;
+    vertical-align: -.125em;
+}
+
+.carousel-item {
+    height: 32rem;
+    background-color: #777;
+}
+
+.carousel-control-big-icon {
+  width: 57px;
+  height: 57px;
+}
+.paral {
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+}
+
+.paralsec {
+background: 
+linear-gradient(
+  lighten($primary, 50%), 
+  lighten($primary, 55%)
+);
+}
+
+.carousel-caption {
+  top:50%;
+  transform: translateY(-50%);
+  bottom: auto;
 }

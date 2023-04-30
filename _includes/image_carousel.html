@@ -1,15 +1,4 @@
-<div id="{{include.carousel-id}}" class="carousel slide w-100" data-ride="true">
-    <ol class="carousel-indicators my-0">
-        {% assign index = 0 %}
-        {% for image in include.images %}
-        {% if forloop.first %}
-        <li data-target="#{{include.carousel-id}}" data-slide-to="{{index}}" class="active"></li>
-        {% else %}
-        <li data-target="#{{include.carousel-id}}" data-slide-to="{{index}}"></li>
-        {% endif %}
-        {% assign index = index | plus: 1 %}
-        {% endfor %}
-    </ol>
+<div id="{{include.carousel-id}}" class="carousel slide w-100" data-bs-ride="true">
     <div class="carousel-inner">
         {% assign index = 0 %}
         {% for image in include.images %}
@@ -27,7 +16,7 @@
                     <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
                     <img src="{{image}}" alt="{{splits[1]}}" class="d-block w-100 mb-5">
                 </picture>
-            <div class="carousel-alt-caption bg-dark" style="--bs-bg-opacity: .5;">
+            <div class="carousel-alt-caption bg-dark">
                 <p>{{include.captions[index]}}</p>
             </div>
         </div>
@@ -37,12 +26,32 @@
         {% endif %}
         {% endfor %}
     </div>
+    <div class="carousel-indicators my-0">
+        {% assign index = 0 %}
+        {% for image in include.images %}
+        {% if forloop.first %}
+        {% assign index1 = index | plus: 1 %}
+        <button type="button" data-bs-target="#{{include.carousel-id}}" data-bs-slide-to="{{index}}" class="active" aria-current="true" aria-label="Slide {{index1}}"></li>
+        {% else %}
+        <button type="button" data-bs-target="#{{include.carousel-id}}" data-bs-slide-to="{{index}}" aria-label = "Slide {{index1}}"></li>
+        {% endif %}
+        {% assign index = index | plus: 1 %}
+        {% endfor %}
+    </div>
     <a class="carousel-control-prev" href="#{{include.carousel-id}}" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="visually-hidden">Previous</span>
     </a>
     <a class="carousel-control-next" href="#{{include.carousel-id}}" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="visually-hidden">Next</span>
     </a>
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{include.carousel-id}}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#{{include.carousel-id}}" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>

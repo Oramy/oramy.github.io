@@ -22,8 +22,8 @@
             </picture>
         {% endif %}
         {% if splits.first contains "video" %}
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item w-100" src="{{splits[1]}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="splits[2]" allowfullscreen></iframe>
+            <div class="ratio ratio-16x9">
+                <iframe class="w-100" src="{{splits[1]}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="splits[2]" allowfullscreen></iframe>
             </div>
         {% endif %}
         </div>
@@ -38,7 +38,7 @@
     {% for image in include.thumbnail-images %}
     {% assign splits=image|split:";"%}
     <li class="list-item active px-2">
-        <button class="thumbnail-carousel-btn btn btn-default p-0" data-slide-to="{{index}}" data-target="#{{include.carousel-id}}">
+        <button class="thumbnail-carousel-btn btn btn-default p-0" data-bs-slide-to="{{index}}" data-bs-target="#{{include.carousel-id}}">
             {% assign imageFile=splits.first | split: "."%}
             <picture>
                 <source type="image/webp" srcset="{{imageFile[0]}}.webp">

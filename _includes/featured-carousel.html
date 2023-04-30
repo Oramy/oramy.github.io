@@ -1,5 +1,5 @@
-<div id="myCarousel" class="carousel slide my-0" data-ride="true" data-interval="20000">
-  <ol class="carousel-indicators">
+<div id="myCarousel" class="carousel slide my-0" data-bs-ride="carousel" data-bs-interval="20000">
+  <div class="carousel-indicators">
     {% assign index = 0 %}
     {% assign sorted_projects = site.data.projects | sort %}
     {% for project_hash in sorted_projects %}
@@ -8,13 +8,13 @@
     {% assign index = index | plus: 1 %}
     {% assign index0 = index | minus: 1 %}
     {% if index == 1 %}
-    <li data-target="#myCarousel" data-slide-to="{{ index0 }}" class="active"></li>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ index0 }}" class="active" aria-current="true" aria-label="Slide {{ index }}"></button>
     {% else %}
-    <li data-target="#myCarousel" data-slide-to="{{ index0 }}" class=""></li>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{ index0 }}" aria-label="Slide {{ index }}"></button>
     {% endif %}
     {% endif %}
     {%endfor%}
-  </ol>
+  </div>
   <div class="carousel-inner">
     {% assign index = 0 %}
     {% assign sorted_projects = site.data.projects | sort %}
@@ -31,21 +31,21 @@
         <source src="{{ project.sd-no-sound-video | relative_url }}" type="video/mp4">
         <p>{{ project.title }}</p>
      </video>
-      <div class="carousel-caption rounded bg-light p-3 text-left">         
-        <div class="row d-flex px-2">
-          <h1 class="p-2 col-12 col-md-3">{{ project.title }}</h1>
-          <div class="p-2 align-self-end text-md-right ml-md-auto" >
+      <div class="carousel-caption text-start rounded bg-light p-3 text-left">         
+        <div class="px-2 row">
+          <h2 class="py-2 col-12 col-md-6">{{ project.title }}</h2>
+          <div class="p-2 align-self-end text-md-end col-12 col-md-6" >
             {% include badges.html badges=project.badges %}
           </div>
         </div>
-        <div class="row d-flex px-2">
+        <div class="d-flex px-2">
           <p class="text-dark col-12 col-md-10 col-lg-8">{{ project.description }}</p>
         </div>
         <div class="d-flex px-2">
           <div class="d-flex align-items-end">
             <a class="btn btn-lg btn-primary" href="{{ project.dedicated-page | default: "#" }}" role="button">Project page</a>
           </div>
-          <div class="ml-auto d-flex flex-column flex-md-row align-items-end">
+          <div class="ms-auto d-flex flex-column flex-md-row align-items-end">
             <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" alt="{{project.structure-logo-alt}}" />
             {% if project.title == "Fired Up!" %}
             <img class="structure-logo mx-3" src="{{ project.award-logo | relative_url }}" alt="{{project.award-logo-alt}}" />
@@ -57,12 +57,12 @@
     {% endif %}
     {% endfor %}
   </div>
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon carousel-control-big-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon carousel-control-big-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>

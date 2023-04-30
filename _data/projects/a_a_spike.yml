@@ -4,7 +4,7 @@ short-description: An action/adventure game about <b>a hedgehog using their own 
 very-short-description: An action/adventure game about <b>a hedgehog using their own spikes as a weapon</b>.
 sd-no-sound-video: "/assets/images/spike/spike-gameplay-footage-sd-sound.mp4"
 thumbnail: "/assets/images/spike/spike_screen_04.png"
-structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.png"
+structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 structure-logo-alt: Cnam-Enjmin
 dedicated-page: "/projects/spike"
 year: 2022

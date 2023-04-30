@@ -1,12 +1,20 @@
-<div class="card-deck">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center g-4">
     {% assign index = 0 %}
     {% for project_hash in include.projects %}
     {% assign project = project_hash[1] %}
     {% unless project.hidden %}
     {% assign index = index | plus: 1 %}
-    <div class="card col-lg-2 col-md-3 p-0 text-left d-flex flex-column">
+    <div class="col py-0 my-0">
+    <div class="card h-100 p-0 text-left">
         <div class="card-img-top card-thumbnail">
-        <img class="card-img-top fill-image" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+        {% assign imageFile = project.thumbnail | split: "."%}
+        <picture>
+            {% unless image contains "gif" %}
+                <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+            {% endunless %}
+            <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
+            <img class="card-img-top fill-image" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+        </picture>
         </div>
         <div class="card-body d-flex flex-column">
         <h5 class="card-title text-dark">{{ project.title }}</h5>
@@ -18,6 +26,7 @@
             </div>
             {% endunless %}
         </div>
+    </div>
     </div>
     {% assign remainder3 = index | modulo: 3 %}
     {% assign remainder4 = index | modulo: 4 %}

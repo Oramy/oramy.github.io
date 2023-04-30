@@ -4,7 +4,7 @@ description: Two spaceships on the run! <b>You can only take 45° turns</b>, scr
 short-description: Frantic 2-player race in space with 45° turns only.
 sd-no-sound-video: "/assets/images/45_degrees/45_degrees_trailer.mp4"
 thumbnail: "/assets/images/45_degrees/45_degrees_screen_1.png"
-structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.png"
+structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 year: 2021
 featured: true
 hidden: false
