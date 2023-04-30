@@ -19,7 +19,7 @@
             </picture>
             </div>
             <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-dark">{{ project.title }}</h5>
+            <h2 class="card-title text-dark fs-5">{{ project.title }}</h2>
             <p class="card-text text-dark">{{ project.short-description }}</p>
                 {% assign badges-size = project.badges | size %}
                 {% unless badges-size == 0 %}
