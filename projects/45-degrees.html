@@ -4,12 +4,13 @@ title: 45°
 ---
 {% assign project = site.data.projects.b_45 %}
 <div class="container-fluid mb-1">
-      <div class="row">
-        <div class="offset-lg-3 col-lg-6">
-            <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
+  <div class="row" style="background-image: url('/assets/images/45_degrees/45_degrees_screen_5.webp'); z-index: -1;">
+    <div class="mask row p-0 m-0" style="background-color: hsla(0, 0%, 0%, 0.6)">
+      <div class="offset-lg-3 col-lg-6 bg-light mt-5 p-4">
+            <h1 class="display-1 mt-3" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
             <p class="lead">{{ project.description }}</p>
         {% assign slide-content-list = "
-        video;https://www.youtube.com/embed/tQiUdatfsO0,
+        video;https://www.youtube-nocookie.com/embed/tQiUdatfsO0,
         image;/assets/images/45_degrees/45_degrees_screen_1.png,
         image;/assets/images/45_degrees/45_degrees_screen_2.png,
         image;/assets/images/45_degrees/45_degrees_screen_3.png,
@@ -24,10 +25,10 @@ title: 45°
           thumbnail-images=thumbnails
           carousel-id="fired-up-thumbnail-carousel" %}
         </div>
-        <div class="col-lg-3 my-2 sticky-lg-top py-2">
-          {% include project-info.html project=project %}
+        <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-2">
+          {% include project-info.html project=project%}
         </div>
-        <div class="offset-lg-3 col-lg-6">
+        <div class="offset-lg-3 col-lg-6 bg-light mb-5">
           <div class="mt-3 p-3">
               <h3>Our core intentions</h3>
               <ul>
@@ -35,6 +36,7 @@ title: 45°
                 <li>Skill based and fair</li>
                 <li>Frantic Race</li>
               </ul>
+          </div>
           </div>
         </div>
     </div>

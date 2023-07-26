@@ -4,12 +4,12 @@ title: XDefiant
 ---
 {% assign project = site.data.projects.c_xdefiant %}
 <div class="container-fluid mb-1">
-      <div class="row">
-        <div class="offset-lg-3 col-lg-6">
-            <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
+      <div class="row" style="background-image: url('/assets/images/xdefiant/pagebackground.jpg'); z-index: -1;">
+        <div class="offset-lg-3 col-lg-6 bg-light mt-5 p-4">
+            <h1 class="display-1 mt-3" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
             <p class="lead">{{ project.description }}</p>
         {% assign slide-content-list = "
-        video;https://www.youtube.com/embed/nmlhRFabV6w,
+        video;https://www.youtube-nocookie.com/embed/nmlhRFabV6w,
         image;/assets/images/xdefiant/xdefiant_screen_1.webp,
         image;/assets/images/xdefiant/xdefiant_screen_2.webp,
         image;/assets/images/xdefiant/xdefiant_screen_3.png,
@@ -24,10 +24,10 @@ title: XDefiant
           thumbnail-images=thumbnails
           carousel-id="fired-up-thumbnail-carousel" %}
         </div>
-        <div class="col-lg-3 my-2 sticky-lg-top py-2">
+        <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-2">
           {% include project-info.html project=project%}
         </div>
-        <div class="offset-lg-3 col-lg-6">
+        <div class="offset-lg-3 col-lg-6 bg-light mb-5">
           <div class="mt-3 p-3">
           </div>
         </div>

@@ -4,13 +4,13 @@ title: Spike
 ---
 {% assign project = site.data.projects.a_a_spike %}
 <div class="container-fluid mb-1">
-      <div class="row">
-        <div class="offset-lg-3 col-lg-6">
-            <h1 class="display-1" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
+      <div class="row" style="background-image: url('/assets/images/spike/pagebackground.png'); z-index: -1;">
+        <div class="offset-lg-3 col-lg-6 bg-light mt-5 p-4">
+            <h1 class="display-1 mt-3" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
             <p class="lead">{{ project.description }}</p>
         {% assign slide-content-list = "
-        video;https://www.youtube.com/embed/NL-Y3g5IYMw;Spike Gameplay Video,
-        video;https://www.youtube.com/embed/G0qrZeRaLwk?start=4630;Spike Jury Presentation,
+        video;https://www.youtube-nocookie.com/embed/NL-Y3g5IYMw;Spike Gameplay Video,
+        video;https://www.youtube-nocookie.com/embed/G0qrZeRaLwk?start=4630;Spike Jury Presentation,
         image;/assets/images/spike/spike_screen_01.png;Fighting screenshot,
         image;/assets/images/spike/spike_screen_02.png;Shop screenshot,
         image;/assets/images/spike/spike_screen_05.png;Life pool screenshot,
@@ -26,10 +26,10 @@ title: Spike
           thumbnail-images=thumbnails
           carousel-id="spike-thumbnail-carousel" %}
         </div>
-        <div class="col-lg-3 my-2 sticky-lg-top py-2">
+        <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-2">
           {% include project-info.html project=project%}
         </div>
-        <div class="offset-lg-3 col-lg-3">
+        <div class="offset-lg-3 col-lg-3 bg-light">
           <div class="mt-3 p-3">
               <h3>Key Selling Points</h3>
               <ul>
@@ -39,7 +39,7 @@ title: Spike
               </ul>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 bg-light">
           <div class="mt-3 p-3">
               <h3>Combat Design Intentions</h3>
               <ul>
@@ -49,11 +49,13 @@ title: Spike
               </ul>
           </div>
         </div>
-        <div class="alert alert-primary alert-dismissible fade show offset-lg-3 col-lg-6" role="alert">
-          <strong>Please note</strong> this project is a <b>vertical slice</b>
-          of the 4th zone of the full game.
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-          </button>
+        <div class="offset-lg-3 col-lg-6 bg-light mb-5">
+          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>Please note</strong> this project is a <b>vertical slice</b>
+            of the 4th zone of the full game.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+          </div>
         </div>
     </div>
 </div>
