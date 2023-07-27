@@ -6,14 +6,14 @@
     {% assign index = index | plus: 1 %}
     <div class="col py-0 my-0">
     <div class="card h-100 p-0 text-left">
-        <div class="card-img-top card-thumbnail">
+        <div class="card-img-top card-thumbnail h-50 p-0">
         {% assign imageFile = project.thumbnail | split: "."%}
         <picture>
             {% unless image contains "gif" %}
                 <source type="image/webp" srcset="{{imageFile[0]}}.webp">
             {% endunless %}
             <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
-            <img class="card-img-top fill-image" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+            <img class="card-img-top fill-image h-100" width="16" height="9" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
         </picture>
         </div>
         <div class="card-body d-flex flex-column">

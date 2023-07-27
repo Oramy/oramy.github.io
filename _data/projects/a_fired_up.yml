@@ -3,7 +3,8 @@ description: A <b>4 player co-op couch game</b> where you use whatever you find 
 short-description: <b>4 player co-op couch game</b> about trainee firefighting animals.
 very-short-description: 4 player co-op couch game
 sd-no-sound-video: "/assets/images/fired_up/Fired_Up_Trailer-SD_Sound.mp4"
-thumbnail: "/assets/images/fired_up/fired_up_screen_2.png"
+thumbnail: "/assets/images/fired_up/fired_up_screen_2_thumbnail.png"
+big-thumbnail: "/assets/images/fired_up/fired_up_screen_2_thumbnail.png"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 award-logo: "/assets/images/fired_up/awards/BostonFIG_Fest_2022_Award_300px.png"
 dedicated-page: "/projects/fired-up"

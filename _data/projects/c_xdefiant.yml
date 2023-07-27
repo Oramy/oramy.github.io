@@ -4,8 +4,9 @@ description: Tom Clancy's XDefiant is a <b>free-to-play</b>, <b>fast-paced arena
           as teams of gunfighters – called Defiants – battle for domination.
 short-description: Free-to-play fast-paced arena shooter made by Ubisoft. 
 very-short-description: Free-to-play fast-paced arena shooter made by Ubisoft. 
-sd-no-sound-video: "/assets/images/xdefiant/xdefiant_gameplay.mp4"
+sd-no-sound-video: "/assets/images/xdefiant/xdefiant_gameplay.webm"
 thumbnail: "/assets/images/xdefiant/xdefiant_thumbnail.jpg"
+big-thumbnail: "/assets/images/xdefiant/xdefiant_thumbnail.jpg"
 structure-logo: "/assets/images/logos/ubisoft-horizontal-logo-black.png"
 dedicated-page: "/projects/xdefiant"
 year: 2021
