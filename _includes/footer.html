@@ -2,14 +2,14 @@
   <div class="container">
     <footer class="pt-3 mt-4 my-auto">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="/" class="nav-link px-2 text-light">Home</a></li>
+        <li class="nav-item"><a href="{% translate_link homen %}" class="nav-link px-2 text-light">{% t pages.home %}</a></li>
         <!--<li class="nav-item"><a href="/project_library" class="nav-link px-2 text-muted">Project Library</a></li>-->
       </ul>
         <div class="nav justify-content-center">
           <ul class="list-unstyled">
             <li class="d-inline"><a class="badge bg-light text-dark" href="https://linkedin.com/in/amaury-butaux"><span class="nav-other-websites-desc bi bi-linkedin"> LinkedIn</span></a></li>
-            <li class="d-inline"><a class="badge bg-light text-dark" href="https://oramy.itch.io"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | relative_url }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></a></li>
-            <li class="d-inline"><a class="badge bg-light text-dark" href="{{"/resume.pdf" | relative-url}}"><span class="nav-other-websites-desc bi bi-file-person"> Resume</span></a></li>
+            <li class="d-inline"><a class="badge bg-light text-dark" href="https://oramy.itch.io"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | prepend: site.baseurl_root }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></a></li>
+            <li class="d-inline"><a class="badge bg-light text-dark" href="{{"/resume.pdf" | relative-url}}"><span class="nav-other-websites-desc bi bi-file-person"> {% t nav.resume %}</span></a></li>
           </ul>
         </div> 
       <p class="text-center text-light">Amaury Butaux</p>

@@ -20,6 +20,8 @@
     {% assign sorted_projects = site.data.projects | sort %}
     {% for project_hash in sorted_projects %}
     {% assign project = project_hash[1] %}
+    {% assign project_id = project_hash[0] %}
+    {% assign tproject = site.data.i18n.[site.lang].projects[project_id] %}
     {% if project.featured %}
     {% assign index = index | plus: 1 %}
     {% if index == 1 %}
@@ -28,27 +30,27 @@
     <div class="carousel-item">
     {% endif %}
       <video title="{{ project.title }}" preload="auto" autoplay loop muted class="first-slide carousel-item-background">
-        <source src="{{ project.sd-no-sound-video | relative_url }}" type="video/mp4">
-        <p>{{ project.title }}</p>
+        <source src="{{ project.sd-no-sound-video | prepend: site.baseurl_root }}" type="video/mp4">
+        <p>{{ tproject.title }}</p>
      </video>
       <div class="carousel-caption text-start rounded bg-light p-3 text-left">         
         <div class="px-2 row">
-          <h2 class="py-2 col-12 col-md-6">{{ project.title }}</h2>
+          <h2 class="py-2 col-12 col-md-6">{{ tproject.title }}</h2>
           <div class="p-2 align-self-end text-md-end col-12 col-md-6" >
             {% include badges.html badges=project.badges %}
           </div>
         </div>
         <div class="d-flex px-2">
-          <p class="text-dark col-12 col-md-10 col-lg-8">{{ project.description }}</p>
+          <p class="text-dark col-12 col-md-10 col-lg-8">{{ tproject.description }}</p>
         </div>
         <div class="d-flex px-2">
           <div class="d-flex align-items-end">
             <a class="btn btn-lg btn-primary" href="{{ project.dedicated-page | default: "#" }}" role="button">Project page</a>
           </div>
           <div class="ms-auto d-flex flex-column flex-md-row align-items-end">
-            <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" alt="{{project.structure-logo-alt}}" />
+            <img class="structure-logo mx-3" src="{{ project.structure-logo | prepend: site.baseurl_root }}" alt="{{project.structure-logo-alt}}" />
             {% if project.title == "Fired Up!" %}
-            <img class="structure-logo mx-3" src="{{ project.award-logo | relative_url }}" alt="{{project.award-logo-alt}}" />
+            <img class="structure-logo mx-3" src="{{ project.award-logo | prepend: site.baseurl_root }}" alt="{{project.award-logo-alt}}" />
             {% endif %}
           </div>
         </div>

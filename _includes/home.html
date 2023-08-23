@@ -6,26 +6,14 @@
       <!-- Example row of columns -->
       <div class="row d-flex justify-content-between">
         <div class="col-md-4 my-3">
-          <h2>User-Centric Design</h2>
-          <p class="lead">I make games for people to play.</p>
-          <p>That's why I always include user experience<br> in my design process.</p>
+          {% tf home/user-centric-design.html %}
         </div>
         <div class="col-md-4 my-3">
-          <h2>Rational Design</h2>
-          <p class="lead">Informed decisions make better games.</p>
-          <p>
-            Research, fast prototyping, metrics and focused iterations
-            are my main tools to make them.
-          </p>
+          {% tf home/rational-design.html %}
         </div>
         <div class="col-md-4 my-3">
-          <h2>Collaborative Design</h2>
-          <p class="lead">Making games is about teamwork.</p>
-          <p>
-            I always think about others' constraints in my design.<br>
-            I ensure a common vision through<br>
-            clear and synthetic documents and presentations.<br>
-          </p>
+          {% tf home/collaborative-design.html %}
+        </div>
         </div>
       </div>
 
@@ -34,7 +22,7 @@
 </div>
 <div class="my-0 py-4 bg-primary"></div>
 <div class="fat-container px-4 py-5">
-  <h2 class="display-3 mb-5 text-center">Games</h2>
+  <h2 class="display-3 mb-5 text-center">{{ titles.games }}</h2>
   {% assign sorted_projects = site.data.projects | sort %}
   {% include project_list.html projects=sorted_projects %}
 </div>

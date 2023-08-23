@@ -13,9 +13,9 @@
             {% include badges.html badges=project.badges %}
             <hr>
           <div class="d-flex flex-column justify-content-center">
-            <img class="structure-logo align-self-center mx-3" src="{{ project.structure-logo | relative_url }}" alt="{{project.structure-logo-alt }}" />
+            <img class="structure-logo align-self-center mx-3" src="{{ project.structure-logo | prepend: site.baseurl_root }}" alt="{{project.structure-logo-alt }}" />
             {% if project.title == "Fired Up!" %}
-            <img class="structure-logo align-self-center mx-3" src="{{ project.award-logo | relative_url }}" alt="{project.award-logo-alt}" />
+            <img class="structure-logo align-self-center mx-3" src="{{ project.award-logo | prepend: site.baseurl_root }}" alt="{project.award-logo-alt}" />
             {% endif %}
           </div>
             <hr>
@@ -34,9 +34,9 @@
             <hr>
           <div class="d-flex flex-row justify-content-center">
              <div>
-               <img class="structure-logo mx-3" src="{{ project.structure-logo | relative_url }}" alt="{{project.structure-logo-alt }}"/>
+               <img class="structure-logo mx-3" src="{{ project.structure-logo | prepend: site.baseurl_root }}" alt="{{project.structure-logo-alt }}"/>
                {% if project.title == "Fired Up!" %}
-               <img class="structure-logo mx-3" src="{{ project.award-logo | relative_url }}" alt="{{project.award-logo-alt }}"/>
+               <img class="structure-logo mx-3" src="{{ project.award-logo | prepend: site.baseurl_root }}" alt="{{project.award-logo-alt }}"/>
                {% endif %}
              </div>
           </div>

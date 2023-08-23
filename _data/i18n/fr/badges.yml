@@ -1,0 +1,41 @@
+2weeks:
+  title: 2 semaines
+3months:
+  title: 3 mois
+4months:
+  title: 4 mois
+6months:
+  title: 6 mois
+2years:
+  title: 2 ans
+
+1developer:
+  title: Solo dev
+2developers:
+  title: 2 développeurs
+6developers:
+  title: 6 développeurs
+7developers:
+  title: 7 développeurs
+9developers:
+  title: 9 développeurs
+10developers:
+  title: 10 développeurs
+Internship:
+  title: Stage
+
+GD:
+  title: Game Designer
+LD:
+  title: Level Designer
+CD:
+  title: Combat Designer
+GPP:
+  title: Programmeur Gameplay
+Engineer:
+  title: Ingénieur
+
+GameJam:
+  title: Game Jam
+wip:
+  title: Travail en cours

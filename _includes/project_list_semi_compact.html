@@ -2,6 +2,8 @@
     {% assign index = 0 %}
     {% for project_hash in include.projects %}
     {% assign project = project_hash[1] %}
+    {% assign project_id = project_hash[0] %}
+    {% assign tproject = site.data.i18n.[site.lang].projects[project_id] %}
     {% unless project.hidden %}
     {% if project.featured %}
     {% assign index = index | plus: 1 %}
@@ -15,12 +17,12 @@
                     <source type="image/webp" srcset="{{imageFile[0]}}.webp">
                 {% endunless %}
                 <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
-                <img class="card-img-top fill-imag h-100" width="222" height="160" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+                <img class="card-img-top fill-imag h-100" width="222" height="160" src="{{ project.thumbnail | prepend: site.baseurl_root }}" alt="{{ project.title }}">
             </picture>
             </div>
             <div class="card-body d-flex flex-column">
-            <h2 class="card-title text-dark fs-5">{{ project.title }}</h2>
-            <p class="card-text text-dark">{{ project.short-description }}</p>
+            <h2 class="card-title text-dark fs-5">{{ tproject.title }}</h2>
+            <p class="card-text text-dark">{{ tproject.short-description }}</p>
                 {% assign badges-size = project.badges | size %}
                 {% unless badges-size == 0 %}
                 <div class="p-0 m-0 mt-auto" >

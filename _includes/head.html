@@ -4,10 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | prepend: site.baseurl_root }}">
   {%- feed_meta -%}
-  <script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | relative_url }}"></script>
-  <script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | relative_url }}"></script>
-  <script src="{{"/assets/javascript/main.js" | relative_url }}"></script>
-  <script src="{{"/assets/javascript/magnifying-glass.js" | relative_url }}"></script>
+  <script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | prepend: site.baseurl_root }}"></script>
+  <script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | prepend: site.baseurl_root }}"></script>
+  <script src="{{"/assets/javascript/main.js" | prepend: site.baseurl_root }}"></script>
+  <script src="{{"/assets/javascript/magnifying-glass.js" | prepend: site.baseurl_root }}"></script>
 </head>

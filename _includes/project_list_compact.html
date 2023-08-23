@@ -13,7 +13,7 @@
                 <source type="image/webp" srcset="{{imageFile[0]}}.webp">
             {% endunless %}
             <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
-            <img class="card-img-top fill-image h-100" width="16" height="9" src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+            <img class="card-img-top fill-image h-100" width="16" height="9" src="{{ project.thumbnail | prepend: site.baseurl_root }}" alt="{{ project.title }}">
         </picture>
         </div>
         <div class="card-body d-flex flex-column">

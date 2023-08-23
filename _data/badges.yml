@@ -1,60 +1,41 @@
 2weeks:
-  title: 2 weeks
   style: bg-info
 3months:
-  title: 3 months
   style: bg-info
 4months:
-  title: 4 months
   style: bg-info
 6months:
-  title: 6 months
   style: bg-info
 2years:
-  title: 2 years
   style: bg-info
 
 1developer:
-  title: Solo dev
   style: bg-info
 2developers:
-  title: 2 developers
   style: bg-info
 6developers:
-  title: 6 developers
   style: bg-info
 7developers:
-  title: 7 developers
   style: bg-info
 9developers:
-  title: 9 developers
   style: bg-info
 10developers:
-  title: 10 developers
   style: bg-info
 Internship:
-  title: Internship
   style: bg-danger
 
 GD:
-  title: Game Designer
   style: bg-primary
 LD:
-  title: Level Designer
   style: bg-secondary
 CD:
-  title: Combat Designer
   style: bg-secondary
 GPP:
-  title: Gameplay Programmer
   style: bg-success
 Engineer:
-  title: Engineer
   style: bg-secondary
 
 GameJam:
-  title: Game Jam
   style: bg-info
 wip:
-  title: Work In Progress
   style: bg-danger

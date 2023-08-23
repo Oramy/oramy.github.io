@@ -17,8 +17,8 @@ title: Amaury Butaux
 email: "amaury.butaux@outlook.fr"
 description: >- # this means to ignore newlines until "baseurl:"
   Junior Game Designer
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.amaurybutaux.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Ymarua
 github_username:  Oramy
 

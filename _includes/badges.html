@@ -1,7 +1,8 @@
 {% for line in include.badges %}
 {% for badge in line %}
 {% assign badge_data = site.data.badges[badge] %}
-<span class="badge {{ badge_data.style }}">{{ badge_data.title }}</span>
+{% assign badge_tdata = site.data.i18n[site.lang].badges[badge]%}
+<span class="badge {{ badge_data.style }}">{{ badge_tdata.title }}</span>
 {% endfor %}
 {% unless forloop.last %}
 <br />

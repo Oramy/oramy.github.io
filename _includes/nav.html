@@ -6,16 +6,16 @@
       <div class="col-12 d-flex">
         <ul class="list-unstyled d-flex d-md-none align-self-end col-12 row">
           <li class="col"><a class="py-3 d-inline-block" href="https://linkedin.com/in/amaury-butaux"><span class="badge bg-light text-dark nav-other-websites-desc bi bi-linkedin"> LinkedIn</span></a></li>
-          <li class="col"><a class="py-3 d-inline-block" href="https://oramy.itch.io"><span class="badge bg-light text-dark"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | relative_url }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></span></a></li>
-          <li class="col"><a class="py-3 d-inline-block" href="{{"/resume.pdf" | relative-url}}"><span class="badge bg-light text-dark nav-other-websites-desc bi bi-file-person"> Resume</span></a></li>
+          <li class="col"><a class="py-3 d-inline-block" href="https://oramy.itch.io"><span class="badge bg-light text-dark"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | prepend: site.baseurl_root }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></span></a></li>
+          <li class="col"><a class="py-3 d-inline-block" href="{{"/resume.pdf" | relative-url}}"><span class="badge bg-light text-dark nav-other-websites-desc bi bi-file-person"> {% t nav.resume %}</span></a></li>
         </ul>
       </div> 
-      <img class="rounded-circle col-md-4 col-6 h-100" width="330" height="310" alt="Profile picture" src="{{ "/assets/images/photo_linkedin.webp" | relative_url }}" />
+      <img class="rounded-circle col-md-4 col-6 h-100" width="330" height="310" alt="Profile picture" src="{{ "/assets/images/photo_linkedin.webp" | prepend: site.baseurl_root }}" />
       <div class="col-md-8 d-flex">
         <ul class="list-unstyled d-none d-md-block align-self-end flex-column col-12 row">
           <li class="col-12"><a class="badge bg-light text-dark" href="https://linkedin.com/in/amaury-butaux"><span class="nav-other-websites-desc bi bi-linkedin"> LinkedIn</span></a></li>
-          <li class="col-12"><a class="badge bg-light text-dark" href="https://oramy.itch.io"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | relative_url }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></a></li>
-          <li class="col-12"><a class="badge bg-light text-dark" href="{{"/resume.pdf" | relative-url}}"><span class="nav-other-websites-desc bi bi-file-person"> Resume</span></a></li>
+          <li class="col-12"><a class="badge bg-light text-dark" href="https://oramy.itch.io"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | prepend: site.baseurl_root }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></a></li>
+          <li class="col-12"><a class="badge bg-light text-dark" href="{{"/resume.pdf" | relative-url}}"><span class="nav-other-websites-desc bi bi-file-person"> {% t nav.resume %}</span></a></li>
         </ul>
       </div> 
     </div>
@@ -23,7 +23,7 @@
   <h1 class="col-md-8 col-lg-6 display-2 fw-bold mx-auto">Amaury Butaux</h1>
   <div class="col-md-8 col-lg-6 mx-auto">
       <h2 class="ml-3 mt-4">
-      Junior Game Designer <!--<small class="text-primary" id="Subtitles"></small>-->
+      {% t titles.juniorgamedesigner %} <!--<small class="text-primary" id="Subtitles"></small>-->
       </h2>
   </div>
 </div>

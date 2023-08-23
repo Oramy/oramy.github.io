@@ -1,0 +1,11 @@
+languages:
+  english: Anglais
+  french: Français
+pages:
+  home: Accueil
+  legal: Mentions légales
+nav:
+  resume: CV
+titles:
+  juniorgamedesigner: Game Designer Junior
+  games: Jeux

@@ -1,7 +1,3 @@
-title: Spike
-description: An action/adventure game about <b>a hedgehog using their own spikes as a weapon</b>.
-short-description: An action/adventure game about <b>a hedgehog using their own spikes as a weapon</b>.
-very-short-description: An action/adventure game about <b>a hedgehog using their own spikes as a weapon</b>.
 sd-no-sound-video: "/assets/images/spike/spike-gameplay-footage-sd-sound.webm"
 thumbnail: "/assets/images/spike/spike_screen_04_thumbnail.webp"
 big-thumbnail: "/assets/images/spike/spike_screen_thumbnail.webp"
@@ -11,10 +7,7 @@ dedicated-page: "/projects/spike"
 year: 2022
 featured: true
 hidden: false
-genre: Action/Adventure
-tools: Unity
 download-page: https://youtu.be/G0qrZeRaLwk?t=4630
-download-button: Last Jury Presentation
 badges:
   -
     - 4months

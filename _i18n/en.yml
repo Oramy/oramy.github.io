@@ -4,3 +4,8 @@ languages:
 pages:
   home: Home
   legal: Legal
+nav:
+  resume: CV
+titles:
+  juniorgamedesigner: Junior Game Designer
+  games: Games
