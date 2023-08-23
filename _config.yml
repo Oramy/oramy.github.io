@@ -28,6 +28,10 @@ repository: "oramy/oramy.github.io"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-multiple-languages-plugin
+# Localization configuration.
+languages: ["en", "fr"]
+exclude_from_localizations: ["assets"]
 
 # A list of the pages to display in the navigation bar
 header_pages:
