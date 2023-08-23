@@ -24,6 +24,7 @@ github_username:  Oramy
 
 repository: "oramy/oramy.github.io"
 
+exclude: [vendor]
 # Build settings
 plugins:
   - jekyll-feed
