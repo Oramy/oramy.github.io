@@ -24,7 +24,6 @@ github_username:  Oramy
 
 repository: "oramy/oramy.github.io"
 
-exclude: [vendor]
 # Build settings
 plugins:
   - jekyll-feed
@@ -48,3 +47,4 @@ exclude:
   - Gemfile.lock
   - node_modules
   - update_boostrap.sh
+  - vendor
