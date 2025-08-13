@@ -23,4 +23,7 @@ gem "jekyll-sitemap"
 gem "jekyll-seo-tag"
 gem "kramdown-parser-gfm"
 gem "webrick"
+gem "flag-icons-rails"
+gem "rake"
+gem "psych"
 end

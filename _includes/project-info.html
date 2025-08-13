@@ -1,4 +1,5 @@
 {% assign project = include.project %}
+{% assign tproject = include.tproject %}
 <div class="my-2 py-2">
     <div class="row justify-content-center">
         <div class="col-lg-9 shadow d-none d-lg-block p-3 bg-light">
@@ -6,9 +7,9 @@
             <hr>
             <p></p>
             <ul>
-                <li><b>Genre:</b> {{project.genre}}</li>
+                <li><b>Genre:</b> {{tproject.genre}}</li>
                 <li><b>Year:</b> {{project.year}}</li>
-                <li><b>Tools:</b> {{project.tools}}</li>
+                <li><b>Tools:</b> {{tproject.tools}}</li>
             </ul>
             {% include badges.html badges=project.badges %}
             <hr>
@@ -19,16 +20,16 @@
             {% endif %}
           </div>
             <hr>
-            <a class="btn btn-primary btn-sm" href="{{project.download-page}}" role="button">{{project.download-button}}</a>
+            <a class="btn btn-primary btn-sm" href="{{project.download-page}}" role="button">{{tproject.download-button}}</a>
         </div>
         <div class="col-12 d-lg-none p-3 bg-light">
             <h2>Infos</h2>
             <hr>
             <p></p>
             <ul>
-                <li><b>Genre:</b> {{project.genre}}</li>
+                <li><b>Genre:</b> {{tproject.genre}}</li>
                 <li><b>Year:</b> {{project.year}}</li>
-                <li><b>Tools:</b> {{project.tools}}</li>
+                <li><b>Tools:</b> {{tproject.tools}}</li>
             </ul>
             {% include badges.html badges=project.badges %}
             <hr>
@@ -41,7 +42,7 @@
              </div>
           </div>
             <hr>
-            <a class="btn btn-primary btn-sm btn-block" href="{{project.download-page}}" role="button">{{project.download-button}}</a>
+            <a class="btn btn-primary btn-sm btn-block" href="{{project.download-page}}" role="button">{{tproject.download-button}}</a>
         </div>
     </div>
 </div>

@@ -1,14 +1,20 @@
 ---
 layout: project
 title: 45°
+
+namespace: 45-degrees
+permalink: /projects/45-degrees/
+permalink_fr: /projets/45-degrees/
 ---
-{% assign project = site.data.projects.b_45 %}
+{% assign project_id = "b_45" %}
+{% assign project = site.data.projects.[project_id] %}
+{% assign tproject = site.data.i18n[site.lang].projects.[project_id] %}
 <div class="container-fluid mb-1">
   <div class="row" style="background-image: url('/assets/images/45_degrees/45_degrees_screen_5.webp'); z-index: -1;">
     <div class="mask row p-0 m-0" style="background-color: hsla(0, 0%, 0%, 0.6)">
       <div class="offset-lg-3 col-lg-6 bg-light mt-5 p-4">
-            <h1 class="display-1 mt-3" style="font-size: max(3em, 8vw);">{{ project.title }}</h1>
-            <p class="lead">{{ project.description }}</p>
+            <h1 class="display-1 mt-3" style="font-size: max(3em, 8vw);">{{ tproject.title }}</h1>
+            <p class="lead">{{ tproject.description }}</p>
         {% assign slide-content-list = "
         video;https://www.youtube-nocookie.com/embed/tQiUdatfsO0,
         image;/assets/images/45_degrees/45_degrees_screen_1.png,
@@ -26,7 +32,7 @@ title: 45°
           carousel-id="fired-up-thumbnail-carousel" %}
         </div>
         <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-2">
-          {% include project-info.html project=project%}
+          {% include project-info.html project=project tproject=tproject%}
         </div>
         <div class="offset-lg-3 col-lg-6 bg-light mb-5">
           <div class="mt-3 p-3">

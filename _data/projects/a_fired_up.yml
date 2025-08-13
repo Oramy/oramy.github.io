@@ -3,7 +3,7 @@ thumbnail: "/assets/images/fired_up/fired_up_screen_2_thumbnail.png"
 big-thumbnail: "/assets/images/fired_up/fired_up_screen_2_thumbnail.png"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 award-logo: "/assets/images/fired_up/awards/BostonFIG_Fest_2022_Award_300px.png"
-dedicated-page: "/projects/fired-up"
+dedicated-page: fired-up
 year: 2022
 featured: true
 hidden: false

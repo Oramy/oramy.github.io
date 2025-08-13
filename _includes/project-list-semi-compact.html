@@ -9,7 +9,7 @@
     {% assign index = index | plus: 1 %}
     <div class="col py-0 my-0">
     <div class="card h-100 p-0 text-left">
-        <a class="clickable-card link-unstyled bg-light" href="{{project.dedicated-page}}">
+        <a class="clickable-card link-unstyled bg-light" href="{% tl {{project.dedicated-page}} %}">
             <div class="card-img-top card-thumbnail h-50 p-0">
             {% assign imageFile = project.thumbnail | split: "."%}
             <picture>

@@ -27,19 +27,19 @@
         {% assign all-projects = all-projects | push: project_hash %}
       {% endfor %}
       {% assign sorted_projects = all-projects | sort %}
-      {% include project_list_compact.html projects=sorted_projects %}
+      {% include project-list-compact.html projects=sorted_projects %}
     </div>
     <div class="tab-pane fade" id="games" role="tabpanel" aria-labelledby="games-tab">
       {% assign sorted_projects = site.data.projects | sort %}
-      {% include project_list_compact.html projects=sorted_projects %}
+      {% include project-list-compact.html projects=sorted_projects %}
     </div>
     <div class="tab-pane fade" id="creative" role="tabpanel" aria-labelledby="creative-tab">
       {% assign sorted_projects = site.data.creative-projects | sort %}
-      {% include project_list_compact.html projects=sorted_projects %}
+      {% include project-list-compact.html projects=sorted_projects %}
     </div>
     <div class="tab-pane fade" id="engineering" role="tabpanel" aria-labelledby="engineering-tab">
       {% assign sorted_projects = site.data.engineering-projects | sort %}
-      {% include project_list_compact.html projects=sorted_projects %}
+      {% include project-list-compact.html projects=sorted_projects %}
     </div>
   </div>
 </div>

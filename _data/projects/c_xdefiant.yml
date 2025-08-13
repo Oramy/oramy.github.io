@@ -2,7 +2,7 @@ sd-no-sound-video: "/assets/images/xdefiant/xdefiant_gameplay.webm"
 thumbnail: "/assets/images/xdefiant/xdefiant_thumbnail.jpg"
 big-thumbnail: "/assets/images/xdefiant/xdefiant_thumbnail.jpg"
 structure-logo: "/assets/images/logos/ubisoft-horizontal-logo-black.png"
-dedicated-page: "/projects/xdefiant"
+dedicated-page: xdefiant
 year: 2021
 featured: true
 hidden: false

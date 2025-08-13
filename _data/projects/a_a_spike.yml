@@ -3,7 +3,7 @@ thumbnail: "/assets/images/spike/spike_screen_04_thumbnail.webp"
 big-thumbnail: "/assets/images/spike/spike_screen_thumbnail.webp"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 structure-logo-alt: Cnam-Enjmin
-dedicated-page: "/projects/spike"
+dedicated-page: spike
 year: 2022
 featured: true
 hidden: false
