@@ -1,7 +1,7 @@
 title: Fired Up!
-description: A <b>4 player co-op couch game</b> where you use whatever you find in the house to save it from the flames.
-short-description: <b>4 player co-op couch game</b> about trainee firefighting animals.
-very-short-description: 4 player co-op couch game
-genre: Couch-Co-op
+description: <b>Dans ce jeu multijoueur à 4</b>, utilisez tout ce qui est à votre disposition pour éteindre les flames.
+short-description: Incarnez des boules de poils pompiers dans ce <b>jeu multijoueur local à 4</b>.
+very-short-description: Jeu multijoueur local à 4
+genre: Multijoueur local
 tools: Unity, Probuilder, Notion, Google Slides
-download-button: Download on itch.io
+download-button: Télécharger sur itch.io

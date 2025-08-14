@@ -1,22 +1,41 @@
-<div class="text-left container-fat d-block d-flex align-items-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-block d-flex align-items-center">
 
-      <a href="{% tl home %}" class = "btn btn-outline-light">
+      <a href="{% tl home %}" class = "navbar-brand">
         <img class="rounded-circle" width="30" height="30" lt="Profile picture" src="{{ "/assets/images/photo_linkedin.webp" | prepend: site.baseurl_root }}" />
         <h1 class="h5 align-middle px-3 d-inline">Amaury Butaux</h1>
         <h2 class="h6 align-middle px-3 d-inline">{% t titles.current-role %}</h2>
       </a>
-      <div>
-      <ul class="list-unstyled d-inline">
-          <li class="d-inline-block"><a class="badge bg-light text-dark" href="https://linkedin.com/in/amaury-butaux"><span class="nav-other-websites-desc bi bi-linkedin"> LinkedIn</span></a></li>
-          <li class="d-inline-block"><a class="badge bg-light text-dark" href="https://oramy.itch.io"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | prepend: site.baseurl_root }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></a></li>
-          <li class="d-inline-block"><a class="badge bg-light text-dark" href="{{"/resume.pdf" | relative-url}}"><span class="nav-other-websites-desc bi bi-file-person"> {% t nav.resume %}</span></a></li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav d-block d-lg-flex flex-grow-1">
+          <li class="nav-item active d-flex d-lg-none align-items-center">
+            {% include nav-links.html %}
+          </li>
+          <li class="nav-item dropdown d-flex">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              {% assign index = 0 %}
+              {% assign sorted_projects = site.data.projects | sort %}
+              {% for project_hash in sorted_projects %}
+              {% assign project = project_hash[1] %}
+              {% assign project_id = project_hash[0] %}
+              {% assign tproject = site.data.i18n.[site.lang].projects[project_id] %}
+              {% unless project.hidden %}
+              {% if project.featured %}
+              {% assign index = index | plus: 1 %}
+              <li><a class="dropdown-item" href="{% tl {{project.dedicated-page}} %}">{{ tproject.title }}</a></li>
+              {% endif %}
+              {% endunless %}
+              {% endfor %}
+            </ul>
+          </li>
+          <li class="nav-item active d-none d-lg-flex flex-grow-1 align-items-center justify-content-end mx-2">
+            {% include nav-links.html %}
+          </li>
+        </ul>
       </div>
-      <div class="flex-grow-1 d-flex justify-content-end">
-        {% if site.lang == "fr" %}
-          <a href="{% tl {{page.namespace}} en %}"><span class="fi fi-fr"></span></a>
-        {% elsif site.lang == "en" %}
-          <a href="{% tl {{page.namespace}} fr %}"><span class="fi fi-gb"></span></a>
-        {% endif %}
-      </div>
-</div>
+    </nav>

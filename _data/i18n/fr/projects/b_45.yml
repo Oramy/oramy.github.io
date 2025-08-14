@@ -1,8 +1,7 @@
 title: 45° 
-description: Two spaceships on the run! <b>You can only take 45° turns</b>, scrolling at lightspeed in the winding corridors of a gigantic spaceship. 
-             Will you take the risk of going faster, or will you let your opponent outrun you?
-short-description: Frantic 2-player race in space with 45° turns only.
-very-short-description: 2-player race in space with 45° turns only.
-genre: Racing game
+description: Dans cette course 2 joueur·euses au milieu d'un vaisseau spatial géant, <b>vous pouvez seulement tourner à 45°</b>. Prendrez vous le risque d'accélérer encore et encore pour garder le rythme?
+short-description: Course frénétique dans l'espace à 2 joueur·euses <b>où on tourne à 45°</b>.
+very-short-description: Course 2 joueur·euses <b>où on tourne à 45°</b>.
+genre: Jeu de course
 tools: Unity, Probuilder
-download-button: Download on itch.io
+download-button: Télécharger sur itch.io

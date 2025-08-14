@@ -7,8 +7,8 @@ permalink: /projects/xdefiant/
 permalink_fr: /projets/xdefiant/
 ---
 {% assign project_id = "c_xdefiant" %}
-{% assign project = site.data.projects.[project_id] %}
-{% assign tproject = site.data.i18n[site.lang].projects.[project_id] %}
+{% assign project = site.data.projects[project_id] %}
+{% assign tproject = site.data.i18n[site.lang].projects[project_id] %}
 <div class="container-fluid mb-1">
       <div class="row" style="background-image: url('/assets/images/xdefiant/pagebackground.webp'); z-index: -1;">
         <div class="offset-lg-3 col-lg-6 bg-light mt-5 p-4">
@@ -47,31 +47,9 @@ permalink_fr: /projets/xdefiant/
           <h2 class="col-12">My missions</h2>
           <hr class="col-12">
           <div class="col-12">
-            <h3>Gameplay Programming</h3>
-            <ul>
-              <li>Implementing <b>sticky gadgets</b> behavior</li>
-              <li>Implementing <b>visual scripting nodes</b> for Tech Game Designers</li>
-              <li><b>Fixing bugs</b> on the existing codebase: <b>AI behavior trees, score system,
-                damage system, game modes, gadgets, ultimates</b>.
-              </li>
-              <li><b>Code reviews</b></li>
-            </ul>
+             {% tf projects/xdefiant/gameplay-programming.md %}
           </div>
         </div>
-        <!-- For this game, we wanted our players to have fun together discovering the many ways there are to put down the fire in a chaotic mood.
-        Players can use anything they like to extinguish the fire: real tools like an extinguisher, but also ordinary objects found in the house. From an aquarium to a cardboard filled in the pool.
-
-        <p>We were two game designers on this project, so we had to split
-            tasks and to organize ourselves to be more efficient.
-            </p> -->
-        <!--<div class="alert alert-primary alert-dismissible fade show" role="alert">
-
-           <i class="bi bi-info-circle-fill"></i> 
-           We were two game designers on this project. Go checkout the work of <b>Keltoum</b>!
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-          </button>
-        </div>-->
       </div>
     </div>
   </div>
