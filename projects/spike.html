@@ -5,321 +5,219 @@ title: Spike
 namespace: spike
 permalink: /projects/spike/
 permalink_fr: /projets/spike/
+
 ---
 {% assign project_id = "a_a_spike" %}
 {% assign project = site.data.projects[project_id] %}
 {% assign tproject = site.data.i18n[site.lang].projects[project_id] %}
-<div class="container-fluid mb-1">
-      <div class="row" style="background-image: url('/assets/images/spike/pagebackground.webp'); z-index: -1;">
-        <div class="offset-lg-3 col-lg-6 bg-light mt-5 p-4">
-            <h1 class="display-1 mt-3" style="font-size: max(3em, 8vw);">{{ tproject.title }}</h1>
-            <p class="lead">{{ tproject.description }}</p>
-        {% assign slide-content-list = "
-        video;https://www.youtube-nocookie.com/embed/NL-Y3g5IYMw;Spike Gameplay Video,
-        video;https://www.youtube-nocookie.com/embed/G0qrZeRaLwk?start=4630;Spike Jury Presentation,
-        image;/assets/images/spike/spike_screen_01.png;Fighting screenshot,
-        image;/assets/images/spike/spike_screen_02.png;Shop screenshot,
-        image;/assets/images/spike/spike_screen_05.png;Life pool screenshot,
-        image;/assets/images/spike/spike_screen_09.png;Death screenshot" | split: "," %}
-        {% assign thumbnails = "
-        /assets/images/spike/spike_gameplay.png;Spike Gameplay,
-        /assets/images/spike/spike_jury_presentation.png;Spike Jury Presentation,
-        /assets/images/spike/spike_screen_01.png;Screenshot 1,
-        /assets/images/spike/spike_screen_02.png;Screenshot 2,
-        /assets/images/spike/spike_screen_05.png;Screenshot 3,
-        /assets/images/spike/spike_screen_09.png;Screenshot 4" | split: "," %}
-        {% include thumbnail-carousel.html slide-content=slide-content-list
-          thumbnail-images=thumbnails
-          carousel-id="spike-thumbnail-carousel" %}
+
+{% assign blocks = project.detailed-blocks %}
+{% assign tblocks = tproject.detailed-blocks %}
+<script>
+  $(document).ready(function() {
+     $(".v-pills-nav-tab").click(function() {
+     $("#v-pills-tabContent").children().removeClass("show active");
+     var content = $("#v-pills-" + $(this).attr("slug-id"));
+     content.addClass("show active");
+     $("#v-pills-nav").children().children("a").removeClass("active");
+     $(this).addClass("active");
+     $("#v-pills-tab").children().removeClass("active");
+     $("#v-pills-" + $(this).attr("slug-id") + "-tab").addClass("active");
+     $('html').animate({scrollTop: $("#v-pills-tabContent").offset().top - 90}, .5);
+     
+ });
+$("#v-pills-tab").children().click(function() {
+     $("#v-pills-nav").children().children("a").removeClass("active");
+     var content = $("#v-pills-nav-tab-" + $(this).attr("slug-id"));
+     content.addClass("show active");
+ });
+
+});
+</script>
+<div class="container-fluid mb-1 p-0 bg-light">
+  <div class="sticky-top bg-light container-fluid align-items-center mx-auto">
+    <nav id="navbar-example2" class="navbar navbar-light bg-light mx-auto container-fat gradient-nav">
+      <a class="navbar-brand" href="#">{{tproject.title}}</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#project-presentation">Project Presentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#missions">Missions</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#detailed-work" role="button"
+            aria-expanded="false">Detailed Work</a>
+          <ul class="dropdown-menu" id="v-pills-nav">
+            {% for block in blocks %}
+              {% assign block-id = block["id"] %}
+              {% assign block-title = tblocks.[block-id] %}
+              {% assign downcased = block-title | downcase | replace: " ", "-" %}
+              <li><a class="dropdown-item v-pills-nav-tab" id="v-pills-nav-tab-{{downcased}}" slug-id="{{downcased}}">{{block-title}}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#project-credits">Credits</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div data-bs-spy="scroll" data-bs-method="position" data-bs-target="#navbar-example2" data-bs-offset="-50"
+    class="scrollspy-example" tabindex="0">
+    <div class="row" style="background-image: url('/assets/images/spike/pagebackground.webp'); z-index: -1;">
+      <div class="offset-lg-3 col-lg-6 bg-light mt-5 px-4 py-3">
+        <div id="project-presentation">
+          <h1 class=" py-1 my-6 d-inline-block" id="project-presentation">{{ tproject.title }}</h1>
+          <p class="text-muted">{{ tproject.description }}</p>
+          <div class="row">
+            {% assign slide-content-list = "
+              video;https://www.youtube-nocookie.com/embed/NL-Y3g5IYMw;Spike Gameplay Video,
+              video;https://www.youtube-nocookie.com/embed/G0qrZeRaLwk?start=4630;Spike Jury Presentation,
+              image;/assets/images/spike/spike_screen_01.png;Fighting screenshot,
+              image;/assets/images/spike/spike_screen_02.png;Shop screenshot,
+              image;/assets/images/spike/spike_screen_05.png;Life pool screenshot,
+              image;/assets/images/spike/spike_screen_09.png;Death screenshot" | split: "," %}
+            {% assign thumbnails = "
+              /assets/images/spike/spike_gameplay.png;Spike Gameplay,
+              /assets/images/spike/spike_jury_presentation.png;Spike Jury Presentation,
+              /assets/images/spike/spike_screen_01.png;Screenshot 1,
+              /assets/images/spike/spike_screen_02.png;Screenshot 2,
+              /assets/images/spike/spike_screen_05.png;Screenshot 3,
+              /assets/images/spike/spike_screen_09.png;Screenshot 4" | split: "," %}
+            {% include thumbnail-carousel.html slide-content=slide-content-list
+                thumbnail-images=thumbnails
+                carousel-id="spike-thumbnail-carousel" %}
+            <div class="col-lg-6 bg-light">
+              <div class="mt-3 p-3">
+                {% tf projects/spike/ksp.md %}
+              </div>
+            </div>
+            <div class="col-lg-6 bg-light">
+              <div class="mt-3 p-3">
+                {% tf projects/spike/combat-design-intentions.md %}
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-2">
-          {% include project-info.html project=project tproject=tproject%}
-        </div>
-        <div class="offset-lg-3 col-lg-3 bg-light">
-          <div class="mt-3 p-3">
-              <h3>Key Selling Points</h3>
+        <div id="missions">
+          <h2 class="p-2 d-inline" id="missions">My missions</h2>
+          <div class="row my-2">
+            <hr class="col-12">
+            <div class="col-12 col-lg-6">
+              <h3>Game Design</h3>
               <ul>
-                <li>Use your own <b>spikes</b> as a <b>weapon</b></li>
-                <li><b>Hardcore</b> experience, <b>cute</b> visuals</li>
-                <li><b>Stop motion</b> inspired animations</li>
+                <li>Designing <b>core mechanics</b></li>
+                <li>Designing <b>3Cs</b></li>
+                <li>Enemy & Combat Design</li>
+                <li>Fast Prototyping</li>
               </ul>
-          </div>
-        </div>
-        <div class="col-lg-3 bg-light">
-          <div class="mt-3 p-3">
-              <h3>Combat Design Intentions</h3>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h3>Level design</h3>
               <ul>
-                <li>Fights should <b>feel fair</b></li>
-                <li><b>Challenge on fast decision making</b> rather than precision and reaction</li>
-                <li><b>You are fragile</b>: each enemy is a serious threat.</li>
+                <li><b>Creating playgrounds</b></li>
+                <li>Macro level design</li>
               </ul>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h3>Narrative design</h3>
+              <ul>
+                <li><b>Worldbuilding</b></li>
+                <li>Narrative <b>structure</b></li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="offset-lg-3 col-lg-6 bg-light mb-5">
-          <div class="alert alert-primary alert-dismissible fade show" role="alert">
-            <strong>Please note</strong> this project is a <b>vertical slice</b>
-            of the 4th zone of the full game.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-            </button>
-          </div>
-        </div>
-    </div>
-</div>
-<div class="jumbotron mt-1 pt-1">
-  <div class="container-fluid">
-    <div class="row justify-content-md-center align-items-start">
-      <div class="col-md-6 p-3">
-        <div class="row my-2 p-2">
-          <h2 class="col-12">My missions</h2>
-          <hr class="col-12">
-          <div class="col-12 col-lg-6">
-            <h3>Game Design</h3>
-            <ul>
-              <li>Designing <b>core mechanics</b></li>
-              <li>Designing <b>3Cs</b></li>
-              <li>Enemy & Combat Design</li>
-              <li>Fast Prototyping</li>
-            </ul>
-          </div>
-          <div class="col-12 col-lg-6">
-            <h3>Level design</h3>
-            <ul>
-              <li><b>Creating playgrounds</b></li>
-              <li>Macro level design</li>
-            </ul>
-          </div>
-          <div class="col-12 col-lg-6">
-            <h3>Narrative design</h3>
-            <ul>
-              <li><b>Worldbuilding</b></li>
-              <li>Narrative <b>structure</b></li>
-            </ul>
-          </div>
+      </div>
+
+
+      <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-5" style="z-index:1019;">
+        {% include project-info.html project=project tproject=tproject%}
+      </div>
+
+      <div class="offset-lg-3 col-lg-6 bg-light mb-5">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          <strong>Please note</strong> this project is a <b>vertical slice</b>
+          of the 4th zone of the full game.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button>
         </div>
       </div>
     </div>
-    <div class="row mt-4">
-      <h2 class="col-12 col-md-9 offset-md-3">Detailed Work</h2>
-      <hr class="col-12 col-md-6 offset-md-3">
-      <div class="d-none d-md-block col-3"></div>
-      <div class="col-md-3">
-        <div class="sticky-top pt-3">
-          <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            {% include v-pill-tab.html name="Technical documents" active="true" %}
-            {% include v-pill-tab.html name="Design Presentations" %}
-            <hr class="my-1 w-100 d-none d-md-block" role="separator">
-            {% include v-pill-tab.html name="Enemy Design" %}
-            {% include v-pill-tab.html name="Enemy implementation and balancing" %}
-            <hr class="my-1 w-100 d-none d-md-block" role="separator">
-            {% include v-pill-tab.html name="Fast prototyping" %}
-            {% include v-pill-tab.html name="Feature and asset lists" %}
+    <div class="container-fluid">
+      <div class="row justify-content-md-center align-items-start">
+        <div class="col-md-6 p-3">
+
+        </div>
+      </div>
+      <div class="row mt-4" id="detailed-work">
+        <h2 class="col-12 col-md-9 offset-md-3">Detailed Work</h2>
+        <hr class="col-12 col-md-6 offset-md-3">
+        <div class="d-none d-md-block col-3"></div>
+        <div class="col-md-3">
+          <div class="sticky-top pt-3">
+            <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              {% for block in blocks %}
+                {% assign block-id = block.id %}
+                {% assign block-title = tblocks.[block-id] %}
+                {% assign downcased = block-title | downcase | replace: " ", "-" %}
+                {% capture text %}
+                {% assign content=block.content%}
+                {% include {{block.content}} %}
+                {% endcapture%}
+              
+              {% include v-pill-tab.html name=block-title active=forloop.first %}
+              {% endfor %}
+              <hr class="my-1 w-100 d-none d-md-block" role="separator">
+              <hr class="my-1 w-100 d-none d-md-block" role="separator">
+
+            </div>
+          </div>
+        </div>
+        <hr class="d-md-none d-block w-100">
+        <div class="col-md-6 mt-3">
+          <div class="tab-content" id="v-pills-tabContent">
+            {% for block in blocks %}
+              {% assign block-id = block.id %}
+              {% assign block-title = tblocks.[block-id] %}
+              {% assign downcased = block-title | downcase | replace: " ", "-" %}
+               {% capture text %}
+               {% assign content=block.content%}
+              {% include {{block.content}} %}
+              {% endcapture%}
+            {% include v-pill-tab-content.html name=block-title content=text active=forloop.first %}
+            {% endfor %}
           </div>
         </div>
       </div>
-      <hr class="d-md-none d-block w-100">
-      <div class="col-md-6 mt-3">
-        <div class="tab-content" id="v-pills-tabContent">
-          {% include v-pill-tab-content.html name="Technical Documents" active="true" %}
-            <h3 class="mb-4">Technical Documents</h3>
-            <div class="row justify-content-lg-center">
-              <p class="col-12">
-                <b>Writing synthetic and comprehensive technical documents</b> to ensure
-                the team uses the same vocabulary and has a document to refer to.
-                Here is the technical document we wrote on the <b>throw & aim mechanic</b>.
-              </p>
-              <div class="col-12">
-                  {% assign image_list = "
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim1.png;Spike mechanics throw document excerpt 1,
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim2.png;Spike mechanics throw document excerpt 2,
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim3.png;Spike mechanics throw document excerpt 3,
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim4.png;Spike mechanics throw document excerpt 4,
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim5.png;Spike mechanics throw document excerpt 5,
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim6.png;Spike mechanics throw document excerpt 6,
-                  /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim7.png;Spike mechanics throw document excerpt 7
-                                    " | split: "," %}
-                  {% assign caption_list = "
-                  Using Google Slides allows for easier teamwork,
-                  Overview of the feature before going in-depth into details,
-                  Illustrating clearly each situation with a diagram creates documents that are easier to read,
-                  Coherent symbols in every diagram make for a more readable document,
-                  I am able to design mathematical models that are adapted to our intentions,
-                  Detailing meaningful tweakable parameters to facilitate work with programmers,
-                  Detailing our design intentions ensure each member can take the right decisions
-                  " | split: "," %}
-                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike-technical-documents-carousel" %}
-              </div>
-            </div>
-          {% include div-end.html %}
-          {% include v-pill-tab-content.html name="Design Presentations" %}
-            <h3 class="mb-4">Design Presentations</h3>
-            <div class="row justify-content-lg-center">
-              <p class="col-12">
-                To ensure everyone is up to date with the latest design decisions, we arrange presentations
-                that <b>explain design intentions</b>, <b>why solutions were accepted or rejected</b> and
-                what we decided.
-              </p>
-              <div class="col-12">
-                  {% assign image_list = "
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation1.png; Spike Game Design Presentation 1,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation2.png; Spike Game Design Presentation 2,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation6.png; Spike Game Design Presentation 3,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation7.png; Spike Game Design Presentation 4,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation8.png; Spike Game Design Presentation 5,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation9.png; Spike Game Design Presentation 6,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation10.png; Spike Game Design Presentation 7,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation11.png; Spike Game Design Presentation 8,
-                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation12.png; Spike Game Design Presentation 9" | split: "," %}
-                  {% assign caption_list = "
-                  Presenting mechanics to the team,
-                  Reference technical documentation to explain how it works and give it more exposure,
-                  Seeing the system through the user eyes to highlight what's important,
-                  Explaining what are the standard solutions for this problem,
-                  Explaining design intentions to give an idea of why solutions were rejected/accepted,
-                  Giving an overview of the inner workings of the system,
-                  A link to technical documentation is available in every slide,
-                  Giving intentions also help User Researchers to know what to test,
-                  Reusing the same diagrams as in technical documentation to foster readability
-                  " | split: "," %}
-                  {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike-carousel-design-presentation-specifications" %}
-              </div>
-            </div>
-          {% include div-end.html %}
-          {% include v-pill-tab-content.html name="Enemy Design" %}
-            <h3 class="mb-4">Designing Enemies</h3>
-            <div class="row">
-              <div class="col-lg-6">
-              <h4>From the 3Cs to Enemies</h4>
-              <p>
-              We built our enemies <b>in regards to the character's moveset we made.</b>
-              Each enemy challenges specific skills and all skills are
-              covered by our enemy set.
-              </p>
-              <h4>Designing with production constraints</h4>
-              <p>
-              <b>We suggested simple & functional character designs</b> to the art team
-              as a basis to iterate upon and to be able to meet deadlines.
-              <b>For example</b>, the spike catcher design matches its behaviour
-              without the need to add hard-to-animate hands.
-              </p>
-              </div>
-              <div class="col-lg-6">
-                  {% assign image_list = "
-                  /assets/images/spike/mob-gifs/termite-idle-gif.gif;Termite monster idle animation,
-                  /assets/images/spike/mob-gifs/spike-catcher-idle-gif.gif;Spike catcher idle animation,
-                  /assets/images/spike/mob-gifs/mosquitoe-idle-gif.gif;Mosquitoe idle animation,
-                  /assets/images/spike/mob-gifs/firefly-idle-gif.gif;Firefly idle animation
-                  " | split: "," %}
-                  {% assign caption_list = "
-                  <b>Termite</b>: a basic monster challenging dodging and throwing spikes;
-                  <b>Spike Catcher</b>: A monster with a counter attack that forces to move;
-                  <b>Mosquitoe</b>: Explosive kamikaze mob to keep you on your toes;
-                  <b>Firefly</b> An explosive firefly to add variations and danger to combat situations
-                  " | split: ";" %}
-                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-mob-design-carousel" %}
-              </div>
-            </div>
-          {% include div-end.html %}
-          {% include v-pill-tab-content.html name="Enemy implementation and balancing" %}
-            <h3 class="mb-4">Implementing & Balancing enemies</h3>
-            <div class="row">
-              <div class="col-lg-6">
-              <h4>Implementing enemies</h4>
-              <p>
-                I worked inside the engine using <b>Unity's animator</b> and <b>used a custom finite state machine tool</b>
-                to implement enemies into the game.
-                <br />I worked hand-in-hand with the AI programmer to be able to do faster
-                refinements on the enemies.
-              </p>
-              </div>
-              <div class="col-lg-6">
-              <h4>Balancing enemies</h4>
-              <p>
-                To balance the game, I used <b>internal feedback</b> from the team combined with <b>mathematical balancing</b>
-                based on the target player behaviours we wanted to have.
-              </p>
-              </div>
-              <div class="col-lg-12">
-                  {% assign image_list = "
-                    /assets/images/spike/design-documents/ai-design/ai-animator-spike-catcher.png;Spike catcher animator,
-                    /assets/images/spike/design-documents/ai-design/ai-fsm-spike-catcher.png;Spike catcher FSM,
-                    /assets/images/spike/design-documents/ai-balancing.png;Spike catcher balancing
-                  " | split: "," %}
-                  {% assign caption_list = "
-                  All animations phases have easy to tweak timings.;
-                  A finite state machine (FSM) I made to implement the spike catcher's behavior;
-                  Upstream balancing of monsters by using mathematical tests
-                  " | split: ";" %}
-                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-carousel-implementing-enemies" %}
-              </div>
-            </div>
-          {% include div-end.html %}
-          {% include v-pill-tab-content.html name="Fast prototyping" %}
-            <h3 class="mb-4">Fast prototyping</h3>
-            <div class="row">
-              <div class="col-lg-6">
-                  <img class="d-block w-100 mb-5" src="/assets/images/spike/fast-prototyping/fast-prototyping-breakable.gif">
-              </div>
-              <div class="col-lg-6">
-                <h4>Prototyping 3Cs</h4>
-                <p>To be able to get a better grasp on our 3Cs as soon as possible,
-                  <b>I prototyped some parts of our character controller and added gamefeel elements</b> such as animations.
-                </p>
-                <h4>Toys</h4>
-                <p>
-                  To <b>test our 3Cs and gamefeel early on</b>, we prototyped toys such as breakable objects that are shown in the adjacent gif. 
-                </p>
-              </div>
-            </div>
-          {% include div-end.html %}
-          {% include v-pill-tab-content.html name="Feature and asset lists" %}
-            <h3 class="mb-4">Feature & asset lists</h3>
-            <div class="row">
-              <div class="col-lg-12">
-                  Throughout the project, we built several asset and feature lists as <b>a way to facilitate
-                  the work with others</b>. Building asset lists with other team members allows
-                  everyone to be on the same basis and designers to give them information about what is
-                  the most important for the game.
-              </div>
-              <div class="col-lg-12">
-                  {% assign image_list = "
-                  /assets/images/spike/design-documents/asset-lists/asset-list-actions-and-decisions.png;Notion asset list of actions & decisions,
-                  /assets/images/spike/design-documents/asset-lists/asset-list-signs-and-feedback.png;Signs & feedback asset list,
-                  /assets/images/spike/design-documents/asset-lists/asset-list-animations-excerpt.png;Animations asset list
-                  " | split: "," %}
-                  {% assign caption_list = "
-                  AI Action and Decision Asset List to work with the AI programmer.;
-                  Listing and designing Signs & feedback with our UX designer.;
-                  Animation asset list as a work document used with our external animator.
-                  " | split: ";" %}
-                  {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-carousel-feature-asset-lists" %}
-              </div>
-            </div>
-          {% include div-end.html %}
-        </div>
-      </div>
+    </div>
+    <div class="container my-3 py-3">
+      {% assign credits-content = "
+      Amaury Butaux : Game Designer,
+      Charlotte Stern : Game Designer,
+      Benoît Marsili : UX/UR Designer,
+      Tristan Réamot : AI Programmer,
+      Ilan Ouamrouche : Gameplay Programmer,
+      Ludovic Aubertin : Tools Programmer,
+      Martin Rault : Character Artist,
+      Astrid Merit : Environment Artist,
+      Gabriel Sauvage : Sound & Music Designer,
+      Liam Hô : Producer,
+      : ,
+      Hélène Malherbe : Extern Animator,
+      Raphaël Bourgueil : Extern VFX Artist,
+      Blanche Périssère : Extern Rig Artist,
+      Solenn Ripoteau : Extern Environment Artist,
+      Slimane Kouidri : Musician,
+      Médéricq Debacq : Musician
+      "
+      %}
+      {% include credits.html content=credits-content %}
     </div>
   </div>
+
 </div>
-<div class="container my-3 py-3">
-  {% assign credits-content = "
-  Amaury Butaux : Game Designer,
-  Charlotte Stern : Game Designer,
-  Benoît Marsili : UX/UR Designer,
-  Tristan Réamot : AI Programmer,
-  Ilan Ouamrouche : Gameplay Programmer,
-  Ludovic Aubertin : Tools Programmer,
-  Martin Rault : Character Artist,
-  Astrid Merit : Environment Artist,
-  Gabriel Sauvage : Sound & Music Designer,
-  Liam Hô : Producer,
-   : ,
-  Hélène Malherbe : Extern Animator,
-  Raphaël Bourgueil : Extern VFX Artist,
-  Blanche Périssère : Extern Rig Artist,
-  Solenn Ripoteau : Extern Environment Artist,
-  Slimane Kouidri : Musician,
-  Médéricq Debacq : Musician
-  "
-  %}
-  {% include credits.html content=credits-content %}
+
 </div>
+<div class="jumbotron mt-1 pt-1">

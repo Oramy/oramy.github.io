@@ -4,12 +4,12 @@
 }
 
 .thumbnail-carousel-btn img:hover,
-.active .thumbnail-carousel-btn img,
+.active-in-carousel .thumbnail-carousel-btn img,
 .thumbnail-carousel-btn:focus img {
     opacity: 1;
     transition: 0.5s;
 }
 
-.active .thumbnail-carousel-btn {
+.active-in-carousel .thumbnail-carousel-btn {
     box-shadow: 0 0 0 0.2rem $primary;
 }

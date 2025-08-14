@@ -54,12 +54,15 @@
     var id = $('#{{include.carousel-id}} .carousel-inner').find('.active').index();
     $('#{{indicators-id}}').children().removeClass("active");
     $('#{{indicators-id}}').children().eq(id).addClass("active");
+    $('#{{indicators-id}}').children().removeClass("active-in-carousel");
+    $('#{{indicators-id}}').children().eq(id).addClass("active-in-carousel");
 
     $('#{{indicators-id}}').find("button").on("click", function() {
 
         var id = $(this).parent("li").index();
         $('#{{indicators-id}}').children().removeClass("active");
         $('#{{indicators-id}}').children().eq(id).addClass("active");
-
+        $('#{{indicators-id}}').children().removeClass("active-in-carousel");
+        $('#{{indicators-id}}').children().eq(id).addClass("active-in-carousel");
     });
 </script>

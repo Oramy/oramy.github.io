@@ -1,11 +1,11 @@
 {% assign downcased = include.name | downcase | replace: " ", "-" %}
 
 {% if include.active %}
-<a class="nav-link active" id="v-pills-{{downcased}}-tab" data-bs-toggle="pill"
+<a class="nav-link active" id="v-pills-{{downcased}}-tab" slug-id="{{downcased}}" data-bs-toggle="pill"
  href="#v-pills-{{downcased}}" role="tab" aria-controls="v-pills-{{downcased}}"
  aria-selected="true">{{include.name}}</a>
 {% else %}
-<a class="nav-link" id="v-pills-{{downcased}}-tab" data-bs-toggle="pill"
+<a class="nav-link" id="v-pills-{{downcased}}-tab" slug-id="{{downcased}}" data-bs-toggle="pill"
  href="#v-pills-{{downcased}}" role="tab" aria-controls="v-pills-{{downcased}}"
  aria-selected="false">{{include.name}}</a>
 {% endif %}

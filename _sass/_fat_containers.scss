@@ -3,6 +3,17 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.gradient-nav {
+  @include gradient-x-three-colors($light, $gray-400, 50%, $light)
+}
+html {
+  scroll-padding-top: 70px; /* height of sticky header */
+}
+.on-top-of-nav {
+  z-index: 1021;
+}
+
 @include media-breakpoint-up(lg) {
   .fat-container {
     max-width: 1320px;

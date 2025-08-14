@@ -1,0 +1,32 @@
+<h3 class="mb-4">Design Presentations</h3>
+<div class="row justify-content-lg-center">
+    <p class="col-12">
+        To ensure everyone is up to date with the latest design decisions, we arrange presentations
+        that <b>explain design intentions</b>, <b>why solutions were accepted or rejected</b> and
+        what we decided.
+    </p>
+    <div class="col-12">
+        {% assign image_list = "
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation1.png; Spike Game Design Presentation 1,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation2.png; Spike Game Design Presentation 2,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation6.png; Spike Game Design Presentation 3,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation7.png; Spike Game Design Presentation 4,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation8.png; Spike Game Design Presentation 5,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation9.png; Spike Game Design Presentation 6,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation10.png; Spike Game Design Presentation 7,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation11.png; Spike Game Design Presentation 8,
+                  /assets/images/spike/design-documents/game-design-presentation/game-design-presentation12.png; Spike Game Design Presentation 9" | split: "," %}
+        {% assign caption_list = "
+                  Presenting mechanics to the team,
+                  Reference technical documentation to explain how it works and give it more exposure,
+                  Seeing the system through the user eyes to highlight what's important,
+                  Explaining what are the standard solutions for this problem,
+                  Explaining design intentions to give an idea of why solutions were rejected/accepted,
+                  Giving an overview of the inner workings of the system,
+                  A link to technical documentation is available in every slide,
+                  Giving intentions also help User Researchers to know what to test,
+                  Reusing the same diagrams as in technical documentation to foster readability
+                  " | split: "," %}
+        {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike-carousel-design-presentation-specifications" %}
+    </div>
+</div>

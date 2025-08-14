@@ -15,3 +15,16 @@ badges:
   -
     - GD
     - CD
+detailed-blocks:
+  - id: technical-documents
+    content: projects/spike/technical-documents.html
+  - id: design-presentations
+    content: projects/spike/design-presentations.html
+  - id: enemy-design
+    content: projects/spike/enemy-design.html
+  - id: balancing
+    content: projects/spike/balancing.html
+  - id: fast-prototyping
+    content: projects/spike/fast-prototyping.html
+  - id: feature-asset-lists
+    content: projects/spike/feature-asset-lists.html

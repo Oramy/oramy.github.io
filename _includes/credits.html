@@ -1,8 +1,10 @@
 {% assign credits-list = include.content | split: "," %}
-<h2 class="mb-2">Credits</h2>
-<ul class="list-unstyled">
-    {% for line in credits-list %}
+<div id="project-credits">
+    <h2 class="mb-2">Credits</h2>
+    <ul class="list-unstyled">
+        {% for line in credits-list %}
         {% assign line-split = line | split: ":" %}
         <li><b>{{line-split[0]}}</b> - {{line-split[1]}}</li>
-    {% endfor %}
-</ul>
+        {% endfor %}
+    </ul>
+</div>

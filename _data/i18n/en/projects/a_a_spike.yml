@@ -5,3 +5,10 @@ very-short-description: An action/adventure game about <b>a hedgehog using their
 genre: Action/Adventure
 tools: Unity
 download-button: Last Jury Presentation
+detailed-blocks:
+  technical-documents: Technical Documents
+  design-presentations: Design Presentations
+  enemy-design: Enemy Design
+  balancing: Enemy implementation and balancing
+  fast-prototyping: Fast prototyping
+  feature-asset-lists: Feature and asset lists

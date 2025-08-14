@@ -4,4 +4,11 @@ short-description: Un jeu d'action aventure où vous jouez <b>un hérisson qui s
 very-short-description: Un jeu d'action aventure où vous jouez <b>un hérisson qui se bat avec ses pics</b>.
 genre: Action/Aventure
 tools: Unity
-download-button: Soutenance Finale
+download-button: Voir la Soutenance Finale
+detailed-blocks:
+  technical-documents: Documents Techniques
+  design-presentations: Présentations de design
+  enemy-design: Design d'ennemis
+  balancing: Implémentation et équilibrage d'ennemis
+  fast-prototyping: Prototypage rapide
+  feature-asset-lists: Listes d'assets et de fonctionnalités
