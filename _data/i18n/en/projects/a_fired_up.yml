@@ -5,3 +5,10 @@ very-short-description: 4 player co-op couch game
 genre: Couch-Co-op
 tools: Unity, Probuilder, Notion, Google Slides
 download-button: Download on itch.io
+detailed-blocks:
+  one-page: One Page
+  writing-documents: Writing documents
+  research: Research
+  metrics: Metrics
+  balancing: Balancing
+  team-work: Team work

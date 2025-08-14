@@ -4,6 +4,7 @@ big-thumbnail: "/assets/images/fired_up/fired_up_screen_2_thumbnail.png"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 award-logo: "/assets/images/fired_up/awards/BostonFIG_Fest_2022_Award_300px.png"
 dedicated-page: fired-up
+path: /projects/fired-up/
 year: 2022
 featured: true
 hidden: false
@@ -15,3 +16,32 @@ badges:
   -
     - GD
     - LD
+background-image: /assets/images/fired_up/pagebackground.webp
+credits: projects/fired-up/credits.md
+slide-content-list:
+  - "video;https://player.vimeo.com/video/726483205?h=8fdfd4bfee"
+  - "image;/assets/images/fired_up/fired_up_screen_1.png"
+  - "image;/assets/images/fired_up/fired_up_screen_2.png"
+  - "image;/assets/images/fired_up/fired_up_screen_3.png"
+  - "image;/assets/images/fired_up/fired_up_screen_4.png"
+thumbnails:
+  - "/assets/images/fired_up/thumbnail_video.png"
+  - "/assets/images/fired_up/fired_up_screen_1.png"
+  - "/assets/images/fired_up/fired_up_screen_2.png"
+  - "/assets/images/fired_up/fired_up_screen_3.png"
+  - "/assets/images/fired_up/fired_up_screen_4.png"
+presentation:
+  - projects/fired-up/core-intentions.md
+missions:
+  - projects/fired-up/missions-game-design.md
+  - projects/fired-up/missions-level-design.md
+  - projects/fired-up/missions-ux.md
+detailed-blocks:
+  - id: one-page
+  - id: writing-documents
+  - id: research
+  - hr: hr
+  - id: metrics
+  - id: balancing
+  - hr: hr
+  - id: team-work

@@ -1,13 +1,153 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body class="pb-0 pt-0">
-    {% include nav-compact.html %}
-    {{ content }}
-    {%- include other-projects.html -%}
-    {%- include footer.html -%}
-  </body>
+<body class="pb-0 pt-0">
+  {% include nav-compact.html %}
+  {% assign project_id = page.project_id%}
+  {% assign project = site.data.projects[project_id] %}
+  {% assign tproject = site.data.i18n[site.lang].projects[project_id] %}
+
+  {% assign blocks = project.detailed-blocks %}
+  {% assign tblocks = tproject.detailed-blocks %}
+  {% assign credits = project.credits %}
+  {% if project.detailed-blocks %}
+  <script>
+    $(document).ready(function () {
+      $(".v-pills-nav-tab").click(function () {
+        $("#v-pills-tabContent").children().removeClass("show active");
+        var content = $("#v-pills-" + $(this).attr("slug-id"));
+        content.addClass("show active");
+        $("#v-pills-nav").children().children("a").removeClass("active");
+        $(this).addClass("active");
+        $("#v-pills-tab").children().removeClass("active");
+        $("#v-pills-" + $(this).attr("slug-id") + "-tab").addClass("active");
+        $('html').animate({
+          scrollTop: $("#detailed-work").offset().top - 90
+        }, .5);
+
+      });
+      $("#v-pills-tab").children().click(function () {
+        $("#v-pills-nav").children().children("a").removeClass("active");
+        var content = $("#v-pills-nav-tab-" + $(this).attr("slug-id"));
+        content.addClass("show active");
+        $('html').animate({
+          scrollTop: $("#detailed-work").offset().top - 90
+        }, .5);
+      });
+
+    });
+  </script>
+  {% endif %}
+  <div class="container-fluid mb-1 p-0 bg-light">
+    <div class="sticky-top bg-light container-fluid align-items-center mx-auto ">
+      <nav id="navbar-example2" class="navbar bg-none mx-auto container-fluid row">
+        <div class="d-inline-block mx-6 offset-lg-2 col-lg-1 col-3 text-end"><a class="navbar-brand" href="#">{{tproject.title}}</a></div>
+        <ul class="nav nav-pills col-lg-9 col-9">
+          <li class="nav-item">
+            <a class="nav-link" href="#project-presentation">Project Presentation</a>
+          </li>
+          {% if project.missions %}
+          <li class="nav-item">
+            <a class="nav-link" href="#missions">Missions</a>
+          </li>
+          {% endif %}
+          {% if project.detailed-blocks %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#detailed-work" role="button"
+              aria-expanded="false">Detailed Work</a>
+            <ul class="dropdown-menu" id="v-pills-nav">
+              {% for block in blocks %}
+              {% if block.hr %}
+              <hr class="my-1 w-100 d-none d-md-block" role="separator">
+              {% else %}
+              {% assign block-id = block["id"] %}
+              {% assign block-title = tblocks[block-id] %}
+              {% assign downcased = block-title | downcase | replace: " ", "-" %}
+              <li><a class="dropdown-item v-pills-nav-tab" id="v-pills-nav-tab-{{downcased}}"
+                  slug-id="{{downcased}}">{{block-title}}</a></li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
+          {% if project.credits %}
+          <li class="nav-item">
+            <a class="nav-link" href="#project-credits">Credits</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+    <div data-bs-spy="scroll" data-bs-method="position" data-bs-target="#navbar-example2" data-bs-offset="-50"
+      class="scrollspy-example" tabindex="0">
+      <div class="row" style="background-image: url('{{project.background-image}}'); z-index: -1;">
+        <div class="offset-lg-3 col-lg-6 bg-light my-5 px-4 py-3">
+          <div id="project-presentation">
+            <h1 class=" py-1 my-6 d-inline-block" id="project-presentation">{{ tproject.title }}</h1>
+            <p class="text-muted">{{ tproject.description }}</p>
+            {% if project.slide-content-list %}
+            <div class="row">
+              {% assign slide-content-list = project.slide-content-list %}
+              {% assign thumbnails = project.thumbnails %}
+              {% include thumbnail-carousel.html slide-content=slide-content-list
+            thumbnail-images=thumbnails
+            carousel-id="project-thumbnail-carousel" %}
+              {% if project.presentation %}
+              {% for paragraph in project.presentation %}
+              <div class="col-lg-6 bg-light">
+                <div class="mt-3 p-3">
+                  {% tf paragraph %}
+                </div>
+              </div>
+              {% endfor %}
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>Please note</strong> this project is a <b>vertical slice</b>
+            of the 4th zone of the full game.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            </button>
+          </div>
+        </div>
+
+        <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-5" style="z-index:1019;">
+          {% include project-info.html project=project tproject=tproject %}
+        </div>
+
+      </div>
+      {% if project.missions %}
+      <div class="container-fluid row pt-5">
+        <div class="offset-lg-3 col-lg-6" id="missions">
+          <h2 class="p-2 d-inline" id="missions">My missions</h2>
+          <div class="row my-2">
+            <hr class="col-12">
+            {% for mission in project.missions %}
+            <div class="col-12 col-lg-6">
+              {% tf mission %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if project.detailed-blocks %}
+      <div class="container-fluid">
+        {% include detailed-work.html blocks=blocks tblocks=tblocks project=project %}
+      </div>
+      {% endif %}
+      {% if project.credits %}
+      <div class="container my-3 py-3" id="project-credits">
+        {% tf project.credits %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {%- include other-projects.html -%}
+  {%- include footer.html -%}
+</body>
 
 </html>

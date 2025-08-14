@@ -1,0 +1,42 @@
+{% assign project=include.project %}
+{% assign blocks=include.blocks %}
+{% assign tblocks=include.tblocks %}
+<div class="row mt-4" id="detailed-work">
+    <h2 class="col-12 col-md-9 offset-md-3">Detailed Work</h2>
+    <hr class="col-12 col-md-6 offset-md-3">
+    <div class="d-none d-md-block col-3"></div>
+    <div class="col-md-3">
+        <div class="sticky-top pt-3" style="z-index:1019; top:50px;">
+            <div class="nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                {% for block in blocks %}
+                {% if block.hr %}
+                <hr class="my-1 w-100 d-none d-md-block" role="separator">
+                {% else %}
+                {% assign block-id = block.id %}
+                {% assign block-title = tblocks[block-id] %}
+                {% assign downcased = block-title | downcase | replace: " ", "-" %}
+
+                {% include v-pill-tab.html name=block-title active=forloop.first %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <hr class="d-md-none d-block w-100">
+    <div class="col-md-6 mt-3">
+        <div class="tab-content" id="v-pills-tabContent">
+            {% for block in blocks %}
+            {% unless block.hr %}
+            {% assign block-id = block.id %}
+            {% assign block-title = tblocks[block-id] %}
+            {% assign downcased = block-title | downcase | replace: " ", "-" %}
+            {% capture text %}
+            {% assign content=project.path | append: block.id | append: ".html"%}
+            {% include {{content}} %}
+            {% endcapture%}
+            {% include v-pill-tab-content.html name=block-title content=text active=forloop.first %}
+            {% endunless %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

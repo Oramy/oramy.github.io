@@ -1,0 +1,31 @@
+<h3 class="mb-4">Research</h3>
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Making well informed decisions.</h4>
+        <p>
+            I investigated <b>several subjects</b> during this project to be able
+            to make <b>well informed decisions</b>. To be more efficient, we split
+            the workload to research key design fields during the beginning
+            of the project.
+        </p>
+
+        <h4>Research in Level Design</h4>
+        <p>
+            Iterating over level design and testing out ideas was also part of
+            my work in this project.
+        </p>
+    </div>
+    <div class="col-lg-6">
+        {% assign image_list = "
+                  /assets/images/fired_up/design_documents/systemic_gd_research_overview_square.png,
+                  /assets/images/fired_up/design_documents/verticality_research_overview.png,
+                  /assets/images/fired_up/design_documents/exploration_ld_lvl3_square.gif
+                  " | split: "," %}
+        {% assign caption_list = "
+                  Research on systemic game design,
+                  Exploring the relevance of verticality for our levels,
+                  Iterations and exploration for the game last level
+                  " | split: "," %}
+        {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_research" %}
+    </div>
+</div>

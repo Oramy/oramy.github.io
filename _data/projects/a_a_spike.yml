@@ -3,6 +3,7 @@ thumbnail: "/assets/images/spike/spike_screen_04_thumbnail.webp"
 big-thumbnail: "/assets/images/spike/spike_screen_thumbnail.webp"
 structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 structure-logo-alt: Cnam-Enjmin
+path: /projects/spike/
 dedicated-page: spike
 year: 2022
 featured: true
@@ -15,16 +16,37 @@ badges:
   -
     - GD
     - CD
+missions:
+ - projects/spike/missions-game-design.md
+ - projects/spike/missions-level-design.md
+ - projects/spike/missions-narrative-design.md
+credits: projects/spike/credits.md
+presentation:
+ - projects/spike/ksp.md
+ - projects/spike/combat-design-intentions.md
 detailed-blocks:
   - id: technical-documents
-    content: projects/spike/technical-documents.html
   - id: design-presentations
-    content: projects/spike/design-presentations.html
+  - hr: hr
   - id: enemy-design
-    content: projects/spike/enemy-design.html
   - id: balancing
-    content: projects/spike/balancing.html
+  - hr: hr
   - id: fast-prototyping
-    content: projects/spike/fast-prototyping.html
   - id: feature-asset-lists
     content: projects/spike/feature-asset-lists.html
+
+background-image: /assets/images/spike/pagebackground.webp
+slide-content-list:
+  - "video;https://www.youtube-nocookie.com/embed/NL-Y3g5IYMw;Spike Gameplay Video"
+  - "video;https://www.youtube-nocookie.com/embed/G0qrZeRaLwk?start=4630;Spike Jury Presentation"
+  - "image;/assets/images/spike/spike_screen_01.png;Fighting screenshot"
+  - "image;/assets/images/spike/spike_screen_02.png;Shop screenshot"
+  - "image;/assets/images/spike/spike_screen_05.png;Life pool screenshot"
+  - "image;/assets/images/spike/spike_screen_09.png;Death screenshot"
+thumbnails:
+  - "/assets/images/spike/spike_gameplay.png;Spike Gameplay"
+  - "/assets/images/spike/spike_jury_presentation.png;Spike Jury Presentation"
+  - "/assets/images/spike/spike_screen_01.png;Screenshot 1"
+  - "/assets/images/spike/spike_screen_02.png;Screenshot 2"
+  - "/assets/images/spike/spike_screen_05.png;Screenshot 3"
+  - "/assets/images/spike/spike_screen_09.png;Screenshot 4"
