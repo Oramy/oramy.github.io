@@ -1,3 +1,3 @@
 ### Narrative design
 - **Worldbuilding**
-- Narrative **structure**
+- **Structure** narrative

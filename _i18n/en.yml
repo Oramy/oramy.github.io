@@ -9,5 +9,177 @@ nav:
 titles:
   current-role: Game Designer
   games: Games
+project-presentation: Project Presentation
+missions: Missions
+my-missions: My Missions
+detailed-work: Detailed Work
+404-page:
+  title: 404
+  description: "<strong>Page not found :(</strong><br> The requested page could not be found."
 
 project-page: Project Page
+click-to-enlarge: Click to enlarge
+
+spike:
+  balancing:
+    title: Implementing & Balancing enemies
+    implementing:
+      title: Implementing enemies
+      content:
+            I worked inside the engine using <b>Unity's animator</b> and <b>used a custom finite state machine
+                tool</b>
+            to implement enemies into the game.
+            <br />I worked hand-in-hand with the AI programmer to be able to do faster
+            refinements on the enemies.
+    balancing-enemies:
+      title: Balancing enemies
+      content: To balance the game, I used <b>internal feedback</b> from the team combined with <b>mathematical
+                balancing</b>
+            based on the target player behaviours we wanted to have.
+    caption-list: All animations phases have easy to tweak timings.;
+                  A finite state machine (FSM) I made to implement the spike catcher's behavior;
+                  Upstream balancing of monsters by using mathematical tests
+  design-presentations:
+    title: Design Presentations
+    content: To ensure everyone is up to date with the latest design decisions, we arrange presentations
+        that <b>explain design intentions</b>, <b>why solutions were accepted or rejected</b> and
+        what we decided.
+    caption-list: Presenting mechanics to the team,
+                  Reference technical documentation to explain how it works and give it more exposure,
+                  Seeing the system through the user eyes to highlight what's important,
+                  Explaining what are the standard solutions for this problem,
+                  Explaining design intentions to give an idea of why solutions were rejected/accepted,
+                  Giving an overview of the inner workings of the system,
+                  A link to technical documentation is available in every slide,
+                  Giving intentions also help User Researchers to know what to test,
+                  Reusing the same diagrams as in technical documentation to foster readability
+  enemy-design:
+    title: Designing Enemies
+    3Cs:
+      title: From the 3Cs to Enemies
+      content: We built our enemies <b>in regards to the character's moveset we made.</b>
+            Each enemy challenges specific skills and all skills are
+            covered by our enemy set.
+    constraints:
+      title: Designing with production constraints
+      content: <b>We suggested simple & functional character designs</b> to the art team
+            as a basis to iterate upon and to be able to meet deadlines.
+            <b>For example</b>, the spike catcher design matches its behaviour
+            without the need to add hard-to-animate hands.
+    caption-list: "<b>Termite</b>: a basic monster challenging dodging and throwing spikes;
+                  <b>Spike Catcher</b>: A monster with a counter attack that forces to move;
+                  <b>Mosquitoe</b>: Explosive kamikaze mob to keep you on your toes;
+                  <b>Firefly</b> An explosive firefly to add variations and danger to combat situations"
+  fast-prototyping:
+    title: Fast prototyping
+    3Cs:
+      title: Prototyping 3Cs
+      content: To be able to get a better grasp on our 3Cs as soon as possible,
+            <b>I prototyped some parts of our character controller and added gamefeel elements</b> such as
+            animations.
+    toys:
+      title: Toys
+      content: To <b>test our 3Cs and gamefeel early on</b>, we prototyped toys such as breakable objects that are
+            shown in the adjacent gif.
+  feature-asset-lists:
+    title: Feature & asset lists
+    description: Throughout the project, we built several asset and feature lists as <b>a way to facilitate
+                the work with others</b>. Building asset lists with other team members allows
+                everyone to be on the same basis and designers to give them information about what is
+                the most important for the game.
+    caption-list: AI Action and Decision Asset List to work with the AI programmer.;
+                  Listing and designing Signs & feedback with our UX designer.;
+                  Animation asset list as a work document used with our external animator.
+  technical-documents:
+    title: Technical Documents
+    description: <b>Writing synthetic and comprehensive technical documents</b> to ensure
+        the team uses the same vocabulary and has a document to refer to.
+        Here is the technical document we wrote on the <b>throw & aim mechanic</b>.
+    caption-list: Using Google Slides allows for easier teamwork,
+                  Overview of the feature before going in-depth into details,
+                  Illustrating clearly each situation with a diagram creates documents that are easier to read,
+                  Coherent symbols in every diagram make for a more readable document,
+                  I am able to design mathematical models that are adapted to our intentions,
+                  Detailing meaningful tweakable parameters to facilitate work with programmers,
+                  Detailing our design intentions ensure each member can take the right decisions
+fired-up:
+  writing-documents:
+    title: Writing Documents
+    description: <b>Writing synthetic and comprehensive documents</b> which can be modified
+        and shared easily is decisive. Here is an excerpt from a document
+        I have made for this project.
+    caption-list: Writing synthetic and comprehensive specs with clear schemes;
+                  Using Google Slides allows for easier teamwork;
+                  The whole document is made with one software to foster fast iterations;
+                  Coherent symbols in every schemes make for a more readable document
+  research:
+    decisions-title: Making well informed decisions.
+    decisions-content: I investigated <b>several subjects</b> during this project to be able
+            to make <b>well informed decisions</b>. To be more efficient, we split
+            the workload to research key design fields during the beginning
+            of the project.
+    level-design-title: Research in Level Design
+    level-design-content: Iterating over level design and testing out ideas was also part of
+            my work in this project.
+    caption-list: Research on systemic game design,
+                  Exploring the relevance of verticality for our levels,
+                  Iterations and exploration for the game last level
+  one-page:
+    title: One Page
+    reminder:
+      title: A reminder
+      content: The role of this one page is to have all <b>core mechanics</b> of the game
+            <b>synthetized in one poster</b> which is always <b>visible by the team</b>.
+    cuts:
+      title: Feature Cuts
+      content: Some of the presented features were cut. We kept mechanics
+            that were the <b>most important</b> in building our goal experience.
+  metrics:
+    title: metrics
+    caption-list: Camera projection on ground to build well sized levels;
+                  Camera minimal zoom to ensure objects that are big enough on screen;
+                  Objects size (non-interactable in blue, interactable in yellow)
+    camera:
+      title: Camera
+      content: We defined camera's maximum range, object and character sizes to <b>ensure game readability</b>.
+            This led to our level size as we wanted <b>one-screen levels</b>.
+    level-metrics:
+      title: Level Metrics
+      content: Walls' height and thickness were then defined on the camera view to <b>minimize
+            blind spots</b> while still <b>ensuring circulation clarity</b>.
+        <br>We used a base unit (1m) to build our levels.
+    helpers:
+      title: Helpers
+      content: I made helpers to <b>ensure metrics were respected</b> when we integrated content
+            and designed levels.
+  balancing:
+    title: Balancing
+    external-playtests:
+      title: Using external playtests
+      content: Our UX/UR designer made several playtests to gather feedbacks,
+            but we had not enough iterations to balance the game with only these playtests.
+    short-time:
+      title: Balancing a game in a small amount of time
+      content: We dedicated team playtests to balancing. During these sessions I balanced the game on the fly,
+            taking into account our dev team's skills, which allowed an overall balanced experienced
+            despite our small time resources.
+    caption-list: Custom unity layout to have all interesting values to balance during balancing playtests;
+                  Dynamic difficulty adjustment scheme
+  teamwork:
+    title: Team work
+    including:
+      title: Including the team
+      content: We <b>gathered ideas</b> during <b>brainstorming</b> sessions
+            that we would then <b>filter and refine</b> to get to
+            mechanics matching our intentions and scope.
+    informing:
+      title: Keeping the team informed
+      content: We also held small and short meetings to <b>keep the team updated</b> with
+            <b>key decisions</b> in the beginning of the project.
+    programmers:
+      title: Working with programmers
+      content: My <b>engineering skills</b> allowed me to easily <b>understand
+                programming challenges</b> and to design features with the <b>right
+                level of detail</b>.
+    caption-list: Brainstorming organized on Miro,
+                  Synthetic presentations to share the latest key decisions to the team.

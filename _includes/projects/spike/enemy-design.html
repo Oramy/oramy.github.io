@@ -1,19 +1,10 @@
-<h3 class="mb-4">Designing Enemies</h3>
+<h3 class="mb-4">{% t spike.enemy-design.title %}</h3>
 <div class="row">
     <div class="col-lg-6">
-        <h4>From the 3Cs to Enemies</h4>
-        <p>
-            We built our enemies <b>in regards to the character's moveset we made.</b>
-            Each enemy challenges specific skills and all skills are
-            covered by our enemy set.
-        </p>
-        <h4>Designing with production constraints</h4>
-        <p>
-            <b>We suggested simple & functional character designs</b> to the art team
-            as a basis to iterate upon and to be able to meet deadlines.
-            <b>For example</b>, the spike catcher design matches its behaviour
-            without the need to add hard-to-animate hands.
-        </p>
+        <h4>{% t spike.enemy-design.3Cs.title %}</h4>
+        <p>{% t spike.enemy-design.3Cs.content %}</p>
+        <h4>{% t spike.enemy-design.constraints.title %}</h4>
+        <p>{% t spike.enemy-design.constraints.content %}</p>
     </div>
     <div class="col-lg-6">
         {% assign image_list = "
@@ -22,12 +13,8 @@
                   /assets/images/spike/mob-gifs/mosquitoe-idle-gif.gif;Mosquitoe idle animation,
                   /assets/images/spike/mob-gifs/firefly-idle-gif.gif;Firefly idle animation
                   " | split: "," %}
-        {% assign caption_list = "
-                  <b>Termite</b>: a basic monster challenging dodging and throwing spikes;
-                  <b>Spike Catcher</b>: A monster with a counter attack that forces to move;
-                  <b>Mosquitoe</b>: Explosive kamikaze mob to keep you on your toes;
-                  <b>Firefly</b> An explosive firefly to add variations and danger to combat situations
-                  " | split: ";" %}
+        {% capture captions %}{% t spike.enemy-design.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: ";" %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-mob-design-carousel" %}
     </div>
 </div>

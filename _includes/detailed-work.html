@@ -14,7 +14,7 @@
                 {% else %}
                 {% assign block-id = block.id %}
                 {% assign block-title = tblocks[block-id] %}
-                {% assign downcased = block-title | downcase | replace: " ", "-" %}
+                {% assign downcased = block-title | slugify:"latin" %}
 
                 {% include v-pill-tab.html name=block-title active=forloop.first %}
                 {% endif %}
@@ -29,7 +29,7 @@
             {% unless block.hr %}
             {% assign block-id = block.id %}
             {% assign block-title = tblocks[block-id] %}
-            {% assign downcased = block-title | downcase | replace: " ", "-" %}
+            {% assign downcased = block-title | slugify:"latin" %}
             {% capture text %}
             {% assign content=project.path | append: block.id | append: ".html"%}
             {% include {{content}} %}

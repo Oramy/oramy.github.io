@@ -1,10 +1,6 @@
-<h3 class="mb-4">Technical Documents</h3>
+<h3 class="mb-4">{% t spike.technical-documents.title %}</h3>
 <div class="row justify-content-lg-center">
-    <p class="col-12">
-        <b>Writing synthetic and comprehensive technical documents</b> to ensure
-        the team uses the same vocabulary and has a document to refer to.
-        Here is the technical document we wrote on the <b>throw & aim mechanic</b>.
-    </p>
+    <p class="col-12">{% t spike.technical-documents.description %}</p>
     <div class="col-12">
         {% assign image_list = "
                   /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim1.png;Spike mechanics throw document excerpt 1,
@@ -15,15 +11,8 @@
                   /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim6.png;Spike mechanics throw document excerpt 6,
                   /assets/images/spike/design-documents/spike-mechanics-throw-aim/spike-mechanics-throw-aim7.png;Spike mechanics throw document excerpt 7
                                     " | split: "," %}
-        {% assign caption_list = "
-                  Using Google Slides allows for easier teamwork,
-                  Overview of the feature before going in-depth into details,
-                  Illustrating clearly each situation with a diagram creates documents that are easier to read,
-                  Coherent symbols in every diagram make for a more readable document,
-                  I am able to design mathematical models that are adapted to our intentions,
-                  Detailing meaningful tweakable parameters to facilitate work with programmers,
-                  Detailing our design intentions ensure each member can take the right decisions
-                  " | split: "," %}
+        {% capture captions %}{% t spike.technical-documents.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: "," %}
         {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="spike-technical-documents-carousel" %}
     </div>
 </div>

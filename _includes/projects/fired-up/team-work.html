@@ -6,28 +6,17 @@
                   /assets/images/fired_up/design_documents/GD_presentation.png
                   " | split: "," %}
         {% assign caption_list = "
-                  Brainstorming organized on Miro,
-                  Synthetic presentations to share the latest key decisions to the team.
                   " | split: "," %}
+        {% capture captions %}{% t fired-up.teamwork.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: "," %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_communication" %}
     </div>
     <div class="col-lg-6">
-        <h4>Including the team</h4>
-        <p>
-            We <b>gathered ideas</b> during <b>brainstorming</b> sessions
-            that we would then <b>filter and refine</b> to get to
-            mechanics matching our intentions and scope.
-        </p>
-        <h4>Keeping the team informed</h4>
-        <p>
-            We also held small and short meetings to <b>keep the team updated</b> with
-            <b>key decisions</b> in the beginning of the project.
-        </p>
-        <h4>Working with programmers</h4>
-        <p>
-            My <b>engineering skills</b> allowed me to easily <b>understand
-                programming challenges</b> and to design features with the <b>right
-                level of detail</b>.
-        </p>
+        <h4>{% t fired-up.teamwork.including.title %}</h4>
+        <p>{% t fired-up.teamwork.including.content %}</p>
+        <h4>{% t fired-up.teamwork.informing.title %}</h4>
+        <p>{% t fired-up.teamwork.informing.content %}</p>
+        <h4>{% t fired-up.teamwork.programmers.title %}</h4>
+        <p>{% t fired-up.teamwork.programmers.content %}</p>
     </div>
 </div>

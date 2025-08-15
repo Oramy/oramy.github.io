@@ -1,5 +1,5 @@
-### Crédits
-
+## Crédits
+---------------
 **Amaury Butaux** - Game/Level Designer  
 **Ethan Fillette** - Compositeur & Intégrateur son  
 **Liam Hô** - Producer  

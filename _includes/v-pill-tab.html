@@ -1,4 +1,4 @@
-{% assign downcased = include.name | downcase | replace: " ", "-" %}
+{% assign downcased = include.name | slugify: "latin" %}
 
 {% if include.active %}
 <a class="nav-link active text-end" id="v-pills-{{downcased}}-tab" slug-id="{{downcased}}" data-bs-toggle="pill"

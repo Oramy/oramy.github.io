@@ -1,9 +1,7 @@
-<h3 class="mb-4">Writing Documents</h3>
+<h3 class="mb-4">{% t fired-up.writing-documents.title %}</h3>
 <div class="row justify-content-lg-center">
     <p class="col-12">
-        <b>Writing synthetic and comprehensive documents</b> which can be modified
-        and shared easily is decisive. Here is an excerpt from a document
-        I have made for this project.
+        {% t fired-up.writing-documents.description %}
     </p>
     <div class="col-12">
         {% assign image_list = "
@@ -12,12 +10,8 @@
                   /assets/images/fired_up/design_documents/example_document_3.png,
                   /assets/images/fired_up/design_documents/example_document_4.png
                                     " | split: "," %}
-        {% assign caption_list = "
-                  Writing synthetic and comprehensive specs with clear schemes,
-                  Using Google Slides allows for easier teamwork,
-                  The whole document is made with one software to foster fast iterations,
-                  Coherent symbols in every schemes make for a more readable document
-                  " | split: "," %}
+        {% capture captions %}{% t fired-up.writing-documents.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: ";" %}
         {% include image_carousel.html images=image_list captions=caption_list loop-caption="true" carousel-id="fired_up_carousel_specifications" %}
     </div>
 </div>

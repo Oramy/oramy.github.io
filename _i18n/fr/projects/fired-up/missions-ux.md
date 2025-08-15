@@ -1,3 +1,3 @@
 ### UX
-- Designing & implementing **onboarding**
-- Screen mockups
+- Design & implémentation de l'**onboarding**
+- Maquettes d'écran

@@ -1,3 +1,3 @@
 ### Level design
-- **Design and blockouts**
-- Iterating on levels
+- **Design et blockouts**
+- Itération sur les niveaux

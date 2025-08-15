@@ -1,5 +1,5 @@
-### Credits
-
+## Credits
+-------------
 **Amaury Butaux** - Game Designer  
 **Charlotte Stern** - Game Designer  
 **Benoît Marsili** - UX/UR Designer  

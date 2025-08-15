@@ -1,20 +1,26 @@
-<div class="bg-light">
-<nav class="container-fat navbar navbar-expand-lg navbar-light bg-light d-block d-flex align-items-center">
-      <a href="{% tl home %}" class = "navbar-brand">
-        <img class="rounded-circle" width="30" height="30" lt="Profile picture" src="{{ "/assets/images/photo_linkedin.webp" | prepend: site.baseurl_root }}" />
-        <h1 class="h5 align-middle px-3 d-inline">Amaury Butaux</h1>
-        <h2 class="h6 align-middle px-3 d-inline">{% t titles.current-role %}</h2>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<div class="bg-light row">
+  <a href="{% tl home %}"
+    class="navbar-brand d-flex align-items-center justify-content-end col-lg-3 col">
+    <img class="rounded-circle d-inline-block mx-3" width="30" height="30" lt="Profile picture"
+      src="{{ "/assets/images/photo_linkedin.webp" | prepend: site.baseurl_root }}" />
+    <h1 class="h5 align-middle px-3 my-auto d-inline-block">Amaury Butaux</h1>
+    <h2 class="h6 align-middle px-0 my-auto d-sm-inline-block d-lg-none d-xxl-inline-block">{% t titles.current-role %}</h2>
+  </a>
+  <div class="col col-lg-6 px-0">
+    <nav class="container-fat navbar navbar-expand-lg navbar-light bg-light d-block d-flex align-items-center px-0"
+      style="z-index: 1021;">
+      <button class="navbar-toggler ms-auto mx-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
         <ul class="navbar-nav d-block d-lg-flex flex-grow-1">
-          <li class="nav-item active d-flex d-lg-none align-items-center">
+          <li class="nav-item active d-flex d-lg-none align-items-center px-0">
             {% include nav-links.html %}
           </li>
           <li class="nav-item dropdown d-flex">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle align-self-center" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Projects
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -39,4 +45,6 @@
         </ul>
       </div>
     </nav>
-    </div>
+
+  </div>
+</div>

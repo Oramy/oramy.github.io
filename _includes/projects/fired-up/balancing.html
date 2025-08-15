@@ -1,27 +1,18 @@
-<h3 class="mb-4">Balancing</h3>
+<h3 class="mb-4">{% t fired-up.balancing.title %}</h3>
 <div class="row">
     <div class="col-lg-6">
-        <h4>Using external playtests</h4>
-        <p>
-            Our UX/UR designer made several playtests to gather feedbacks,
-            but we had not enough iterations to balance the game with only these playtests.
-        </p>
-        <h4>Balancing a game in a small amount of time</h4>
-        <p>
-            We dedicated team playtests to balancing. During these sessions I balanced the game on the fly,
-            taking into account our dev team's skills, which allowed an overall balanced experienced
-            despite our small time resources.
-        </p>
+        <h4>{% t fired-up.balancing.external-playtests.title %}</h4>
+        <p>{% t fired-up.balancing.external-playtests.content %}</p>
+        <h4>{% t fired-up.balancing.short-time.title %}</h4>
+        <p>{% t fired-up.balancing.short-time.content %}</p>
     </div>
     <div class="col-lg-6">
         {% assign image_list = "
                   /assets/images/fired_up/design_documents/balancing-unity-layout.png,
                   /assets/images/fired_up/design_documents/DDA.png
                   " | split: "," %}
-        {% assign caption_list = "
-                  Custom unity layout to have all interesting values to balance during balancing playtests;
-                  Dynamic difficulty adjustment scheme
-                  " | split: ";" %}
+        {% capture captions %}{% t fired-up.balancing.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: ";" %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_balancing" %}
     </div>
 </div>

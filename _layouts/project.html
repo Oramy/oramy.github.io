@@ -42,21 +42,25 @@
   {% endif %}
   <div class="container-fluid mb-1 p-0 bg-light">
     <div class="sticky-top bg-light container-fluid align-items-center mx-auto ">
-      <nav id="navbar-example2" class="navbar bg-none mx-auto container-fluid row">
-        <div class="d-inline-block mx-6 offset-lg-2 col-lg-1 col-3 text-end"><a class="navbar-brand" href="#">{{tproject.title}}</a></div>
-        <ul class="nav nav-pills col-lg-9 col-9">
-          <li class="nav-item">
-            <a class="nav-link" href="#project-presentation">Project Presentation</a>
+      <nav id="navbar-example2" class="navbar bg-none mx-auto 
+        container-fluid row justify-content-start d-none d-lg-flex">
+        <div class="d-block px-6 col-3
+        text-end justify-content-start">
+          <a class="navbar-brand" href="#">{{tproject.title}}</a>
+        </div>
+        <ul class="nav nav-pills col-lg-6 d-flex p-0">
+          <li class="nav-item flex-fill">
+            <a class="nav-link text-center" href="#project-presentation">{% t project-presentation %}</a>
           </li>
           {% if project.missions %}
-          <li class="nav-item">
-            <a class="nav-link" href="#missions">Missions</a>
+          <li class="nav-item flex-fill">
+            <a class="nav-link text-center" href="#missions">{% t missions %}</a>
           </li>
           {% endif %}
           {% if project.detailed-blocks %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#detailed-work" role="button"
-              aria-expanded="false">Detailed Work</a>
+          <li class="nav-item dropdown flex-fill">
+            <a class="nav-link dropdown-toggle text-center" data-bs-toggle="dropdown" href="#detailed-work" role="button"
+              aria-expanded="false">{% t detailed-work %}</a>
             <ul class="dropdown-menu" id="v-pills-nav">
               {% for block in blocks %}
               {% if block.hr %}
@@ -64,17 +68,12 @@
               {% else %}
               {% assign block-id = block["id"] %}
               {% assign block-title = tblocks[block-id] %}
-              {% assign downcased = block-title | downcase | replace: " ", "-" %}
+              {% assign downcased = block-title | slugify:"latin" %}
               <li><a class="dropdown-item v-pills-nav-tab" id="v-pills-nav-tab-{{downcased}}"
                   slug-id="{{downcased}}">{{block-title}}</a></li>
               {% endif %}
               {% endfor %}
             </ul>
-          </li>
-          {% endif %}
-          {% if project.credits %}
-          <li class="nav-item">
-            <a class="nav-link" href="#project-credits">Credits</a>
           </li>
           {% endif %}
         </ul>
@@ -122,13 +121,19 @@
       {% if project.missions %}
       <div class="container-fluid row pt-5">
         <div class="offset-lg-3 col-lg-6" id="missions">
-          <h2 class="p-2 d-inline" id="missions">My missions</h2>
+          <h2 class="p-2 d-inline" id="missions">{% t my-missions %}</h2>
           <div class="row my-2">
             <hr class="col-12">
             {% for mission in project.missions %}
+            {% if forloop.first and forloop.last %}
+              <div class="col-12">
+                {% tf mission %}
+              </div>
+            {% else %}
             <div class="col-12 col-lg-6">
               {% tf mission %}
             </div>
+            {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -140,8 +145,10 @@
       </div>
       {% endif %}
       {% if project.credits %}
-      <div class="container my-3 py-3" id="project-credits">
-        {% tf project.credits %}
+      <div class="container-fluid" id="project-credits">
+        <div class="offset-lg-3 col-lg-6 mt-5">
+          {% tf project.credits %}
+        </div>
       </div>
       {% endif %}
     </div>

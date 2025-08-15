@@ -10,4 +10,195 @@ titles:
   current-role: Game Designer
   games: Jeux
 
+project-presentation: Présentation du projet
+missions: Missions
+my-missions: Mes Missions
+detailed-work: Travail détaillé
+404-page:
+  title: 404
+  description: "<strong>Page introuvable :(</strong><br> La page demandée n'a pas pu être localisée."
 project-page: Voir le projet
+click-to-enlarge: Cliquez pour agrandir
+
+spike:
+  balancing:
+    title: Implémentation et équilibrages des ennemis
+    implementing:
+      title: Implémentation des ennemis
+      content:
+        J'ai utilisé <b>l'animateur Unity</b> et <b>un outil sur mesure
+        de machine à états finis</b> pour implémenter les ennemis du jeu.
+        <br /> J'ai travaillé en collaboration avec le programmeur IA pour
+        améliorer les ennemis.
+    balancing-enemies:
+      title: Équilibrage des ennemis
+      content: Pour équilibrer le jeu, je me suis basé sur <b>les retours internes</b>
+       et <b>des modèles mathématiques</b> basé sur nos intentions d'expérience de jeu.
+    caption-list: la durée de chaque phase d'animation est facilement modifiable.;
+                Une machine à état fini (FSM) que j'ai implémenté pour le spike catcher.;
+                Équilibrage des monstres à l'aide de modèles mathématiques.
+  design-presentations:
+    title: Présentations de Design
+    content: Pour être sur que tout le monde est à jour,
+      nous préparons des présentations qui expliquent
+      <b>les intentions de design</b>, <b>pourquoi les solutions
+      ont été acceptées ou rejetées</b> et ce que nous avons décidé.
+    caption-list: Présentation des mécaniques à l'équipe,
+                  Documentation technique de référence pour expliquer le fonctionnement,
+                  Le système du point de vue utilisateur pour comprendre les intentions,
+                  Solutions classiques pour ce problème de design,
+                  Explications des intentions de design pour expliquer pourquoi les idées sont acceptées/rejetées,
+                  Une vue d'ensemble des détails techniques,
+                  Un lien vers la documentation technique est disponible sur chaque slide,
+                  Donner des intentions aide les User Researchers dans leurs tests,
+                  Réutilisation des schémas de la documentation technique pour améliorer la lisibilité et la cohérence.
+  enemy-design:
+    title: Design des ennemis
+    3Cs:
+      title: Les ennemis à partir des 3Cs
+      content: Nous avons designés nos ennemis <b>en fonction des compétences du personnage.</b>
+            Chaque ennemi challenge une compétence spécifque et chaque
+            compétence est mise à l'épreuve par nos ennemis.
+    constraints:
+      title: Designer avec des contraintes de productions
+      content: <b>Nous avons proposé des character design simple et fonctionnels</b>
+              aux artistes comme une base sur laquelle itérer pour tenir nos échéances.
+              <b>Par exemple</b>, le design du spike catcher correspond à ses pouvoirs,
+              sans avoir eu à animer des mains.
+    caption-list: "<b>Termite</b>: un monstre basique sur le thème de l'esquive et du lancer de pics;
+                    <b>Spike Catcher</b>: un monstre qui contre-attaque et force à se déplacer;
+                    <b>Moustique</b>: un monstre explosif kamikaze pour tenir en alerte;
+                    <b>Luciole</b>: un monstre explosif passif pour ajouter de la variété et du danger au level design."
+  fast-prototyping:
+    title: Prototypage rapide
+    3Cs:
+      title: Prototypage des 3Cs
+      content: Pour pouvoir avoir une meilleure compréhension de nos 3Cs au plus vite,
+        <b>J'ai prototypé une partie du character controller et ajouté du gamefeel</b> comme des animations et des VFX.
+    toys:
+      title: Jouets
+      content: Pour <b>tester nos 3Cs et notre gamefeel</b>, nous avons prototypés des Jouets
+          comme des objets cassables (sur le gif ci-contre).
+  feature-asset-lists:
+    title: Liste d'assets et de features
+    description: Tout au long du projet, nous avons construits plusieurs listes
+              d'asset et de features <b>pour mieux travailler avec les autres</b>.
+              Réfléchir ensemble sur ses listes permet d'être sur
+              la même longueur d'onde et d'évaluer ce qui est le plus important
+              pour le jeu.
+    caption-list: Liste d'actions et de décisions des IA en collaboration avec le programmeur IA.;
+                  Liste et design de signes et feedbacks avec le UX designer.;
+                  Liste d'animations comme document de travail avec notre animatrice externe.
+  technical-documents:
+    title: Documents techniques
+    description: <b>Écrire des documents techniques synthétiques et compréhensibles</b> permet
+                de s'assurer que toute l'équipe partage un vocabulaire commun et
+                des documents de référence.
+                Voilà le document technique que nous avons écrit pour la
+                mécanique de <b>lancer et viser</b>.
+    caption-list: Utilisation de Google Slides pour collaborer facilement,
+                  Vue d'ensemble de la fonctionnalité avant d'aller dans le détail,
+                  Illustrer chaque situation de gameplay par un diagramme crée des documents plus facile à lire,
+                  Utiliser des symboles consistants rend les diagrammes plus facile à lire,
+                  J'ai designé des modèles mathématiques qui correspondent à nos intentions,
+                  Détailler les paramètres importants à tweaker pour faciliter le travail avec les programmeurs,
+                  Détailler nos intentions de design pour que chaque collègue puisse prendre les bonnes décisions.
+fired-up:
+  writing-documents:
+    title: Écrire des documents
+    description: <b>Écrire des documents synthétiques et compréhensibles</b>,
+            modifiables et facilement partageables a été décisif.
+            Voilà un extrait d'un document que j'ai réalisé pour ce projet.
+    caption-list: Écriture des spécifications claires, synthétiques et schématisées;
+                Utilisation de Google Slides pour collaborer plus facilement;
+                L'intégralité du document est fait avec un logiciel pour itérer facilement;
+                Un vocabulaire visuel consistant permet d'avoir un document plus clair.
+  research:
+    decisions-title: Prendre des décisions informées.
+    decisions-content: J'ai travaillé <b>plusieurs sujets</b> pendant
+                      le projet pour prendre <b>des décisions éclairées</b>.
+                      Pour être plus efficace, nous avons partagé
+                      le travail de recherche par thématique au
+                      début du projet.
+    level-design-title: Recherche en level design
+    level-design-content: J'ai aussi itérer sur le level design et tester des idées
+                      pour explorer le champ des possibles pour le projet.
+    caption-list: Recherche sur le game design systémique,
+                  Explorer la pertinence de la verticalité sur nos niveaux,
+                  Itérations et explorations sur le dernier niveau du jeu
+  one-page:
+    title: One Page
+    reminder:
+      title: Rappel
+      content: Un One Page a pour but de donner une vue d'ensemble
+            de <b>toutes les mécaniques sur un poster toujours visible
+            par l'équipe</b>.
+    cuts:
+      title: Cut de features
+      content: Une partie des features ont été cut.
+            Nous avons gardé les mécaniques qui étaient
+            <b>les plus importantes</b> pour construire
+            l'expérience de jeu.
+  metrics:
+    title: Métriques
+    caption-list: Projection de la caméra sur le sol
+                pour dimensionner correctement les niveaux;
+                Zoom minimal de la caméra pour s'assurer que les objets
+                sont assez gros à l'écran;
+                Taille des objets (pas interactif en bleu, interactif en jaune)
+    camera:
+      title: Caméra
+      content: J'ai défini le zoom de la caméra, la taille
+              des objets et des personnages pour <b>s'assurer
+              de la lisibilité du jeu</b>.
+              Cela définit la taille de <b>nos niveaux
+              qu'on veut sur un écran</b>.
+    level-metrics:
+      title: Métriques des niveaux
+      content: La hauteur des murs et leur épaisseur sont définis
+            en fonction de la vue de la caméra pour
+            <b>minimiser les angles morts</b> et
+            <b>construire une circulation claire</b>.
+            <br>Les niveaux ont été construits avec des unités réelles (mètres).
+    helpers:
+      title: Guides
+      content: J'ai créé des guides de taille
+              pour <b>s'assurer que les métriques
+              étaient respectées</b> quand nous avons
+              designés et intégrés les niveaux.
+  balancing:
+    title: Équilibrage
+    external-playtests:
+      title: Playtests externes
+      content: Notre designer UX/UR a organisé plusieurs
+            playtests pour rassembler des retours,
+            mais nous n'avions pas assez de temps pour
+            équilibrer seulement à partir de ces playtests.
+    short-time:
+      title: Équilibrer en peu de temps
+      content: Nos playtests en équipe étaient dédiés à l'équilibrage.
+          Nous avons équilibré en prenant en compte
+          nos biais de développeur·euse·s ce qui nous à permis
+          d'avoir un jeu équilibré malgré nos ressources faibles.
+    caption-list: Une disposition des outils Unity dédiées à l'équilibrage à la volée;
+                  Ajustement dynamique de la difficulté
+  teamwork:
+    title: Travail d'équipe
+    including:
+      title: Inclure l'équipe
+      content: Nous avons organisé des <b>sessions de brainstorming</b>
+              pour <b>collecter des idées et inclure l'équipe</b>.
+              Ces idées ont été la matière première pour décider de
+              mécaniques en cohérence avec les intentions et le scope.
+    informing:
+      title: Tenir l'équipe à jour
+      content: Nous avons tenus des courtes réunions pour
+            <b>tenir régulièrement l'équipe à jour</b>
+            au début du projet.
+    programmers:
+      title: Travailler avec les programmeurs
+      content: Mes <b>compétences d'ingénieurs</b> me permettent
+            de comprendre facilement <b>les enjeux des programmeur·euses</b>
+            et de designer avec <b>le bon niveau de détail</b>.
+    caption-list: Brainstorming sur Miro,
+                Présentations synthétiques pour partager les dernières avancées.

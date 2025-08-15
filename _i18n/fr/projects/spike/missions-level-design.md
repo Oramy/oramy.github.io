@@ -1,3 +1,3 @@
 ### Level design
-- **Creating playgrounds**
-- Macro level design
+- **Création d'aire de jeux**
+- Level design macro

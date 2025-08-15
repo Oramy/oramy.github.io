@@ -1,0 +1,7 @@
+ - Designing **core mechanics**
+ - Designing **3Cs**
+ - Designing **Metrics**
+ - Designing **Signs&Feedbacks**
+ - **Integrating** Assets
+ - **Tweaking** values
+ - Level Design

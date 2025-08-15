@@ -6,28 +6,16 @@
                   /assets/images/fired_up/design_documents/camera_metrics_square.png,
                   /assets/images/fired_up/design_documents/metrics_square.png
                   " | split: "," %}
-        {% assign caption_list = "
-                  Camera projection on ground to build well sized levels;
-                  Camera minimal zoom to ensure objects that are big enough on screen;
-                  Objects size (non-interactable in blue, interactable in yellow)
-                  " | split: ";" %}
+        {% capture captions %}{% t fired-up.metrics.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: ";" %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="fired_up_carousel_metrics" %}
     </div>
     <div class="col-lg-6">
-        <h4>Camera</h4>
-        <p>
-            We defined camera's maximum range, object and character sizes to <b>ensure game readability</b>.
-            This led to our level size as we wanted <b>one-screen levels</b>.
-        </p>
-        <h4>Level Metrics</h4>
-        Walls' height and thickness were then defined on the camera view to <b>minimize
-            blind spots</b> while still <b>ensuring circulation clarity</b>.
-        <br>We used a base unit (1m) to build our levels.
-        </p>
-        <h4>Helpers</h4>
-        <p>
-            I made helpers to <b>ensure metrics were respected</b> when we integrated content
-            and designed levels.
-        </p>
+        <h4>{% t fired-up.metrics.camera.title %}</h4>
+        <p>{% t fired-up.metrics.camera.content %}</p>
+        <h4>{% t fired-up.metrics.level-metrics.title %}</h4>
+        <p>{% t fired-up.metrics.level-metrics.content %}</p>
+        <h4>{% t fired-up.metrics.helpers.title %}</h4>
+        <p>{% t fired-up.metrics.helpers.content %}</p>
     </div>
 </div>

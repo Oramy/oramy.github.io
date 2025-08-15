@@ -1,4 +1,4 @@
-{% assign downcased = include.name | downcase | replace: " ", "-" %}
+{% assign downcased = include.name | slugify:"latin" %}
 
 {% if include.active %}
 <div class="tab-pane fade show active" id="v-pills-{{downcased}}"

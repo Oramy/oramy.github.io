@@ -1,22 +1,12 @@
-<h3 class="mb-4">Implementing & Balancing enemies</h3>
+<h3 class="mb-4">{% t spike.balancing.title %}</h3>
 <div class="row">
     <div class="col-lg-6">
-        <h4>Implementing enemies</h4>
-        <p>
-            I worked inside the engine using <b>Unity's animator</b> and <b>used a custom finite state machine
-                tool</b>
-            to implement enemies into the game.
-            <br />I worked hand-in-hand with the AI programmer to be able to do faster
-            refinements on the enemies.
-        </p>
+        <h4>{% t spike.balancing.implementing.title %}</h4>
+        <p>{% t spike.balancing.implementing.content %}</p>
     </div>
     <div class="col-lg-6">
-        <h4>Balancing enemies</h4>
-        <p>
-            To balance the game, I used <b>internal feedback</b> from the team combined with <b>mathematical
-                balancing</b>
-            based on the target player behaviours we wanted to have.
-        </p>
+        <h4>{% t spike.balancing.balancing-enemies.title %}</h4>
+        <p>{% t spike.balancing.balancing-enemies.content %}</p>
     </div>
     <div class="col-lg-12">
         {% assign image_list = "
@@ -24,11 +14,8 @@
                     /assets/images/spike/design-documents/ai-design/ai-fsm-spike-catcher.png;Spike catcher FSM,
                     /assets/images/spike/design-documents/ai-balancing.png;Spike catcher balancing
                   " | split: "," %}
-        {% assign caption_list = "
-                  All animations phases have easy to tweak timings.;
-                  A finite state machine (FSM) I made to implement the spike catcher's behavior;
-                  Upstream balancing of monsters by using mathematical tests
-                  " | split: ";" %}
+        {% capture captions %}{% t spike.balancing.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: ";" %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-carousel-implementing-enemies" %}
     </div>
 </div>

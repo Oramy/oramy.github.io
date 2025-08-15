@@ -13,3 +13,19 @@ badges:
     - Internship
   -
     - GPP
+background-image: /assets/images/xdefiant/pagebackground.webp
+slide-content-list:
+ - "video;https://www.youtube.com/embed/VUv3ug_uHkE"
+ - "image;/assets/images/xdefiant/xdefiant_screen_1.webp"
+ - "image;/assets/images/xdefiant/xdefiant_screen_2.webp"
+ - "image;/assets/images/xdefiant/xdefiant_screen_3.png"
+ - "image;/assets/images/xdefiant/xdefiant_screen_4.png"
+
+thumbnails:
+ - "/assets/images/xdefiant/thumbnail_video.png"
+ - "/assets/images/xdefiant/xdefiant_screen_1.webp"
+ - "/assets/images/xdefiant/xdefiant_screen_2.webp"
+ - "/assets/images/xdefiant/xdefiant_screen_3.png"
+ - "/assets/images/xdefiant/xdefiant_screen_4.png"
+missions:
+  - projects/xdefiant/gameplay-programming.md

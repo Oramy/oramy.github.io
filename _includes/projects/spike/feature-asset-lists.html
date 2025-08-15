@@ -1,10 +1,6 @@
-<h3 class="mb-4">Feature & asset lists</h3>
+<h3 class="mb-4">{% t spike.feature-asset-lists.title %}</h3>
 <div class="row">
-    <div class="col-lg-12">
-        Throughout the project, we built several asset and feature lists as <b>a way to facilitate
-            the work with others</b>. Building asset lists with other team members allows
-        everyone to be on the same basis and designers to give them information about what is
-        the most important for the game.
+    <div class="col-lg-12">{% t spike.feature-asset-lists.description %}
     </div>
     <div class="col-lg-12">
         {% assign image_list = "
@@ -12,11 +8,8 @@
                   /assets/images/spike/design-documents/asset-lists/asset-list-signs-and-feedback.png;Signs & feedback asset list,
                   /assets/images/spike/design-documents/asset-lists/asset-list-animations-excerpt.png;Animations asset list
                   " | split: "," %}
-        {% assign caption_list = "
-                  AI Action and Decision Asset List to work with the AI programmer.;
-                  Listing and designing Signs & feedback with our UX designer.;
-                  Animation asset list as a work document used with our external animator.
-                  " | split: ";" %}
+        {% capture captions %}{% t spike.feature-asset-lists.caption-list %}{% endcapture %}
+        {% assign caption_list = captions | split: ";" %}
         {% include image_carousel.html images=image_list captions=caption_list carousel-id="spike-carousel-feature-asset-lists" %}
     </div>
 </div>
