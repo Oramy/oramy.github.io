@@ -14,7 +14,7 @@ project-presentation: Présentation du projet
 missions: Missions
 my-missions: Mes Missions
 detailed-work: Travail détaillé
-404-page:
+not-found:
   title: 404
   description: "<strong>Page introuvable :(</strong><br> La page demandée n'a pas pu être localisée."
 project-page: Voir le projet

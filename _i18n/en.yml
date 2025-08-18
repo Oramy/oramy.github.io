@@ -13,7 +13,7 @@ project-presentation: Project Presentation
 missions: Missions
 my-missions: My Missions
 detailed-work: Detailed Work
-404-page:
+not-found:
   title: 404
   description: "<strong>Page not found :(</strong><br> The requested page could not be found."
 
