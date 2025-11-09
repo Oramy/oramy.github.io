@@ -87,7 +87,7 @@ jobs:
           # if you are including the line below, make sure your source files are NOT in the master branch:
           # publish_branch: master
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           # upload entire directory
           path: './_site'
