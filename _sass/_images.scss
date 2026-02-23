@@ -69,7 +69,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 100%;
+  clip-path: inset(0px 50% 0px 0px);
+  image-rendering: smooth;
   object-fit: cover;
   object-position: left;
 }
