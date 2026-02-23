@@ -1,23 +1,23 @@
 ---
-layout: default
+layout: page
 ---
-<article>
-
-  <header>
-    <h1>{{ page.title | escape }}</h1>
-    <p class="text-muted">
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • {{ page.author }}
-      {%- endif -%}
-    </p>
-  </header>
-
-  <section>
+  <div class="container-fluid mb-1 p-0 bg-light">
+      <div class="container-fluid row pt-5">
+        <div class="offset-lg-4 col-lg-4" id="missions">
+          <h1 class="mb-0 mt-0">{{ page.title }}</h1>
+<p >{{ page.date | date_to_string }} - {{ page.author }}</p>
     {{ content }}
-  </section>
+    <div class="d-flex justify-content-between mt-5 mb-2">
 
-</article>
+          {% if page.previous %} 
+        <a rel="prev" href="{{ page.previous.url }}">&larr; {{page.previous.title}} (Older)</a>
+        {% else %}
+        <a></a>
+    {% endif %}
+    {% if page.next %} 
+        <a rel="next" href="{{ page.next.url }}">{{page.next.title}} (Newer) &rarr;</a>
+    {% endif %}
+    </div>
+        </div>
+      </div>
+  </div>

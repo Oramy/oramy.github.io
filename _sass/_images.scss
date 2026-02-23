@@ -23,3 +23,157 @@
     /* symbol for "collapsed" panels */
     content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
+
+.image-comparison {
+  width: 100%;
+}
+
+.images-container{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.image-comparison picture{
+
+  display:block;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.image-comparison img 
+{
+  display:block;
+  width:100%;
+  height:100%; 
+}
+
+.image-comparison picture{
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: left;
+}
+
+.image-comparison .images-container .before-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.image-comparison .images-container .before-img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.slider-line{
+  position:absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  transform: translate(-50%, 0%);
+}
+.slider-icon {
+  position: absolute;
+  left: auto;
+  top:50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%)rotate(90deg) ;
+  width: 50px;
+  height:auto;
+}
+
+.image-comparison .slider {
+
+  position:absolute;
+  inset:0;
+  opacity: 0;
+  top:50%;
+  transform: translate(0%, -50%);
+  width: 100%;
+  height:100%;
+  z-index:2;  
+}
+.image-layers {
+
+  margin: 40 px auto;
+  width: 100%;  
+}
+.image-layers img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.first-layer {
+  position: relative;
+}
+.other-layer
+{
+  display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ overflow: visible;
+ object-fit: cover;
+ object-position: left; 
+ animation: layer-border-anim 1ms linear;
+ animation-timeline: view(500px 0px);
+}
+.scroller {
+  scroll-timeline-name: --main-scroll-timeline;
+}
+
+.image-layers .images-container {
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 0deg) rotate3d(1,0,0, 0deg);
+  perspective: none;
+  animation: rotate-layers 1ms linear;
+  animation-timeline: view(500px 0px);
+}
+@keyframes rotate-layers{
+
+  0% {
+    transform: scale3d(.5,.5,.5) rotate3d(0, 1, 0, 45deg) rotate3d(1,0,0, 70deg);
+    perspective: none;
+  }
+  40% {
+      transform: rotate3d(0, 1, 0, 45deg) rotate3d(1,0,0, 70deg);
+    perspective: none;
+  }
+  80% , 100% {
+    transform:  rotate3d(0, 1, 0, 0deg);
+    perspective: none;
+  }
+}
+@keyframes layer-border-anim{
+
+  from {
+    border: lab(78.2% 11.96 -33.28 / 0.7) 1px solid;
+
+    border-radius: 12px;
+    background: lab(78.2% 11.96 -33.28 / 0.1);
+  }
+  to {
+    border: lab(78.2% 11.96 -33.28 / 0) 1px solid;
+    border-radius: 12px;
+    background: lab(78.2% 11.96 -33.28 / 0);
+  }
+}
+.image-layers picture{
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  object-fit: cover;
+  object-position: left;
+}

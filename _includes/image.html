@@ -1,0 +1,11 @@
+        {% assign image=include.image %}
+        {% assign splits= image | split: ";"%}
+
+        {% assign imageFile= splits[0] | split: "."%}
+                <picture class="{{include.classInclude}}"style="{{include.style}}">
+                    {% unless image contains "gif" %}
+                        <source type="image/webp" srcset="{{imageFile[0]}}.webp">
+                    {% endunless %}
+                    <source type="image/{{imageFile[1]}}" srcset="{{imageFile[0]}}.{{imageFile[1]}}">
+                    <img src="{{image}}"  alt="{{splits[1]}}" class="d-block {% unless include.classInclude %} w-100 mb-5{% endunless %}">
+                </picture>

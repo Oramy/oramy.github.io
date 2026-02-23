@@ -1,0 +1,16 @@
+            <div class="image-layers">
+                <div class="images-container">
+                    {% for imageNumber in include.images %}
+                    {% assign splits= include.image | split:";" %}
+                    {% assign imageRad =  include.image | split: "."%}
+                    {% assign imageFile = imageRad[0] | append: imageNumber | append: "." | append: imageRad[1] %}
+                    {% if forloop.first %}
+                    {% include image.html image=imageFile classInclude="first-layer" %}
+                    {% else %}
+                    {% assign styleTag = "transform:  translate3d(0, 0, calc("|append: forloop.index0| append:"* 30px));"%}
+                    {% include image.html image=imageFile classInclude="other-layer" style=styleTag%}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+

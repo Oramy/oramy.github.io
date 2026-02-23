@@ -61,4 +61,10 @@ $(".clickable-card").on('mouseenter', function() {
   var requestID = requestAnimationFrame(anim);
 })
   }
+  $(".slider").on("input", function (){
+    var sliderValue = $(this).val() + "%";
+    $(this).parent().children(".before-img").children("img").css('width', sliderValue);
+    $(this).parent().children(".slider-icon").css('left', sliderValue);
+    $(this).parent().children(".slider-line").css('left', sliderValue);
+  });
 });

@@ -24,6 +24,11 @@ github_username:  Oramy
 
 repository: "oramy/oramy.github.io"
 
+show_drafts: null
+limit_posts: 0
+future: false
+unpublished: false
+
 # Build settings
 plugins:
   - jekyll-feed
