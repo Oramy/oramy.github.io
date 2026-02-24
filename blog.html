@@ -20,18 +20,18 @@ permalink: /blog/
           <h2 class="h2 mt-2">{{ post.title }}</h2>
           <p class="align-self-end text-muted">{{ post.date | date_to_string }} - {{ post.author }}</p>
           </div>
-          <p class="card-text text-dark mb-2">{{ post.excerpt }}...</p>
+          <p class="card-text text-dark mb-2">{{ post.excerpt }}</p>
         </div>
         {% else %}
     <li class="text-decoration-none list-group-item list-group-item-action">
       <a href="{{ post.url }}" class="text-decoration-none">
-        <div>
+        <div class="text-muted">
           <div class="d-flex justify-content-between">
 
           <h2 class="h4 mt-2 text-dark">{{ post.title }}</h2>
           <p class="align-self-end text-muted">{{ post.date | date_to_string }} - {{ post.author }}</p>
           </div>
-          <p class="card-text text-muted mb-2">{{ post.excerpt }}...</p>
+          <p class="card-text text-muted mb-2">{{ post.excerpt }}</p>
         </div>
         {% endif %}
       </a>
