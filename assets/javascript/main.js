@@ -63,7 +63,8 @@ $(".clickable-card").on('mouseenter', function() {
   }
   $(".slider").on("input", function (){
     var sliderValue = $(this).val() + "%";
-    $(this).parent().children(".before-img").children("img").css('width', sliderValue);
+    var sliderValueRev = (100-$(this).val()) + "%";
+    $(this).parent().children(".before-img").children("img").css('clip-path', "inset(0px "+sliderValueRev+" 0px 0px)");
     $(this).parent().children(".slider-icon").css('left', sliderValue);
     $(this).parent().children(".slider-line").css('left', sliderValue);
   });

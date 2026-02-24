@@ -69,7 +69,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 100%;
+  clip-path: inset(0px 50% 0px 0px);
+  image-rendering: smooth;
   object-fit: cover;
   object-position: left;
 }
@@ -92,6 +94,13 @@
   transform: translate(-50%, -50%)rotate(90deg) ;
   width: 50px;
   height:auto;
+  opacity: 0;
+  transition: .1s linear, transform 0s linear, left 0s linear;
+}
+
+.images-container:hover .slider-icon
+{
+  opacity:1;
 }
 
 .image-comparison .slider {
@@ -130,6 +139,7 @@
  animation: layer-border-anim 1ms linear;
  animation-timeline: view(500px 0px);
 }
+
 .scroller {
   scroll-timeline-name: --main-scroll-timeline;
 }
