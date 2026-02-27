@@ -13,9 +13,6 @@ badges:
   -
     - 4months
     - 10developers
-  -
-    - GD
-    - CD
 missions:
  - projects/spike/missions-game-design.md
  - projects/spike/missions-level-design.md

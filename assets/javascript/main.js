@@ -68,4 +68,14 @@ $(".clickable-card").on('mouseenter', function() {
     $(this).parent().children(".slider-icon").css('left', sliderValue);
     $(this).parent().children(".slider-line").css('left', sliderValue);
   });
+
+  const fadeInObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        $(entry.target).removeClass("basic-fade-in");
+        $(entry.target).addClass("basic-fade-in-active");
+      }
+    })
+  }, {threshold:1.0});
+  $(".basic-fade-in").each((i,e)=>fadeInObserver.observe(e));
 });
