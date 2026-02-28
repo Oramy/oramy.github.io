@@ -7,6 +7,11 @@
     {% assign tproject = site.data.i18n.[site.lang].projects[project_id] %}
     {% if project.featured %}
     {% assign index = index | plus: 1 %}
+    <div class="position-relative">
+
+      <div class="position-absolute h-100 w-100">
+        <div class="border border-primary-subtle rounded row fade-in-slot h-100" style="opacity:1;"></div>
+      </div>
   <div class="row bg-light basic-fade-in border-0 my-3 border">
      {% assign odd = index | modulo: 2 %}
      {% if odd == 1 %}
@@ -46,6 +51,7 @@
         </div>
       </div>
   </div>
+    </div>
     {% endif %}
     {% endfor %}
 </div>

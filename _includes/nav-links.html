@@ -1,16 +1,18 @@
 
-    <div class="justify-self-end">
-        <ul class="list-unstyled d-inline">
-            <li class="d-inline-block"><a class="badge bg-light text-dark" href="https://linkedin.com/in/amaury-butaux"><span class="nav-other-websites-desc bi bi-linkedin"> LinkedIn</span></a></li>
-            <li class="d-inline-block"><a class="badge bg-light text-dark" href="https://oramy.itch.io"><img width="13.33" height="12" src="{{"/assets/images/itchio-textless-black.svg" | prepend: site.baseurl_root }}" alt="itch.io icon" class="inline-image"/><span class="nav-other-websites-desc"> itch.io</span></a></li>
-            <li class="d-inline-block"><a class="badge bg-light text-dark" href="{{"/resume.pdf" | relative-url}}"><span class="nav-other-websites-desc bi bi-file-person"> {% t nav.resume %}</span></a></li>
-        </ul>
-    </div>
-    <div class="nav-item d-flex justify-content-end mx-4">
-        {% if site.lang == "fr" %}
-        <a href="{% tl {{page.namespace}} en %}"><span class="fi fi-fr"></span></a>
-        {% elsif site.lang == "en" %}
-        <a href="{% tl {{page.namespace}} fr %}"><span class="fi fi-gb"></span></a>
-        {% endif %}
-    </div>
-</li>
+            <li class="nav-item {{include.classInclude}} ms-3"><a class="text-decoration-none nav-link" href="https://linkedin.com/in/amaury-butaux">LinkedIn <span class="nav-other-websites-desc bi bi-linkedin"></span></a></li>
+            <li class="nav-item {{include.classInclude}}"><a class="text-decoration-none nav-link" href="https://oramy.itch.io"><span class="nav-other-websites-desc">itch.io </span><img width="19" height="16" src="{{"/assets/images/itchio-textless-black.svg" | prepend: site.baseurl_root }}" alt="itch.io icon" class="inline-image"/></a></li>
+            <li class="nav-item {{include.classInclude}}"><a class="text-decoration-none nav-link" href="{{"/resume.pdf" | relative-url}}">{% t nav.resume %} <span class="nav-other-websites-desc bi bi-file-person"></span></a></li>
+          <li class="nav-item dropdown {{include.classInclude}} ms-auto">
+            <a class="nav-link dropdown-toggle align-self-center" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              {% if site.lang == "fr" %}
+              Français
+              {% else %}
+              English
+              {% endif %}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="dropdown-item"><a href="{% tl {{page.namespace}} fr %}" class="nav-link">Français</a></li>
+              <li class="dropdown-item"><a href="{% tl {{page.namespace}} en %}" class="nav-link">English</a></li>
+            </ul>
+          </li>
