@@ -8,6 +8,10 @@ img {
   max-width: 100%;
 }
 
+.profile
+{
+  min-width: 0;
+}
 
 .structure-logo {
   max-height: 100%;
@@ -260,4 +264,8 @@ background: linear-gradient(to right, #367867 0%, lab(29.27% -24.64 17.94) 100%)
   2%, 100% {
     opacity: 0;
   }
+}
+
+.hello {
+ font-size: calc(1.3rem + 3.4vw);
 }

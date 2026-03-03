@@ -13,7 +13,7 @@
     {% assign index = index | plus: 1 %}
     <div class="position-relative">
       <div class="position-absolute w-100 h-100">
-        <div class="border border-primary-subtle row fade-in-slot h-100" style="opacity:1;"></div>
+        <div class="border border-primary-subtle row m-0 fade-in-slot h-100" style="opacity:1;"></div>
       </div>
   <div class="bg-light basic-fade-in border-0 my-3 border">
      {% assign odd = index | modulo: 2 %}
@@ -22,7 +22,7 @@
     {% else %}
     {% assign video-class = "order-lg-first" %}
     {% endif %}
-    <div class="row">
+    <div class="row m-0">
 
      <video title="{{ project.title }}" preload="auto" autoplay loop muted class="col-12 col-lg-6 {{video-class}} p-0">
 
