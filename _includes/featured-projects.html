@@ -1,4 +1,8 @@
-<div class="fat-container bg-primary-subtle">
+<div class="fat-container position-relative">
+  <div class="position-absolute p-5 w-100 h-100" id="work">
+    <div class="bg-primary-subtle w-100 h-100">
+    </div>
+  </div>
     {% assign index = 0 %}
     {% assign sorted_projects = site.data.projects | sort %}
     {% for project_hash in sorted_projects %}
@@ -8,23 +12,24 @@
     {% if project.featured %}
     {% assign index = index | plus: 1 %}
     <div class="position-relative">
-
-      <div class="position-absolute h-100 w-100">
-        <div class="border border-primary-subtle rounded row fade-in-slot h-100" style="opacity:1;"></div>
+      <div class="position-absolute w-100 h-100">
+        <div class="border border-primary-subtle row fade-in-slot h-100" style="opacity:1;"></div>
       </div>
-  <div class="row bg-light basic-fade-in border-0 my-3 border">
+  <div class="bg-light basic-fade-in border-0 my-3 border">
      {% assign odd = index | modulo: 2 %}
      {% if odd == 1 %}
     {% assign video-class = "order-lg-last" %}
     {% else %}
     {% assign video-class = "order-lg-first" %}
     {% endif %}
+    <div class="row">
+
      <video title="{{ project.title }}" preload="auto" autoplay loop muted class="col-12 col-lg-6 {{video-class}} p-0">
 
         <source src="{{ project.sd-no-sound-video | prepend: site.baseurl_root }}" type="video/mp4">
         <p>{{ tproject.title }}</p>
      </video>
-      <div class="text-start rounded p-3 text-left col-12 col-lg-6 d-flex justify-content-between flex-column">         
+      <div class="text-start p-3 bg-light shadow text-left col-12 col-lg-6 d-flex justify-content-between flex-column">         
         <div>
         <div class="px-2 row">
           <h2>{{ tproject.role }}
@@ -50,8 +55,19 @@
           </div>
         </div>
       </div>
+    </div>
   </div>
     </div>
     {% endif %}
     {% endfor %}
 </div>
+<div class="fixed-bottom d-flex w-100 bottom-0 scroll-discover">
+      <div class="fs-4 text-align-center text-light mx-auto mb-5">
+        <button href="#work" class="border-primary-subtle d-block bg-primary text-light fs-4 btn btn-primary shadow px-4 py-2 mb-2">
+        Scroll to discover my work!
+        </button>
+        <div class="d-flex justify-content-center">
+          <svg width="50px" height="50px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#367867" stroke="#F8F9FA" stroke-width="15"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#367867"></path></g></svg>
+        </div>
+      </div>
+    </div>

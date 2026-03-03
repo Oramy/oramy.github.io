@@ -1,13 +1,13 @@
 <div class="bg-light">
-    <nav class="container-fat navbar navbar-expand-lg navbar-light bg-light d-block d-flex align-items-center p-0"
+    <nav class="px-0 container-fat navbar navbar-expand-lg navbar-light bg-light d-block d-flex align-items-center p-0"
       style="z-index: 1021;">
   <a href="{% tl home %}"
-    class="navbar-brand d-flex bg-primary px-4 py-3 align-items-center">
+    class="navbar-brand d-flex bg-primary px-4 py-2 align-items-center">
     <img class="rounded-circle d-inline-block mr-3" width="30" height="30" lt="Profile picture"
       src="{{ "/assets/images/photo_linkedin.webp" | prepend: site.baseurl_root }}" />
       <div class="my-auto d-inline-block">
         <h1 class="h5 px-3 my-auto text-light d-inline-block">{{ site.title }}</h1>
-        <h2 class="h6 px-0 p-2 my-auto text-light d-sm-inline-block d-lg-none d-xxl-inline-block">{% t titles.current-role %}</h2>
+        <h2 class="h6 px-0 p-2 my-auto text-light d-none  d-xxl-inline-block">{% t titles.current-role %}</h2>
 
       </div>
   </a>
@@ -17,8 +17,8 @@
       </button>
       <div class="collapse navbar-collapse align-items-center flex-grow-1" id="navbarSupportedContent">
         <ul class="navbar-nav d-lg-flex flex-grow-1">
-            {% include nav-links.html classInclude="d-lg-none d-flex" %}
-          <li class="nav-item dropdown">
+            {% include nav-links.html classInclude="d-lg-none" %}
+          <li class="nav-item dropdown ms-3">
             <a class="nav-link dropdown-toggle align-self-center" href="#" id="navbarDropdownMenuLink" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Projects

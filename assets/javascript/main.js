@@ -78,4 +78,8 @@ $(".clickable-card").on('mouseenter', function() {
     })
   }, {threshold:1.0});
   $(".basic-fade-in").each((i,e)=>fadeInObserver.observe(e));
+  $(".scroll-discover .btn").on("click", () =>
+  {
+    $("#work")[0].scrollIntoView({behavior:"smooth", block: "start"});
+  });
 });
