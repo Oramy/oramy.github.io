@@ -14,4 +14,310 @@
   <script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | prepend: site.baseurl_root }}"></script>
   <script src="{{"/assets/javascript/main.js" | prepend: site.baseurl_root }}"></script>
   <script src="{{"/assets/javascript/magnifying-glass.js" | prepend: site.baseurl_root }}"></script>
+  <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
+  <script type="x-shader/x-fragment" id="Image">
+    precision highp float;
+
+    uniform float iTime;
+    uniform vec2 iResolution;
+    uniform vec4 iMouse;
+    uniform vec4 iForeground;
+// sdfs : https://iquilezles.org/articles/distfunctions2d/
+// raymarching: https://www.youtube.com/watch?v=khblXafu7iA
+vec3 palette( in float t )
+{
+    vec3 a = vec3(.5,.5,.5);
+    vec3 b = vec3(.5, .5, .5);
+    vec3 c = vec3(1., 1., .5);
+    vec3 d = vec3(0.8, 0.9, 0.30);
+    return a + b*cos( 6.28318*(c*t+d) );
+}
+
+float circle (vec2 p, float r)
+{
+    return length(p) - r;
+}
+
+float onion(float d, float r)
+{
+    return abs(d) - r;
+}
+
+float sdBox( in vec2 p, in vec2 b )
+{
+    vec2 d = abs(p)-b;
+    return length(max(d,0.0)) + min(max(d.x,d.y),0.0);
+}
+
+float sdEquilateralTriangle( in vec2 p, in float r )
+{
+    const float k = sqrt(3.0);
+    p.x = abs(p.x) - r;
+    p.y = p.y + r/k;
+    if( p.x+k*p.y>0.0 ) p = vec2(p.x-k*p.y,-k*p.x-p.y)/2.0;
+    p.x -= clamp( p.x, -2.0*r, 0.0 );
+    return -length(p)*sign(p.y);
+}
+
+vec2 grid(in vec2 uv, vec2 tile)
+{
+    return mod(uv, tile) - tile *.5;
+}
+vec2 pixelated(vec2 p, vec2 tile) {
+    return p - mod(p, tile);
+}
+
+float sdSphere(vec3 p, float r) {
+    return length(p) - r;
+}
+
+vec3 rot3D(vec3 p, vec3 axis, float angle) {
+    return mix(dot(axis, p) * axis, p, cos(angle))
+    + cross(axis, p) * sin(angle);
+}
+
+float sdBox(vec3 p, vec3 b) {
+    vec3 q = abs(p) - b;
+    return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), .0);
+}
+
+mat2 rot2D(float angle) {
+    float s = sin(angle);
+    float c = cos(angle);
+    return mat2(c, -s, s, c);
+}
+
+void grid(in vec3 uv, out vec3 oUv, vec3 tile)
+{
+    oUv = mod(uv, tile) - tile *.5;
+}
+vec3 pixelated(vec3 p, vec3 tile) {
+    return p - mod(p, tile);
+}
+
+
+float map(vec3 p) {
+    vec3 spherePos = vec3(.0, 0., 0.);
+    
+    vec3 q = p - spherePos;
+
+    //q.xy *= rot2D(iTime * .05);
+    //q.xz *= rot2D(iTime * .05);
+    //vec3 tile = mix(vec3(3.), vec3(5.),(sin(iTime) + 1.) / 2.);
+    vec3 tile = vec3(2.,2.,3.);
+    grid(q, q, tile);
+    q.xy *= rot2D(iTime * .5);
+    q.xz *= rot2D(iTime * .5);
+    vec3 pixelCoordinates = pixelated(p, tile);
+    float m = mod(pixelCoordinates.x + pixelCoordinates.y + pixelCoordinates.z, 2. * tile.x) / tile.x;
+    return mix(sdBox(q, vec3(.3)), sdSphere(q, .3), 0.);
+}
+
+
+vec2 rayMarching(vec2 uv)
+{
+    vec3 ro = vec3(3. + cos(iTime*.1) * 3.,0.,-3. + iTime*.25);
+    vec3 rd = normalize(vec3(uv, 1));
+    rd.xy *= rot2D(.5);
+    rd.xz *= rot2D(.25);
+    vec3 col = vec3(0);
+    
+    float t = 0.;
+    float hit = 0.;
+    
+    vec2 m = (iMouse.xy - iResolution.xy*.5)/iResolution.xy;
+    if (iMouse.z < 0.) m = vec2(sin(iTime*.2), sin(iTime));
+    
+    for (int i = 0; i < 100; i++) {
+        vec3 p = ro + rd * t;
+
+        float d = map(p);
+        t += d;
+        
+        if (d < .001)
+        {
+            hit = 1.-d;
+            break;
+        }
+        if (t > 10.)
+        {
+            hit = -1.;
+            break;
+        }
+    }
+    
+    return vec2(hit, t);
+}
+
+float halftone(vec2 uv, vec2 tileSize, float p) {
+    float e = max(1.0/iResolution.x, 1.0/iResolution.y);
+    vec2 uv2 = grid(uv, tileSize);
+    if (p > -.001)
+      return 1.;
+    float d2 = smoothstep(e, -e, p);
+    float littleSize = mix(-.001, tileSize.x/3., d2);
+    
+    float m1 = uv.x - uv.y;
+    float m2 = uv.y - uv.x;
+    float seye = mix(mix(circle(uv2, littleSize), 
+        sdBox(uv2, vec2(littleSize, littleSize)),
+        clamp(mix(m1, 1.-m2, sin(iTime)), 0., 1.)),
+        sdEquilateralTriangle(uv2, littleSize),
+        clamp(mix(m2, 1.-m1, sin(iTime)), 0., 1.)
+        );
+    seye = onion(seye, e);
+    
+    return seye;
+}
+float halftone2(vec2 uv, vec2 tileSize, float p) {
+    float e = max(1.0/iResolution.x, 1.0/iResolution.y);
+    vec2 uv2 = grid(uv, tileSize);
+    float d2 = smoothstep(e, -e, p);
+    float littleSize = mix(-.001, tileSize.x/3., d2);
+    
+    float m1 = uv.x - uv.y;
+    float m2 = uv.y - uv.x;
+    float seye = mix(mix(circle(uv2, littleSize), 
+        sdBox(uv2, vec2(littleSize, littleSize)),
+        clamp(mix(m1, 1.-m2, sin(iTime)), 0., 1.)),
+        sdEquilateralTriangle(uv2, littleSize),
+        clamp(mix(m2, 1.-m1, sin(iTime)), 0., 1.)
+        );
+    
+    return seye;
+}
+
+
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    // Normalized pixel coordinates (from 0 to 1)
+    float e = max(1.0/iResolution.x, 1.0/iResolution.y);
+    vec2 uv = (fragCoord - iResolution.xy*0.5) * e;
+    vec2 fgCenter = (iForeground.xy - iResolution.xy*0.5)*e;
+    vec2 fgSize = iForeground.zw * e;
+    
+    vec2 m = (iMouse.xy - iResolution.xy*.5)*e;
+    // Center-shape
+    vec2 uv3 = rot2D(iTime) * uv;
+    float triangle = sdBox(uv-fgCenter, fgSize);
+    float onionAnim = mix(-4., 4.,(sin(iTime*.5) + 1.)/2.); 
+    float triOutline = onion(triangle, e);
+
+    float cSize = .1 + iMouse.w / 10.;
+    float mouseCircle =  min(circle(uv - m, cSize), onion(circle(uv-m, (1.-iMouse.z)*2.*cSize + cSize-.1), .2*iMouse.z-.1));
+    float mouseCircleAA = smoothstep(-20.*e, 20.*e, mouseCircle); 
+    
+    // ray-marching
+    vec2 tileSize = vec2(e * 10., e*10.);
+    vec2 pixUV = pixelated(uv, tileSize);
+    vec2 march = rayMarching(pixUV);
+    
+    // halftone
+    float d2 = halftone(uv, tileSize*4., -march.x*.1);
+    float d3 = halftone(uv, tileSize, -march.x*.1);
+    float d = halftone(uv, tileSize*4., -march.x*.1);
+    
+    // Anti-aliasing
+    float halfToneAA = smoothstep(e, -e, d);
+    float ihalfToneAA = smoothstep(e, -e, d2);
+    float iihalfToneAA = smoothstep(e, -e, d3);
+    float triAA = smoothstep(30.*e, -30.*e, triangle);
+    float triOutlineAA = smoothstep(e, -e, triOutline);
+    
+    vec3 col = 
+    mix(
+      mix(
+        1. - vec3(halfToneAA) * vec3(palette(march.y).x)*.1,
+        1. - ihalfToneAA * vec3(54./255., 120./255., 103./255.)*.1, 
+        1. - triAA),
+      1. - vec3(iihalfToneAA)*
+        mix(mix(palette(march.y), 
+        vec3(54./255., 120./255., 103./255.),
+        0.8),vec3(.1), triAA*.8),
+      clamp(1.-mouseCircleAA, 0., 1.));
+    // Output to screen
+    fragColor = vec4(col,1.0);
+}
+    void main() {
+      mainImage(gl_FragColor, gl_FragCoord.xy);
+    }
+  </script>
+  <script>
+    // mouse coordinates taken from from the mousemove event expressed in "CSS pixels"
+var mouseX;
+var mouseY;
+var mouseZ = 0;
+var mouseW = 0;
+
+document.addEventListener("mousemove", (event) => {
+   mouseX = event.clientX;
+   mouseY = event.clientY;
+});
+document.addEventListener("mousedown", (event) => {
+  mouseZ = 1;
+  mouseW += 1;
+  mouseW *= 1.2;
+});
+document.addEventListener("mouseup", (event) => {
+});
+ window.addEventListener("DOMContentLoaded", () => {
+   
+    shaderWebBackground.shade({
+      canvas: document.getElementById("my-canvas"),
+  onInit: (ctx) => {
+    // we can center the mouse even before any "mousemove" event occurs
+    // note, we are 
+    mouseX = ctx.cssWidth / 2;
+    mouseY = ctx.cssHeight / 2;
+    // for convenience you can store your attributes on context
+    ctx.iFrame = 0;
+  },
+  onResize: (width, height, ctx) => {
+    ctx.iMinDimension = Math.min(width, height);
+  },                 
+  onBeforeFrame: (ctx) => {
+    ctx.shaderMouseX = ctx.toShaderX(mouseX);
+    ctx.shaderMouseY = ctx.toShaderY(mouseY);
+    var fgIdRect = document.getElementById("my-fg").getBoundingClientRect();
+    if (mouseZ > 0.)
+      mouseZ = Math.max(0., mouseZ - 0.04);
+    if (mouseW > 0.)
+      mouseW = mouseW*.98;
+  
+    ctx.fx = (ctx.toShaderX(fgIdRect.left) + ctx.toShaderX(fgIdRect.right)) / 2.;
+    ctx.fw = (ctx.toShaderX(fgIdRect.right) - ctx.toShaderX(fgIdRect.left)) / 2.;
+    ctx.fy = (ctx.toShaderY(fgIdRect.bottom) + ctx.toShaderY(fgIdRect.top)) / 2.;
+    ctx.fh = (ctx.toShaderY(fgIdRect.top) - ctx.toShaderY(fgIdRect.bottom)) / 2.;
+    console.log(ctx.fw, ctx.fh, ctx.fx, ctx.fy);
+  },
+  shaders: {
+    // the last shader will render to screen
+    Image: {
+      uniforms: {
+        // uniform value calculated in place
+        iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
+        // uniform values taken from context
+        iFrame: (gl, loc) => gl.uniform1i(loc, ctx.iFrame),
+        iMinDimension: (gl, loc, ctx) => gl.uniform1f(loc, ctx.iMinDimension),
+        iResolution: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
+        iMouse: (gl, loc, ctx) => gl.uniform4f(loc, ctx.shaderMouseX, ctx.shaderMouseY,mouseZ, mouseW),        
+        iChanel0: (gl, loc, ctx) => ctx.texture(loc, ctx.buffers.BufferD),
+        iForeground: (gl, loc, ctx) => gl.uniform4f(loc, ctx.fx, ctx.fy, ctx.fw, ctx.fh)
+        // ... more uniforms
+      }
+    }    
+  },
+  onAfterFrame: (ctx) => {
+    ctx.iFrame++;
+  },
+  // custom error handler
+  onError: (error, canvas) => {
+    canvas.remove();
+    console.error(error);
+    document.documentElement.classList.add("my-fallback");
+  }
+});
+ });
+  </script>
 </head>

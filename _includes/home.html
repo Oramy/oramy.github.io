@@ -1,14 +1,20 @@
-<div class="bg-primary-subtle shadow">
 
-<div class="fat-container px-2 bg-primary-subtle">
-  <p class="px-0 mx-5 pt-5 text-primary hello"><b>Hello! I am Amaury&nbsp;Butaux,</b></p>
-<div class="align-self-center mx-0 row mb-5 pt-0 px-0 basic-fade-in-active">
-  <div class=" py-0 px-5 mb-4 border-primary col-12 col-md-auto">
-    <img  max-width="320" class="h-auto" lt="Profile picture"
-      src="{{ "/assets/images/photo_linkedin.webp" | prepend: site.baseurl_root }}" />
-  </div>
-  <div class="sequential-fade-in px-5 col-auto col-lg-6">
+<div class="shadow position-relative shader-web-background mb-5">
+  <canvas id="my-canvas" class="position-absolute w-100 h-100"></canvas>
+<div class="fat-container position-relative">
+  <div class="">
+        <div class="content">
+  <div class="order-last row pt-5">
+    <img  class="col-lg-4 d-inline-block" lt="Profile picture" 
+      src="{{ "/assets/images/new-profile-landing.webp" | prepend: site.baseurl_root }}" />
 
+    <div class="col-lg-8">
+
+      <div class="text-landing py-5 rounded border-dark border-primary" id="my-fg">
+
+    <p class="px-0 mx-5 text-primary fs-1"><b>Hello! I am Amaury&nbsp;Butaux,</b></p>
+    <div class="sequential-fade-in px-5">
+  
 <!--<p class="fs-1 lh-1 py-0 my-1 text-primary align-self-center">
   Hello! I am Amaury Butaux,  </p>-->
   <div class="m-0">
@@ -16,18 +22,27 @@
   <p class="fs-3 m-0">with <b class="special-emphasis">3 years</b> of professional experience on a shipped PC game.</p>
   <p class="fs-3 m-0">and a strong interest for <b class="special-emphasis">tech</b>, <b class="special-emphasis">UX</b> and <b class="special-emphasis">UI</b>. </p>
   <p></p>
+      </div>
   </div>
+    </div>
 </div>
 </div>
+        </div>
+    </div>
+
 </div>
 </div>
-<div class="fat-container px-2">
+<div class="pt-5">
+
+<div class="fat-container bg-white px-2">
+<h1 class="text-center mb-4">Featured projects</h1>
 {% include featured-projects.html %}
-<hr class="my-5">
+</div>
+</div>
+<!--<hr class="my-5">
 <div class="jumbotron-fluid mx-0 px-0 paralsec paral">
   <div class="px-3 py-5 my-0 text-left">
     <div class="container-fat">
-      <!-- Example row of columns -->
       <div class="row d-flex justify-content-between">
         <div class="col-md-4 my-3">
           {% tf home/user-centric-design.html %}
@@ -50,6 +65,7 @@
   {% assign sorted_projects = site.data.projects | sort %}
   {% include project-list.html projects=sorted_projects %}
 </div>
+-->
 <!--
 <hr class="my-5">
 <div class="container-fluid bg-dark py-5 d-flex">
@@ -63,4 +79,4 @@
   </div>
 </div>
 -->
-<hr class="w-100 my-0 py-5 bg-dark">
+<hr class="w-100 my-0 border-0 py-5 bg-white">

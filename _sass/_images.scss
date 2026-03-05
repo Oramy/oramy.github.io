@@ -244,7 +244,7 @@ img {
 }
 
 .special-emphasis {
-  background: #367867;
+    background: #367867;
 background: linear-gradient(to right, #367867 0%, lab(29.27% -24.64 17.94) 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -265,7 +265,35 @@ background: linear-gradient(to right, #367867 0%, lab(29.27% -24.64 17.94) 100%)
     opacity: 0;
   }
 }
+.stripes
+{
+  background: repeating-linear-gradient(
+  45deg,
+  lab(99.14% -4.13 0.17),
+  lab(99.14% -4.13 0.17) 10px,
+  lab(96.66% -10.89 -0.13) 10px,
+  lab(96.66% -10.89 -0.13) 20px
+);
+}
 
 .hello {
  font-size: calc(1.3rem + 3.4vw);
+}
+.landing-photo {
+  background-image: url("/assets/images/landing-bg.webp");
+  background-size: cover;
+  background-position-y: 100%;
+}
+.text-landing {
+  
+}
+.wrap {
+    display: inline-block;
+    position: relative;
+}
+
+.wrap img + .content {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
