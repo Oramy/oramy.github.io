@@ -193,30 +193,35 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     // Normalized pixel coordinates (from 0 to 1)
     float e = max(1.0/iResolution.x, 1.0/iResolution.y);
+    vec2 m = (iMouse.xy - iResolution.xy*.5)*e;
+
     vec2 uv = (fragCoord - iResolution.xy*0.5) * e;
+    float cSize = .1 + iMouse.w / 10.;
+    float waveCircle = circle(uv-m, (1.-iMouse.z)*20.*(cSize-.1)+.1 + cSize-.1);
+    vec2 wave = max(0., onion(waveCircle, 40.*e))*max(-1., waveCircle/100. + waveCircle*(cSize-.1)/10.) * normalize(uv-m);
+    vec2 uv2 = uv + wave;
     vec2 fgCenter = (iForeground.xy - iResolution.xy*0.5)*e;
     vec2 fgSize = iForeground.zw * e;
     
-    vec2 m = (iMouse.xy - iResolution.xy*.5)*e;
+    
     // Center-shape
     vec2 uv3 = rot2D(iTime) * uv;
     float triangle = sdBox(uv-fgCenter, fgSize);
     float onionAnim = mix(-4., 4.,(sin(iTime*.5) + 1.)/2.); 
     float triOutline = onion(triangle, e);
 
-    float cSize = .1 + iMouse.w / 10.;
-    float mouseCircle =  min(circle(uv - m, cSize), onion(circle(uv-m, (1.-iMouse.z)*2.*cSize + cSize-.1), .2*iMouse.z-.1));
+    float mouseCircle =  min(circle(uv - m, cSize), onion(circle(uv-m, (1.-iMouse.z)*4.*cSize + cSize-.1), .2*iMouse.z-.1));
     float mouseCircleAA = smoothstep(-20.*e, 20.*e, mouseCircle); 
     
     // ray-marching
     vec2 tileSize = vec2(e * 10., e*10.);
-    vec2 pixUV = pixelated(uv, tileSize);
+    vec2 pixUV = pixelated(uv2, tileSize);
     vec2 march = rayMarching(pixUV);
     
     // halftone
-    float d2 = halftone(uv, tileSize*4., -march.x*.1);
-    float d3 = halftone(uv, tileSize, -march.x*.1);
-    float d = halftone(uv, tileSize*4., -march.x*.1);
+    float d2 = halftone(uv2, tileSize*4., -march.x*.1);
+    float d3 = halftone(uv2, tileSize, -march.x*.1);
+    float d = halftone(uv2, tileSize*4., -march.x*.1);
     
     // Anti-aliasing
     float halfToneAA = smoothstep(e, -e, d);
@@ -249,7 +254,12 @@ var mouseX;
 var mouseY;
 var mouseZ = 0;
 var mouseW = 0;
-
+document.addEventListener('mousedown', function(event) {
+    if (event.detail > 1) { // Checking if it's a double click
+        event.preventDefault(); // Preventing the default text selection behavior
+        // Further condition checks can be added to customize functionality, if needed
+    }
+}, false);
 document.addEventListener("mousemove", (event) => {
    mouseX = event.clientX;
    mouseY = event.clientY;
@@ -281,7 +291,7 @@ document.addEventListener("mouseup", (event) => {
     ctx.shaderMouseY = ctx.toShaderY(mouseY);
     var fgIdRect = document.getElementById("my-fg").getBoundingClientRect();
     if (mouseZ > 0.)
-      mouseZ = Math.max(0., mouseZ - 0.04);
+      mouseZ = Math.max(0., mouseZ - 0.02);
     if (mouseW > 0.)
       mouseW = mouseW*.98;
   
