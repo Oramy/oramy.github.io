@@ -236,8 +236,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
         1. - vec3(halfToneAA) * vec3(palette(march.y).x)*.1,
         1. - ihalfToneAA * vec3(54./255., 120./255., 103./255.)*.1, 
         1. - triAA),
-      1. - vec3(iihalfToneAA)*
-        mix(mix(palette(march.y), 
+      1.-vec3(iihalfToneAA)*
+        mix(mix(1.-palette(march.y), 
         vec3(54./255., 120./255., 103./255.),
         0.8),vec3(.1), triAA*.8),
       clamp(1.-mouseCircleAA, 0., 1.));
