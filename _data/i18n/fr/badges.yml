@@ -8,6 +8,8 @@
   title: 6 mois
 2years:
   title: 2 ans
+3years:
+  title: 3 ans
 
 1developer:
   title: Solo dev
@@ -21,6 +23,8 @@
   title: 9 développeurs
 10developers:
   title: 10 développeurs
+20developers:
+  title: 20 développeurs
 Internship:
   title: Stage
 

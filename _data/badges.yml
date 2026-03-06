@@ -8,6 +8,8 @@
   style: bg-info
 2years:
   style: bg-info
+3years:
+  style: bg-info
 
 1developer:
   style: bg-info
@@ -20,6 +22,8 @@
 9developers:
   style: bg-info
 10developers:
+  style: bg-info
+20developers:
   style: bg-info
 Internship:
   style: bg-danger

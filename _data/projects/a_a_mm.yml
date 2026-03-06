@@ -1,0 +1,36 @@
+sd-no-sound-video: "/assets/images/mother-machine/mm-trailer-sd-no-sound.mp4"
+thumbnail: "/assets/images/spike/spike_screen_04_thumbnail.webp"
+big-thumbnail: "/assets/images/spike/spike_screen_thumbnail.webp"
+structure-logo: "/assets/images/logos/mm-logo.webp"
+structure-logo-alt: maschinen-mensch
+path: /projects/mother-machine/
+dedicated-page: mother-machine
+year: 2025
+featured: true
+hidden: false
+download-page: https://store.steampowered.com/app/1555980/Mother_Machine/
+badges:
+  -
+    - 3years
+    - 20developers
+detailed-blocks:
+
+background-image: /assets/images/mother-machine/mm-bg.webp
+slide-content-list:
+  - "video;https://www.youtube-nocookie.com/embed/8t4vP9lFmPg;Spike Gameplay Video"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_02.webp;Screenshot 1"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_03.webp;Screenshot 2"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_04.webp;Screenshot 3"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_05.webp;Screenshot 4"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_08.webp;Screenshot 5"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_09.webp;Screenshot 6"
+  - "image;/assets/images/mother-machine/MM_SShot_25_02_10.webp;Screenshot 7"
+thumbnails:
+  - "/assets/images/mother-machine/mm-bg.webp;Trailer"
+  - "/assets/images/mother-machine/MM_SShot_25_02_02.webp;Screenshot 1"
+  - "/assets/images/mother-machine/MM_SShot_25_02_03.webp;Screenshot 2"
+  - "/assets/images/mother-machine/MM_SShot_25_02_04.webp;Screenshot 3"
+  - "/assets/images/mother-machine/MM_SShot_25_02_05.webp;Screenshot 4"
+  - "/assets/images/mother-machine/MM_SShot_25_02_08.webp;Screenshot 5"
+  - "/assets/images/mother-machine/MM_SShot_25_02_09.webp;Screenshot 6"
+  - "/assets/images/mother-machine/MM_SShot_25_02_10.webp;Screenshot 7"

@@ -19,7 +19,10 @@ not-found:
 
 project-page: Project Page
 click-to-enlarge: Click to enlarge
-
+mother-machine:
+  balacing:
+    title: Balancing
+    content: I balanced
 spike:
   balancing:
     title: Implementing & Balancing enemies

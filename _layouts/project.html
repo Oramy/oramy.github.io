@@ -105,12 +105,14 @@
             </div>
             {% endif %}
           </div>
+          {% if project.dedicated-page="fired-up" %}
           <div class="alert alert-primary alert-dismissible fade show" role="alert">
             <strong>Please note</strong> this project is a <b>vertical slice</b>
             of the 4th zone of the full game.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
             </button>
           </div>
+          {% endif %}
         </div>
 
         <div class="col-lg-3 my-2 mt-3 sticky-lg-top py-5" style="z-index:1019;">
