@@ -5,7 +5,7 @@ structure-logo: "/assets/images/logos/cnam-enjmin-black-logo.webp"
 dedicated-page: 45-degrees
 path: /projects/45-degrees/
 year: 2021
-featured: true
+featured: false
 hidden: false
 download-page: https://spaceconcombre.itch.io/45
 badges:

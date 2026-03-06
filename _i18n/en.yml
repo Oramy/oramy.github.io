@@ -9,7 +9,9 @@ nav:
 titles:
   current-role: Game Designer
   games: Games
+on-project: "on" 
 project-presentation: Project Presentation
+featured-projects: Featured Projects
 missions: Missions
 my-missions: My Missions
 detailed-work: Detailed Work

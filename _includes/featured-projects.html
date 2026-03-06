@@ -33,7 +33,8 @@
         <div>
         <div class="px-2 row">
           <h2>{{ tproject.role }}
-            <p class="h4">on {{ tproject.title }}</p>
+            <p class="h4">{% translate on-project %}
+              {{ tproject.title }}</p>
           </h2>
           <div class="p-2 align-self-end text-md-end col-12 col-md-6 d-none" >
             {% include badges.html badges=project.badges %}

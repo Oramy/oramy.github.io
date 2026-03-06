@@ -1,6 +1,6 @@
 sd-no-sound-video: "/assets/images/mother-machine/mm-trailer-sd-no-sound.mp4"
-thumbnail: "/assets/images/spike/spike_screen_04_thumbnail.webp"
-big-thumbnail: "/assets/images/spike/spike_screen_thumbnail.webp"
+thumbnail: "/assets/images/mother-machine/mm-bg.webp"
+big-thumbnail: "/assets/images/mother-machine/mm-bg.webp"
 structure-logo: "/assets/images/logos/mm-logo.webp"
 structure-logo-alt: maschinen-mensch
 path: /projects/mother-machine/
